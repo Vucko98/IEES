@@ -1,14 +1,13 @@
-#Mon Aug 08 00:52:45 CEST 2022
+#Mon Aug 08 01:16:57 CEST 2022
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/isSystem=true
 repositories/http\:__download.eclipse.org_eclipse_updates_3.5/uri=http\://download.eclipse.org/eclipse/updates/3.5
 repositories/http\:__download.eclipse.org_eclipse_updates_3.5/enabled=true
 repositories/http\:__download.eclipse.org_eclipse_updates_3.5/count=1
-repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/description=
 repositories/http\:__download.eclipse.org_releases_galileo/enabled=true
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/provider=
 eclipse.preferences.version=1
 repositories/http\:__download.eclipse.org_eclipse_updates_3.5/nickname=The Eclipse Project Updates
-repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/version=1
+repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/version=1.0.0
 repositories/http\:__download.eclipse.org_releases_galileo/count=1
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/isSystem=true
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/name=metadata listener dropins
@@ -20,6 +19,7 @@ repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/des
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/uri=file\:/C\:/Users/Vojvoda/Desktop/IEES/eclipse/configuration/org.eclipse.osgi/bundles/83/data/listener_1925729951/
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/name=C\:\\Users\\Vojvoda\\Desktop\\IEES\\eclipse\\.eclipseextension
-repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/provider=
+repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_configuration_org.eclipse.osgi_bundles_83_data_listener_1925729951/suffix=content.xml
+repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/suffix=eclipse
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/type=org.eclipse.equinox.p2.extensionlocation.metadataRepository
 repositories/file\:_C\:_Users_Vojvoda_Desktop_IEES_eclipse_.eclipseextension/version=1
