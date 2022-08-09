@@ -27,10 +27,10 @@ C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\Predefined\Predefi
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\Predefined\PredefinedPackages.xml
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\FTN.ESI.SIMES.CIM.CIMProfileCreator.exe
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\FTN.ESI.SIMES.CIM.CIMProfileCreator.pdb
-C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csprojAssemblyReference.cache
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\FTN.ESI.SIMES.CIM.CIMProfileCreator.CIMProfileCreatorForm.resources
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\FTN.ESI.SIMES.CIM.CIMProfileCreator.Properties.Resources.resources
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csproj.GenerateResource.cache
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csproj.CoreCompileInputs.cache
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\FTN.ESI.SIMES.CIM.CIMProfileCreator.exe
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\FTN.ESI.SIMES.CIM.CIMProfileCreator.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csproj.AssemblyReference.cache
