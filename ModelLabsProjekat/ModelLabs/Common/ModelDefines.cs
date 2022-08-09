@@ -14,7 +14,7 @@ namespace FTN.Common
         IrregularTP_ =								0x0003,
         RegularIntervalSdle_ =						0x0004,
         OutageSdle_ =								0x0005,
-        Disconnector_ =								0x0006,
+        Disconnector_ =							    0x0006,
     }
 
     [Flags]
@@ -69,7 +69,7 @@ namespace FTN.Common
 		OutageSdle_SwitchingOps_ =			0x1311000000050100,
 
 		Switch_ =							0x1111100000000000,
-		Switch_SwitchingOp_ =				0x1111100000000010,
+		Switch_SwitchingOp_ =				0x1111100000000100,
 
 		Disconnector_ =						0x1111110000060000,
 	}
