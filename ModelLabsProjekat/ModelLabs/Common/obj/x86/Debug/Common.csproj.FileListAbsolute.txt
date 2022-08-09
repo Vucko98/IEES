@@ -13,3 +13,9 @@ D:\shared\simesVezbe\Projekat\ModelLabsProjekat\ModelLabs\bin\FTN.Common.pdb
 D:\shared\simesVezbe\Projekat\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\shared\simesVezbe\Projekat\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\FTN.Common.dll
 D:\shared\simesVezbe\Projekat\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\FTN.Common.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\FTN.Common.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\FTN.Common.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\FTN.Common.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x86\Debug\FTN.Common.pdb

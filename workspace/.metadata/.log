@@ -96,3 +96,101 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -perspective au.com.langd
 !MESSAGE Could not find view: org.eclipse.ui.internal.introview
 !SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 03:16:13.265
 !MESSAGE OK
+!SESSION 2022-08-08 11:38:01.143 -----------------------------------------------
+eclipse.buildId=I20090611-1540
+java.version=1.6.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -perspective au.com.langdale.cimtoole.CIMToolPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -perspective au.com.langdale.cimtoole.CIMToolPerspective
+
+!ENTRY org.eclipse.ui 4 4 2022-08-08 11:38:03.379
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2022-08-08 11:38:04.209
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:38:04.209
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:38:04.209
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:38:04.209
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2022-08-08 11:38:04.209
+!MESSAGE Unable to restore perspective: Workspace - CIMTool.
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:38:04.209
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 4 0 2022-08-08 11:38:04.209
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:38:04.209
+!MESSAGE OK
+!SESSION 2022-08-08 11:45:32.066 -----------------------------------------------
+eclipse.buildId=I20090611-1540
+java.version=1.6.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -perspective au.com.langdale.cimtoole.CIMToolPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -perspective au.com.langdale.cimtoole.CIMToolPerspective
+
+!ENTRY org.eclipse.ui 4 4 2022-08-08 11:45:34.199
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2022-08-08 11:45:35.075
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:45:35.075
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:45:35.075
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:45:35.075
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2022-08-08 11:45:35.075
+!MESSAGE Unable to restore perspective: Workspace - CIMTool.
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 0 0 2022-08-08 11:45:35.075
+!MESSAGE 
+!SUBENTRY 2 org.eclipse.ui 4 0 2022-08-08 11:45:35.075
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 org.eclipse.core.runtime 0 0 2022-08-08 11:45:35.075
+!MESSAGE OK
