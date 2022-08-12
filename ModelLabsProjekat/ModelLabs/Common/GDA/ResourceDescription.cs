@@ -201,7 +201,7 @@ namespace FTN.Common
 					case PropertyType.Int64:
 					case PropertyType.TimeSpan:
 					case PropertyType.DateTime:
-						if (this.Properties[i].Id == ModelCode.IDOBJ_GID)
+						if (this.Properties[i].Id == ModelCode.IDObject_GID_)
 						{
 							xmlWriter.WriteValue(String.Format("0x{0:x16}", this.Properties[i].AsLong()));
 						}

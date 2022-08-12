@@ -542,7 +542,7 @@ namespace FTN.Common
 
 			//// model code with inheratence only
 			typeIdLong &= (long)ModelCodeMask.MASK_INHERITANCE_ONLY;
-			if (typeIdLong == (long)ModelCode.IDOBJ)
+			if (typeIdLong == (long)ModelCode.IDObject_)
 			{
 				return;
 			}
@@ -866,21 +866,22 @@ namespace FTN.Common
 
 		private void InitializeTypeIdsInInsertOrder()
 		{			
-			typeIdsInInsertOrder.Add(ModelCode.BASEVOLTAGE);
-			typeIdsInInsertOrder.Add(ModelCode.LOCATION);
-			typeIdsInInsertOrder.Add(ModelCode.POWERTR);
-			typeIdsInInsertOrder.Add(ModelCode.POWERTRWINDING);
-			typeIdsInInsertOrder.Add(ModelCode.WINDINGTEST);			
+			typeIdsInInsertOrder.Add(ModelCode.RegularIntervalSdle_);
+			typeIdsInInsertOrder.Add(ModelCode.RegularTP_);
+			typeIdsInInsertOrder.Add(ModelCode.OutageSdle_);
+			typeIdsInInsertOrder.Add(ModelCode.IrregularTP_);
+            typeIdsInInsertOrder.Add(ModelCode.SwitchingOp_);
+            typeIdsInInsertOrder.Add(ModelCode.Disconnector_);			
 		}
 
 		private void InitializeNotSettablePropertyIds()
 		{			
-			notSettablePropertyIds.Add(ModelCode.IDOBJ_GID);
-			notSettablePropertyIds.Add(ModelCode.BASEVOLTAGE_CONDEQS);
-			notSettablePropertyIds.Add(ModelCode.LOCATION_PSRS);
-			notSettablePropertyIds.Add(ModelCode.POWERTRWINDING_TESTS);
-            notSettablePropertyIds.Add(ModelCode.POWERTR_WINDINGS);	
-		}
+			notSettablePropertyIds.Add(ModelCode.IDObject_GID_);
+			notSettablePropertyIds.Add(ModelCode.SwitchingOp_Switches_);
+			notSettablePropertyIds.Add(ModelCode.IrregularIntervalSdle_TPs_);
+			notSettablePropertyIds.Add(ModelCode.RegularIntervalSdle_TPs_);
+            notSettablePropertyIds.Add(ModelCode.OutageSdle_SwitchingOps_);
+        }
 	
 		# endregion Initialization of metadata
 
