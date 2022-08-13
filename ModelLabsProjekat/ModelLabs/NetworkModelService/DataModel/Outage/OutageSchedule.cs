@@ -13,7 +13,7 @@ namespace FTN {
     using FTN;
     
     
-    /// A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.
-    public class PowerSystemResource : IdentifiedObject {
+    /// The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service.
+    public class OutageSchedule : IrregularIntervalSchedule {
     }
 }
