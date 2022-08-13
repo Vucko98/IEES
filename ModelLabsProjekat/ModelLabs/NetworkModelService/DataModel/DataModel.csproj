@@ -84,16 +84,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\BaseVoltage .cs" />
-    <Compile Include="Core\ConductingEquipment.cs" />
-    <Compile Include="Core\Equipment.cs" />
-    <Compile Include="Core\Location.cs" />
-    <Compile Include="Core\IdentifiedObject.cs" />
-    <Compile Include="Core\PowerSystemResource.cs" />
+    <Compile Include="CoreNew\BasicIntervalSchedule.cs" />
+    <Compile Include="CoreNew\ConductingEquipment.cs" />
+    <Compile Include="CoreNew\Equipment.cs" />
+    <Compile Include="CoreNew\IdentifiedObject.cs" />
+    <Compile Include="CoreNew\IrregularIntervalSchedule.cs" />
+    <Compile Include="CoreNew\IrregularTimePoint.cs" />
+    <Compile Include="CoreNew\PowerSystemResource.cs" />
+    <Compile Include="CoreNew\RegularIntervalSchedule.cs" />
+    <Compile Include="CoreNew\RegularTimePoint.cs" />
+    <Compile Include="OutageNew\OutageSchedule.cs" />
+    <Compile Include="OutageNew\SwitchingOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wires\WindingTest.cs" />
-    <Compile Include="Wires\PowerTransformer.cs" />
-    <Compile Include="Wires\TransformerWinding.cs" />
+    <Compile Include="WiresNew\Disconnector.cs" />
+    <Compile Include="WiresNew\Switch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj">
