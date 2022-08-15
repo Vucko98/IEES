@@ -237,95 +237,113 @@
 				}
 			}
 		}
-		#endregion Populate ResourceDescription
+        #endregion Populate ResourceDescription
 
-		#region Enums convert
-		public static PhaseCode GetDMSPhaseCode(FTN.PhaseCode phases)
-		{
-			switch (phases)
-			{
-				case FTN.PhaseCode.A:
-					return PhaseCode.A;
-				case FTN.PhaseCode.AB:
-					return PhaseCode.AB;
-				case FTN.PhaseCode.ABC:
-					return PhaseCode.ABC;
-				case FTN.PhaseCode.ABCN:
-					return PhaseCode.ABCN;
-				case FTN.PhaseCode.ABN:
-					return PhaseCode.ABN;
-				case FTN.PhaseCode.AC:
-					return PhaseCode.AC;
-				case FTN.PhaseCode.ACN:
-					return PhaseCode.ACN;
-				case FTN.PhaseCode.AN:
-					return PhaseCode.AN;
-				case FTN.PhaseCode.B:
-					return PhaseCode.B;
-				case FTN.PhaseCode.BC:
-					return PhaseCode.BC;
-				case FTN.PhaseCode.BCN:
-					return PhaseCode.BCN;
-				case FTN.PhaseCode.BN:
-					return PhaseCode.BN;
-				case FTN.PhaseCode.C:
-					return PhaseCode.C;
-				case FTN.PhaseCode.CN:
-					return PhaseCode.CN;
-				case FTN.PhaseCode.N:
-					return PhaseCode.N;
-				case FTN.PhaseCode.s12N:
-					return PhaseCode.ABN;
-				case FTN.PhaseCode.s1N:
-					return PhaseCode.AN;
-				case FTN.PhaseCode.s2N:
-					return PhaseCode.BN;
-				default: return PhaseCode.Unknown;
-			}
-		}
+        #region Enums convert
 
-		public static TransformerFunction GetDMSTransformerFunctionKind(FTN.TransformerFunctionKind transformerFunction)
+        public static UnitMultiplier GetDMSUnitMultiplier(FTN.UnitMultiplier unitMultiplier)
+        {
+            switch (unitMultiplier)
+            {
+                case FTN.UnitMultiplier.c:
+                    return UnitMultiplier.c;
+                case FTN.UnitMultiplier.d:
+                    return UnitMultiplier.d;
+                case FTN.UnitMultiplier.G:
+                    return UnitMultiplier.G;
+                case FTN.UnitMultiplier.k:
+                    return UnitMultiplier.k;
+                case FTN.UnitMultiplier.m:
+                    return UnitMultiplier.m;
+                case FTN.UnitMultiplier.M:
+                    return UnitMultiplier.M;
+                case FTN.UnitMultiplier.micro:
+                    return UnitMultiplier.micro;
+                case FTN.UnitMultiplier.n:
+                    return UnitMultiplier.n;
+                case FTN.UnitMultiplier.none:
+                    return UnitMultiplier.none;
+                case FTN.UnitMultiplier.p:
+                    return UnitMultiplier.p;
+                //case FTN.UnitMultiplier.T:
+                default:
+                    return UnitMultiplier.T;
+            }
+        }
+        
+        public static UnitSymbol GetDMSUnitSymbol(FTN.UnitSymbol unitSymbol)
+        {
+            switch (unitSymbol)
+            {
+                case FTN.UnitSymbol.A:
+                    return UnitSymbol.A;
+                case FTN.UnitSymbol.deg:
+                    return UnitSymbol.deg;
+                case FTN.UnitSymbol.degC:
+                    return UnitSymbol.degC;
+                case FTN.UnitSymbol.F:
+                    return UnitSymbol.F;
+                case FTN.UnitSymbol.g:
+                    return UnitSymbol.g;
+                case FTN.UnitSymbol.h:
+                    return UnitSymbol.h;
+                case FTN.UnitSymbol.H:
+                    return UnitSymbol.H;
+                case FTN.UnitSymbol.Hz:
+                    return UnitSymbol.Hz;
+                case FTN.UnitSymbol.J:
+                    return UnitSymbol.J;
+                case FTN.UnitSymbol.m:
+                    return UnitSymbol.m;
+                case FTN.UnitSymbol.m2:
+                    return UnitSymbol.m2;
+                case FTN.UnitSymbol.m3:
+                    return UnitSymbol.m3;
+                case FTN.UnitSymbol.min:
+                    return UnitSymbol.min;
+                case FTN.UnitSymbol.N:
+                    return UnitSymbol.N;
+                case FTN.UnitSymbol.none:
+                    return UnitSymbol.none;
+                case FTN.UnitSymbol.ohm:
+                    return UnitSymbol.ohm;
+                case FTN.UnitSymbol.Pa:
+                    return UnitSymbol.Pa;
+                case FTN.UnitSymbol.rad:
+                    return UnitSymbol.rad;
+                case FTN.UnitSymbol.s:
+                    return UnitSymbol.s;
+                case FTN.UnitSymbol.S:
+                    return UnitSymbol.S;
+                case FTN.UnitSymbol.V:
+                    return UnitSymbol.V;
+                case FTN.UnitSymbol.VA:
+                    return UnitSymbol.VA;
+                case FTN.UnitSymbol.VAh:
+                    return UnitSymbol.VAh;
+                case FTN.UnitSymbol.VAr:
+                    return UnitSymbol.VAr;
+                case FTN.UnitSymbol.VArh:
+                    return UnitSymbol.VArh;
+                case FTN.UnitSymbol.W:
+                    return UnitSymbol.W;
+                //case FTN.UnitSymbol.Wh:
+                default:
+                    return UnitSymbol.Wh;
+            }
+        }
+
+        public static SwitchState GetDMSSwitchState(FTN.SwitchState switchState)
 		{
-			switch (transformerFunction)
+			switch (switchState)
 			{
-				case FTN.TransformerFunctionKind.voltageRegulator:
-					return TransformerFunction.Voltreg;
+                case FTN.SwitchState.open:
+					return SwitchState.open;
 				default:
-					return TransformerFunction.Consumer;
+					return SwitchState.close;
 			}
 		}
 
-		public static WindingType GetDMSWindingType(FTN.WindingType windingType)
-		{
-			switch (windingType)
-			{
-				case FTN.WindingType.primary:
-					return WindingType.Primary;
-				case FTN.WindingType.secondary:
-					return WindingType.Secondary;
-				case FTN.WindingType.tertiary:
-					return WindingType.Tertiary;
-				default:
-					return WindingType.None;
-			}
-		}
-
-		public static WindingConnection GetDMSWindingConnection(FTN.WindingConnection windingConnection)
-		{
-			switch (windingConnection)
-			{
-				case FTN.WindingConnection.D:
-					return WindingConnection.D;
-				case FTN.WindingConnection.I:
-					return WindingConnection.I;
-				case FTN.WindingConnection.Z:
-					return WindingConnection.Z;
-				case FTN.WindingConnection.Y:
-					return WindingConnection.Y;
-				default:
-					return WindingConnection.Y;
-			}
-		}
-		#endregion Enums convert
-	}
+        #endregion Enums convert
+    }
 }
