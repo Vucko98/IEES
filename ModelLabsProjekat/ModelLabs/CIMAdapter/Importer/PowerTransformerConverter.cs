@@ -10,233 +10,219 @@
 	{
 
 		#region Populate ResourceDescription
+        //10000000
 		public static void PopulateIdentifiedObjectProperties(FTN.IdentifiedObject cimIdentifiedObject, ResourceDescription rd)
 		{
 			if ((cimIdentifiedObject != null) && (rd != null))
 			{
 				if (cimIdentifiedObject.MRIDHasValue)
 				{
-					rd.AddProperty(new Property(ModelCode.IDOBJ_MRID, cimIdentifiedObject.MRID));
+					rd.AddProperty(new Property(ModelCode.IDObject_MRID_, cimIdentifiedObject.MRID));
 				}
 				if (cimIdentifiedObject.NameHasValue)
 				{
-					rd.AddProperty(new Property(ModelCode.IDOBJ_NAME, cimIdentifiedObject.Name));
+					rd.AddProperty(new Property(ModelCode.IDObject_Name_, cimIdentifiedObject.Name));
 				}
-				if (cimIdentifiedObject.DescriptionHasValue)
+				if (cimIdentifiedObject.AliasNameHasValue)
 				{
-					rd.AddProperty(new Property(ModelCode.IDOBJ_DESCRIPTION, cimIdentifiedObject.Description));
+					rd.AddProperty(new Property(ModelCode.IDObject_AName_, cimIdentifiedObject.AliasName));
 				}
 			}
 		}
+        //11000000
+        public static void PopulatePowerSystemResourceProperties(FTN.PowerSystemResource cimPowerSystemResource, ResourceDescription rd)
+        {
+            if ((cimPowerSystemResource != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimPowerSystemResource, rd);
+            }
+        }
+        //12000000
+        public static void PopulateSwitchingOperationProperties(FTN.SwitchingOperation cimSwitchingOperation, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+        {
+            if ((cimSwitchingOperation != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimSwitchingOperation, rd);
 
-		public static void PopulateLocationProperties(FTN.Location cimLocation, ResourceDescription rd)
-		{
-			if ((cimLocation != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimLocation, rd);
+                if (cimSwitchingOperation.NewStateHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.SwitchingOp_NewState_, (short)GetDMSSwitchState(cimSwitchingOperation.NewState)));
+                }
+                if (cimSwitchingOperation.OperationTimeHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.SwitchingOp_OpTime_, cimSwitchingOperation.OperationTime));
+                }
+                if (cimSwitchingOperation.OutageScheduleHasValue)
+                {
+                    long gid = importHelper.GetMappedGID(cimSwitchingOperation.OutageSchedule.ID);
+                    if (gid < 0)
+                    {
+                        report.Report.Append("WARNING: Convert ").Append(cimSwitchingOperation.GetType().ToString()).Append(" rdfID = \"").Append(cimSwitchingOperation.ID);
+                        report.Report.Append("\" - Failed to set reference to OutageSchedule: rdfID \"").Append(cimSwitchingOperation.OutageSchedule.ID).AppendLine(" \" is not mapped to GID!");
+                    }
+                    rd.AddProperty(new Property(ModelCode.SwitchingOp_OutageSdle_, gid));
+                }                                                                                               
+            }
+        }
+        //13000000
+        public static void PopulateBasicIntervalScheduleProperties(FTN.BasicIntervalSchedule cimBasicIntervalSchedule, ResourceDescription rd)
+        {
+            if ((cimBasicIntervalSchedule != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimBasicIntervalSchedule, rd);
 
-				if (cimLocation.CategoryHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.LOCATION_CATEGORY, cimLocation.Category));
-				}
-				if (cimLocation.CorporateCodeHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.LOCATION_CORPORATECODE, cimLocation.CorporateCode));
-				}
-			}
-		}
+                if (cimBasicIntervalSchedule.StartTimeHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_StartT_, cimBasicIntervalSchedule.StartTime));
+                }
+                if (cimBasicIntervalSchedule.Value1MultiplierHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Mplr_, (short)GetDMSUnitMultiplier(cimBasicIntervalSchedule.Value1Multiplier)));
+                }
+                if (cimBasicIntervalSchedule.Value2MultiplierHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Mplr_, (short)GetDMSUnitMultiplier(cimBasicIntervalSchedule.Value2Multiplier)));
+                }
+                if (cimBasicIntervalSchedule.Value1UnitHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Unit_, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value1Unit)));
+                }
+                if (cimBasicIntervalSchedule.Value2UnitHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Unit_, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value2Unit)));
+                }
+            }
+        }
+        //14000000
+        public static void PopulateRegularTimePointProperties(FTN.RegularTimePoint cimRegularTimePoint, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+        {
+            if ((cimRegularTimePoint != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimRegularTimePoint, rd);
 
-		public static void PopulatePowerSystemResourceProperties(FTN.PowerSystemResource cimPowerSystemResource, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
-		{
-			if ((cimPowerSystemResource != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimPowerSystemResource, rd);
+                if (cimRegularTimePoint.SequenceNumberHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.RegularTP_SequenceNum_, cimRegularTimePoint.SequenceNumber));
+                }
+                if (cimRegularTimePoint.Value1HasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.RegularTP_V1_, cimRegularTimePoint.Value1));
+                }
+                if (cimRegularTimePoint.Value2HasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.RegularTP_V2_, cimRegularTimePoint.Value2));
+                }
+                if (cimRegularTimePoint.IntervalScheduleHasValue)
+                {
+                    long gid = importHelper.GetMappedGID(cimRegularTimePoint.IntervalSchedule.ID);
+                    if (gid < 0)
+                    {
+                        report.Report.Append("WARNING: Convert ").Append(cimRegularTimePoint.GetType().ToString()).Append(" rdfID = \"").Append(cimRegularTimePoint.ID);
+                        report.Report.Append("\" - Failed to set reference to IntervalSchedule: rdfID \"").Append(cimRegularTimePoint.IntervalSchedule.ID).AppendLine(" \" is not mapped to GID!");
+                    }
+                    rd.AddProperty(new Property(ModelCode.RegularTP_IntervalSdle_, gid));
+                }
+            }
+        }
+        //15000000
+        public static void PopulateIrregularTimePointProperties(FTN.IrregularTimePoint cimIrregularTimePoint, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+        {
+            if ((cimIrregularTimePoint != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimIrregularTimePoint, rd);
 
-				if (cimPowerSystemResource.CustomTypeHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.PSR_CUSTOMTYPE, cimPowerSystemResource.CustomType));
-				}
-				if (cimPowerSystemResource.LocationHasValue)
-				{
-					long gid = importHelper.GetMappedGID(cimPowerSystemResource.Location.ID);
-					if (gid < 0)
-					{
-						report.Report.Append("WARNING: Convert ").Append(cimPowerSystemResource.GetType().ToString()).Append(" rdfID = \"").Append(cimPowerSystemResource.ID);
-						report.Report.Append("\" - Failed to set reference to Location: rdfID \"").Append(cimPowerSystemResource.Location.ID).AppendLine(" \" is not mapped to GID!");
-					}
-					rd.AddProperty(new Property(ModelCode.PSR_LOCATION, gid));
-				}
-			}
-		}
+                if (cimIrregularTimePoint.TimeHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.IrregularTP_time_, cimIrregularTimePoint.Time));
+                }
+                if (cimIrregularTimePoint.Value1HasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.IrregularTP_V1_, cimIrregularTimePoint.Value1));
+                }
+                if (cimIrregularTimePoint.Value2HasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.IrregularTP_V2_, cimIrregularTimePoint.Value2));
+                }
+                if (cimIrregularTimePoint.IntervalScheduleHasValue)
+                {
+                    long gid = importHelper.GetMappedGID(cimIrregularTimePoint.IntervalSchedule.ID);
+                    if (gid < 0)
+                    {
+                        report.Report.Append("WARNING: Convert ").Append(cimIrregularTimePoint.GetType().ToString()).Append(" rdfID = \"").Append(cimIrregularTimePoint.ID);
+                        report.Report.Append("\" - Failed to set reference to IntervalSchedule: rdfID \"").Append(cimIrregularTimePoint.IntervalSchedule.ID).AppendLine(" \" is not mapped to GID!");
+                    }
+                    rd.AddProperty(new Property(ModelCode.IrregularTP_IntervalSdle_, gid));
+                }
+            }
+        }
+        //11100000
+        public static void PopulateEquipmentProperties(FTN.Equipment cimEquipment, ResourceDescription rd)
+        {
+            if ((cimEquipment != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulatePowerSystemResourceProperties(cimEquipment, rd);
+            }
+        }
+        //13100000
+        public static void PopulateIrregularIntervalScheduleProperties(FTN.IrregularIntervalSchedule cimIrregularIntervalSchedule, ResourceDescription rd)
+        {
+            if ((cimIrregularIntervalSchedule != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateBasicIntervalScheduleProperties(cimIrregularIntervalSchedule, rd);
+            }
+        }
+        //13200000
+        public static void PopulateRegularIntervalScheduleProperties(FTN.RegularIntervalSchedule cimRegularIntervalSchedule, ResourceDescription rd)
+        {
+            if ((cimRegularIntervalSchedule != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateBasicIntervalScheduleProperties(cimRegularIntervalSchedule, rd);
 
-		public static void PopulateBaseVoltageProperties(FTN.BaseVoltage cimBaseVoltage, ResourceDescription rd)
-		{
-			if ((cimBaseVoltage != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimBaseVoltage, rd);
+                if (cimRegularIntervalSchedule.EndTimeHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.RegularIntervalSdle_EndT_, cimRegularIntervalSchedule.EndTime));
+                }
+                if (cimRegularIntervalSchedule.TimeStepHasValue)
+                {
+                    rd.AddProperty(new Property(ModelCode.RegularIntervalSdle_TStep_, cimRegularIntervalSchedule.TimeStep));
+                }
+            }
+        }
+        //11110000
+        public static void PopulateConductingEquipmentProperties(FTN.ConductingEquipment cimConductingEquipment, ResourceDescription rd)
+        {
+            if ((cimConductingEquipment != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateEquipmentProperties(cimConductingEquipment, rd);
+            }
+        }
+        //11111000
+        public static void PopulateSwitchProperties(FTN.Switch cimSwitch, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+        {
+            if ((cimSwitch != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateConductingEquipmentProperties(cimSwitch, rd);
 
-				if (cimBaseVoltage.NominalVoltageHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.BASEVOLTAGE_NOMINALVOLTAGE, cimBaseVoltage.NominalVoltage));
-				}
-			}
-		}
-
-		public static void PopulateEquipmentProperties(FTN.Equipment cimEquipment, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
-		{
-			if ((cimEquipment != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulatePowerSystemResourceProperties(cimEquipment, rd, importHelper, report);
-
-				if (cimEquipment.PrivateHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.EQUIPMENT_ISPRIVATE, cimEquipment.Private));
-				}
-				if (cimEquipment.IsUndergroundHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.EQUIPMENT_ISUNDERGROUND, cimEquipment.IsUnderground));
-				}
-			}
-		}
-
-		public static void PopulateConductingEquipmentProperties(FTN.ConductingEquipment cimConductingEquipment, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
-		{
-			if ((cimConductingEquipment != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateEquipmentProperties(cimConductingEquipment, rd, importHelper, report);
-
-				if (cimConductingEquipment.PhasesHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.CONDEQ_PHASES, (short)GetDMSPhaseCode(cimConductingEquipment.Phases)));
-				}
-				if (cimConductingEquipment.RatedVoltageHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.CONDEQ_RATEDVOLTAGE, cimConductingEquipment.RatedVoltage));
-				}
-				if (cimConductingEquipment.BaseVoltageHasValue)
-				{
-					long gid = importHelper.GetMappedGID(cimConductingEquipment.BaseVoltage.ID);
-					if (gid < 0)
-					{
-						report.Report.Append("WARNING: Convert ").Append(cimConductingEquipment.GetType().ToString()).Append(" rdfID = \"").Append(cimConductingEquipment.ID);
-						report.Report.Append("\" - Failed to set reference to BaseVoltage: rdfID \"").Append(cimConductingEquipment.BaseVoltage.ID).AppendLine(" \" is not mapped to GID!");
-					}
-					rd.AddProperty(new Property(ModelCode.CONDEQ_BASVOLTAGE, gid));
-				}
-			}
-		}
-
-		public static void PopulatePowerTransformerProperties(FTN.PowerTransformer cimPowerTransformer, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
-		{
-			if ((cimPowerTransformer != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateEquipmentProperties(cimPowerTransformer, rd, importHelper, report);
-
-				if (cimPowerTransformer.FunctionHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTR_FUNC, (short)GetDMSTransformerFunctionKind(cimPowerTransformer.Function)));
-				}
-				if (cimPowerTransformer.AutotransformerHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTR_AUTO, cimPowerTransformer.Autotransformer));
-				}
-			}
-		}
-
-		public static void PopulateTransformerWindingProperties(FTN.TransformerWinding cimTransformerWinding, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
-		{
-			if ((cimTransformerWinding != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateConductingEquipmentProperties(cimTransformerWinding, rd, importHelper, report);
-
-				if (cimTransformerWinding.ConnectionTypeHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_CONNTYPE, (short)GetDMSWindingConnection(cimTransformerWinding.ConnectionType)));
-				}
-				if (cimTransformerWinding.GroundedHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_GROUNDED, cimTransformerWinding.Grounded));
-				}
-				if (cimTransformerWinding.RatedSHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_RATEDS, cimTransformerWinding.RatedS));
-				}
-				if (cimTransformerWinding.RatedUHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_RATEDU, cimTransformerWinding.RatedU));
-				}
-				if (cimTransformerWinding.WindingTypeHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_WINDTYPE, (short)GetDMSWindingType(cimTransformerWinding.WindingType)));
-				}
-				if (cimTransformerWinding.PhaseToGroundVoltageHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_PHASETOGRNDVOLTAGE, cimTransformerWinding.PhaseToGroundVoltage));
-				}
-				if (cimTransformerWinding.PhaseToPhaseVoltageHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_PHASETOPHASEVOLTAGE, cimTransformerWinding.PhaseToPhaseVoltage));
-				}
-				if (cimTransformerWinding.PowerTransformerHasValue)
-				{
-					long gid = importHelper.GetMappedGID(cimTransformerWinding.PowerTransformer.ID);
-					if (gid < 0)
-					{
-						report.Report.Append("WARNING: Convert ").Append(cimTransformerWinding.GetType().ToString()).Append(" rdfID = \"").Append(cimTransformerWinding.ID);
-						report.Report.Append("\" - Failed to set reference to PowerTransformer: rdfID \"").Append(cimTransformerWinding.PowerTransformer.ID).AppendLine(" \" is not mapped to GID!");
-					}
-					rd.AddProperty(new Property(ModelCode.POWERTRWINDING_POWERTRW, gid));
-				}
-			}
-		}
-
-		public static void PopulateWindingTestProperties(FTN.WindingTest cimWindingTest, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
-		{
-			if ((cimWindingTest != null) && (rd != null))
-			{
-				PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimWindingTest, rd);
-
-				if (cimWindingTest.LeakageImpedanceHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_LEAKIMPDN, cimWindingTest.LeakageImpedance));
-				}
-				if (cimWindingTest.LoadLossHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_LOADLOSS, cimWindingTest.LoadLoss));
-				}
-				if (cimWindingTest.NoLoadLossHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_NOLOADLOSS, cimWindingTest.NoLoadLoss));
-				}
-				if (cimWindingTest.PhaseShiftHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_PHASESHIFT, cimWindingTest.PhaseShift));
-				}
-				if (cimWindingTest.LeakageImpedance0PercentHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_LEAKIMPDN0PERCENT, cimWindingTest.LeakageImpedance0Percent));
-				}
-				if (cimWindingTest.LeakageImpedanceMaxPercentHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_LEAKIMPDNMAXPERCENT, cimWindingTest.LeakageImpedanceMaxPercent));
-				}
-				if (cimWindingTest.LeakageImpedanceMinPercentHasValue)
-				{
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_LEAKIMPDNMINPERCENT, cimWindingTest.LeakageImpedanceMinPercent));
-				}
-
-				if (cimWindingTest.From_TransformerWindingHasValue)
-				{
-					long gid = importHelper.GetMappedGID(cimWindingTest.From_TransformerWinding.ID);
-					if (gid < 0)
-					{
-						report.Report.Append("WARNING: Convert ").Append(cimWindingTest.GetType().ToString()).Append(" rdfID = \"").Append(cimWindingTest.ID);
-						report.Report.Append("\" - Failed to set reference to TransformerWinding: rdfID \"").Append(cimWindingTest.From_TransformerWinding.ID).AppendLine(" \" is not mapped to GID!");
-					}
-					rd.AddProperty(new Property(ModelCode.WINDINGTEST_POWERTRWINDING, gid));
-				}
-			}
-		}
+                if (cimSwitch.SwitchingOperationsHasValue)
+                {
+                    long gid = importHelper.GetMappedGID(cimSwitch.SwitchingOperations.ID);
+                    if (gid < 0)
+                    {
+                        report.Report.Append("WARNING: Convert ").Append(cimSwitch.GetType().ToString()).Append(" rdfID = \"").Append(cimSwitch.ID);
+                        report.Report.Append("\" - Failed to set reference to SwitchingOperations: rdfID \"").Append(cimSwitch.SwitchingOperations.ID).AppendLine(" \" is not mapped to GID!");
+                    }
+                    rd.AddProperty(new Property(ModelCode.Switch_SwitchingOp_, gid));
+                }
+            }
+        }
+        //11111100
+        public static void PopulateDisconnectorProperties(FTN.Disconnector cimDisconnector, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
+        {
+            if ((cimDisconnector != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateSwitchProperties(cimDisconnector, rd, importHelper, report);
+            }
+        }
         #endregion Populate ResourceDescription
 
         #region Enums convert
