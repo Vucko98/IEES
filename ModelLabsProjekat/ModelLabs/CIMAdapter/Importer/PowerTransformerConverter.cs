@@ -196,6 +196,14 @@
                 PowerTransformerConverter.PopulateEquipmentProperties(cimConductingEquipment, rd);
             }
         }
+        //13110000
+        public static void PopulateOutageScheduleProperties(FTN.OutageSchedule cimOutageSchedule, ResourceDescription rd)
+        {
+            if ((cimOutageSchedule != null) && (rd != null))
+            {
+                PowerTransformerConverter.PopulateIrregularIntervalScheduleProperties(cimOutageSchedule, rd);
+            }
+        }
         //11111000
         public static void PopulateSwitchProperties(FTN.Switch cimSwitch, ResourceDescription rd, ImportHelper importHelper, TransformAndLoadReport report)
         {
