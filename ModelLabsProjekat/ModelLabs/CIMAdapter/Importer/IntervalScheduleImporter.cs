@@ -9,10 +9,10 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
 	/// <summary>
 	/// PowerTransformerImporter
 	/// </summary>
-	public class PowerTransformerImporter
+	public class IntervalScheduleImporter
 	{
 		/// <summary> Singleton </summary>
-		private static PowerTransformerImporter ptImporter = null;
+		private static IntervalScheduleImporter ptImporter = null;
 		private static object singletoneLock = new object();
 
 		private ConcreteModel concreteModel;
@@ -22,7 +22,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
 
 
 		#region Properties
-		public static PowerTransformerImporter Instance
+		public static IntervalScheduleImporter Instance
 		{
 			get
 			{
@@ -32,7 +32,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
 					{
 						if (ptImporter == null)
 						{
-							ptImporter = new PowerTransformerImporter();
+							ptImporter = new IntervalScheduleImporter();
 							ptImporter.Reset();
 						}
 					}
@@ -138,7 +138,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
                 importHelper.DefineIDMapping(cimRegularIntervalSchedule.ID, gid);
 
                 ////populate ResourceDescription
-                PowerTransformerConverter.PopulateRegularIntervalScheduleProperties(cimRegularIntervalSchedule, rd);
+                IntervalScheduleConverter.PopulateRegularIntervalScheduleProperties(cimRegularIntervalSchedule, rd);
             }
             return rd;
         }
@@ -177,7 +177,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
                 importHelper.DefineIDMapping(cimRegularTimePoint.ID, gid);
 
                 ////populate ResourceDescription
-                PowerTransformerConverter.PopulateRegularTimePointProperties(cimRegularTimePoint, rd, importHelper, report);
+                IntervalScheduleConverter.PopulateRegularTimePointProperties(cimRegularTimePoint, rd, importHelper, report);
             }
             return rd;
         }
@@ -216,7 +216,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
                 importHelper.DefineIDMapping(cimOutageSchedule.ID, gid);
 
                 ////populate ResourceDescription
-                PowerTransformerConverter.PopulateOutageScheduleProperties(cimOutageSchedule, rd);
+                IntervalScheduleConverter.PopulateOutageScheduleProperties(cimOutageSchedule, rd);
             }
             return rd;
         }
@@ -254,7 +254,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
                 importHelper.DefineIDMapping(cimIrregularTimePoint.ID, gid);
 
                 ////populate ResourceDescription
-                PowerTransformerConverter.PopulateIrregularTimePointProperties(cimIrregularTimePoint, rd, importHelper, report);
+                IntervalScheduleConverter.PopulateIrregularTimePointProperties(cimIrregularTimePoint, rd, importHelper, report);
             }
             return rd;
         }
@@ -293,7 +293,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
                 importHelper.DefineIDMapping(cimSwitchingOperation.ID, gid);
 
                 ////populate ResourceDescription
-                PowerTransformerConverter.PopulateSwitchingOperationProperties(cimSwitchingOperation, rd, importHelper, report);
+                IntervalScheduleConverter.PopulateSwitchingOperationProperties(cimSwitchingOperation, rd, importHelper, report);
             }
             return rd;
         }
@@ -332,7 +332,7 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
                 importHelper.DefineIDMapping(cimDisconnector.ID, gid);
 
                 ////populate ResourceDescription
-                PowerTransformerConverter.PopulateDisconnectorProperties(cimDisconnector, rd, importHelper, report);
+                IntervalScheduleConverter.PopulateDisconnectorProperties(cimDisconnector, rd, importHelper, report);
             }
             return rd;
         }       

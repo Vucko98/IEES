@@ -6,7 +6,7 @@
 	/// PowerTransformerConverter has methods for populating
 	/// ResourceDescription objects using PowerTransformerCIMProfile_Labs objects.
 	/// </summary>
-	public static class PowerTransformerConverter
+	public static class IntervalScheduleConverter
 	{
 
 		#region Populate ResourceDescription
@@ -34,7 +34,7 @@
         {
             if ((cimPowerSystemResource != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimPowerSystemResource, rd);
+                IntervalScheduleConverter.PopulateIdentifiedObjectProperties(cimPowerSystemResource, rd);
             }
         }
         //12000000
@@ -42,7 +42,7 @@
         {
             if ((cimSwitchingOperation != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimSwitchingOperation, rd);
+                IntervalScheduleConverter.PopulateIdentifiedObjectProperties(cimSwitchingOperation, rd);
 
                 if (cimSwitchingOperation.NewStateHasValue)
                 {
@@ -69,7 +69,7 @@
         {
             if ((cimBasicIntervalSchedule != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimBasicIntervalSchedule, rd);
+                IntervalScheduleConverter.PopulateIdentifiedObjectProperties(cimBasicIntervalSchedule, rd);
 
                 if (cimBasicIntervalSchedule.StartTimeHasValue)
                 {
@@ -98,7 +98,7 @@
         {
             if ((cimRegularTimePoint != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimRegularTimePoint, rd);
+                IntervalScheduleConverter.PopulateIdentifiedObjectProperties(cimRegularTimePoint, rd);
 
                 if (cimRegularTimePoint.SequenceNumberHasValue)
                 {
@@ -129,7 +129,7 @@
         {
             if ((cimIrregularTimePoint != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateIdentifiedObjectProperties(cimIrregularTimePoint, rd);
+                IntervalScheduleConverter.PopulateIdentifiedObjectProperties(cimIrregularTimePoint, rd);
 
                 if (cimIrregularTimePoint.TimeHasValue)
                 {
@@ -160,7 +160,7 @@
         {
             if ((cimEquipment != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulatePowerSystemResourceProperties(cimEquipment, rd);
+                IntervalScheduleConverter.PopulatePowerSystemResourceProperties(cimEquipment, rd);
             }
         }
         //13100000
@@ -168,7 +168,7 @@
         {
             if ((cimIrregularIntervalSchedule != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateBasicIntervalScheduleProperties(cimIrregularIntervalSchedule, rd);
+                IntervalScheduleConverter.PopulateBasicIntervalScheduleProperties(cimIrregularIntervalSchedule, rd);
             }
         }
         //13200000
@@ -176,7 +176,7 @@
         {
             if ((cimRegularIntervalSchedule != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateBasicIntervalScheduleProperties(cimRegularIntervalSchedule, rd);
+                IntervalScheduleConverter.PopulateBasicIntervalScheduleProperties(cimRegularIntervalSchedule, rd);
 
                 if (cimRegularIntervalSchedule.EndTimeHasValue)
                 {
@@ -193,7 +193,7 @@
         {
             if ((cimConductingEquipment != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateEquipmentProperties(cimConductingEquipment, rd);
+                IntervalScheduleConverter.PopulateEquipmentProperties(cimConductingEquipment, rd);
             }
         }
         //13110000
@@ -201,7 +201,7 @@
         {
             if ((cimOutageSchedule != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateIrregularIntervalScheduleProperties(cimOutageSchedule, rd);
+                IntervalScheduleConverter.PopulateIrregularIntervalScheduleProperties(cimOutageSchedule, rd);
             }
         }
         //11111000
@@ -209,7 +209,7 @@
         {
             if ((cimSwitch != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateConductingEquipmentProperties(cimSwitch, rd);
+                IntervalScheduleConverter.PopulateConductingEquipmentProperties(cimSwitch, rd);
 
                 if (cimSwitch.SwitchingOperationsHasValue)
                 {
@@ -228,7 +228,7 @@
         {
             if ((cimDisconnector != null) && (rd != null))
             {
-                PowerTransformerConverter.PopulateSwitchProperties(cimDisconnector, rd, importHelper, report);
+                IntervalScheduleConverter.PopulateSwitchProperties(cimDisconnector, rd, importHelper, report);
             }
         }
         #endregion Populate ResourceDescription
