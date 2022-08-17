@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#"
+	xmlns:ftn="http://www.ftnydro.com/CIM15/2010/extension#">
+	
+	<!--CIMET alat je atribute tipa Second generisa kao reference, dok ih DLL smatra kao float -> smatram da su atributi tipa float. -->
+	<cim:OutageSchedule rdf:ID="OS_132594591">
+		<cim:BasicIntervalSchedule.startTime>8/10/2022 09:00:00 AM</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Multiplier>G</cim:BasicIntervalSchedule.value1Multiplier>
+		<cim:BasicIntervalSchedule.value1Unit>Hz</cim:BasicIntervalSchedule.value1Unit>
+		<cim:BasicIntervalSchedule.value2Multiplier>M</cim:BasicIntervalSchedule.value2Multiplier>
+		<cim:BasicIntervalSchedule.value2Unit>N</cim:BasicIntervalSchedule.value2Unit>
+		<cim:IdentifiedObject.aliasName>OS_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>OS_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>OS_1</cim:IdentifiedObject.name>
+	</cim:OutageSchedule>
+
+	<cim:SwitchingOperation rdf:ID="SO_1354844875">
+		<cim:SwitchingOperation.newState>close</cim:SwitchingOperation.newState>
+		<cim:SwitchingOperation.operationTime>8/10/2022 09:10:00 AM</cim:SwitchingOperation.operationTime>
+		<cim:SwitchingOperation.OutageSchedule rdf:resource="#OS_132594591"/>
+		<cim:IdentifiedObject.aliasName>SO_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>SO_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>SO_1</cim:IdentifiedObject.name>
+	</cim:SwitchingOperation>
+	<!--
+	<cim:IrregularTimePoint rdf:ID="ITP_1567815458">
+		<cim:IrregularTimePoint.IntervalSchedule rdf:resource="#OS_132594591"/>
+		<cim:IrregularTimePoint.time rdf:resource="#"/>
+		<cim:IrregularTimePoint.value1>0.11</cim:IrregularTimePoint.value1>
+		<cim:IrregularTimePoint.value2>0.12</cim:IrregularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>ITP_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>ITP_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>ITP_1ITP_1</cim:IdentifiedObject.name>
+	</cim:IrregularTimePoint>
+	-->
+	<cim:Disconnector rdf:ID="D_1897892641">
+		<cim:Switch.SwitchingOperations rdf:resource="#SO_1354844875"/>
+		<cim:IdentifiedObject.aliasName>D_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>D_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>D_1</cim:IdentifiedObject.name>
+	</cim:Disconnector>
+	<cim:Disconnector rdf:ID="D_278492494">
+		<cim:Switch.SwitchingOperations rdf:resource="#SO_1354844875"/>
+		<cim:IdentifiedObject.aliasName>D_2</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>D_2</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>D_2</cim:IdentifiedObject.name>
+	</cim:Disconnector>
+	<!-- timeStep rdf:resource="#" ??? trazi referencu umesto da je float?!
+	<cim:RegularIntervalSchedule rdf:ID="RIS_1234495">
+		<cim:RegularIntervalSchedule.endTime>8/12/2022 09:00:00 AM</cim:RegularIntervalSchedule.endTime>
+		<cim:RegularIntervalSchedule.timeStep rdf:resource="#"/>
+		<cim:BasicIntervalSchedule.startTime>8/12/2022 04:30:00 PM</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Multiplier>micro</cim:BasicIntervalSchedule.value1Multiplier>
+		<cim:BasicIntervalSchedule.value1Unit>deg</cim:BasicIntervalSchedule.value1Unit>
+		<cim:BasicIntervalSchedule.value2Multiplier>G</cim:BasicIntervalSchedule.value2Multiplier>
+		<cim:BasicIntervalSchedule.value2Unit>m3</cim:BasicIntervalSchedule.value2Unit>
+		<cim:IdentifiedObject.aliasName>RIS_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RIS_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RIS_1</cim:IdentifiedObject.name>
+	</cim:RegularIntervalSchedule>
+	<cim:RegularIntervalSchedule rdf:ID="RIS_22315654">
+		<cim:RegularIntervalSchedule.endTime>8/15/2022 09:00:00 AM</cim:RegularIntervalSchedule.endTime>
+		<cim:RegularIntervalSchedule.timeStep rdf:resource="#"/>
+		<cim:BasicIntervalSchedule.startTime>8/15/2022 11:30:00 AM</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Multiplier>none</cim:BasicIntervalSchedule.value1Multiplier>
+		<cim:BasicIntervalSchedule.value1Unit>g</cim:BasicIntervalSchedule.value1Unit>
+		<cim:BasicIntervalSchedule.value2Multiplier>p</cim:BasicIntervalSchedule.value2Multiplier>
+		<cim:BasicIntervalSchedule.value2Unit>S</cim:BasicIntervalSchedule.value2Unit>
+		<cim:IdentifiedObject.aliasName>RIS_2</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RIS_2</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RIS_2</cim:IdentifiedObject.name>
+	</cim:RegularIntervalSchedule>
+
+	<cim:RegularTimePoint rdf:ID="RTP_1325423">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="#RIS_1234495"/>
+		<cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>0.11</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>0.12</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_1</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_219512564">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="#RIS_1234495"/>
+		<cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>0.21</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>0.22</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_2</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_2</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_2</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_381249126">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="#RIS_22315654"/>
+		<cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>0.31</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>0.32</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_3</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_3</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_3</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_415949498915">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="#RIS_22315654"/>
+		<cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>0.41</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>0.42</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_4</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_4</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_4</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	-->
+</rdf:RDF>

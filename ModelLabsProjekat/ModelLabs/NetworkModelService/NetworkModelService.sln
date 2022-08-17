@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceContracts", "ServiceContracts", "{19570575-2F42-4818-A632-193E0A78E576}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkModelService", "NetworkModelService.csproj", "{2630D180-1B68-4E84-AEAC-42EE8C88B50F}"
@@ -80,9 +82,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{892CBE15-9ED7-4540-81FA-0EAABA592138} = {E3F70031-2C0C-490B-BD29-FF28E10CE28F}
 		{B726FB71-D295-41EE-9644-B2B0B1BC8911} = {19570575-2F42-4818-A632-193E0A78E576}
 		{32EE9373-A350-42AC-972B-41B2EDABA082} = {DD837AD7-3DE5-4E49-9924-3D73590CCCF3}
-		{892CBE15-9ED7-4540-81FA-0EAABA592138} = {E3F70031-2C0C-490B-BD29-FF28E10CE28F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {292D4F10-7EEB-4167-A6CE-FDD57CEAEAF6}
 	EndGlobalSection
 	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
 		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
