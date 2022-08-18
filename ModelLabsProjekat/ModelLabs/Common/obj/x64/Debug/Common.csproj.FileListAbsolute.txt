@@ -1,0 +1,6 @@
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN.Common.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN.Common.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x64\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x64\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x64\Debug\FTN.Common.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\Common\obj\x64\Debug\FTN.Common.pdb

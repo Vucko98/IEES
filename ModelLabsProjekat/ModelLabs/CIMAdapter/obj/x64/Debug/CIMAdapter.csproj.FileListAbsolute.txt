@@ -1,0 +1,7 @@
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN.ESI.SIMES.CIM.CIMAdapter.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN.ESI.SIMES.CIM.CIMAdapter.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMAdapter\obj\x64\Debug\CIMAdapter.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMAdapter\obj\x64\Debug\CIMAdapter.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMAdapter\obj\x64\Debug\CIMAdapter.csproj.CopyComplete
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMAdapter\obj\x64\Debug\FTN.ESI.SIMES.CIM.CIMAdapter.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMAdapter\obj\x64\Debug\FTN.ESI.SIMES.CIM.CIMAdapter.pdb

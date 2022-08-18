@@ -10,3 +10,11 @@ D:\Vezbe\10\ModelLabs\bin64\NMSTestClient.pdb
 D:\Vezbe\10\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\ResolveAssemblyReference.cache
 D:\Vezbe\10\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.exe
 D:\Vezbe\10\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\NMSTestClient.exe.config
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\NMSTestClient.exe
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\NMSTestClient.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.csproj.CopyComplete
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.exe
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\Test\NMSTestClient\obj\x64\Debug\NMSTestClient.pdb

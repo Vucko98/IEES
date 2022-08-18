@@ -20,4 +20,3 @@ C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ob
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\obj\x86\Debug\NetworkModelService.csproj.CopyComplete
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\obj\x86\Debug\FTN.Services.NetworkModelService.dll
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\obj\x86\Debug\FTN.Services.NetworkModelService.pdb
-C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\obj\x86\Debug\NetworkModelService.csproj.AssemblyReference.cache

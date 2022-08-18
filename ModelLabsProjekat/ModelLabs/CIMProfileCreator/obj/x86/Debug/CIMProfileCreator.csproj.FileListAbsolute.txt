@@ -33,4 +33,4 @@ C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csproj.CoreCompileInputs.cache
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\FTN.ESI.SIMES.CIM.CIMProfileCreator.exe
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\FTN.ESI.SIMES.CIM.CIMProfileCreator.pdb
-C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMProfileCreator\obj\x86\Debug\CIMProfileCreator.csproj.AssemblyReference.cache

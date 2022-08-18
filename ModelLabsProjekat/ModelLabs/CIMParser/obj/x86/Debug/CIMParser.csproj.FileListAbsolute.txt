@@ -18,4 +18,4 @@ C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\CIMParser.pdb
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMParser\obj\x86\Debug\CIMParser.csproj.CoreCompileInputs.cache
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMParser\obj\x86\Debug\CIMParser.dll
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMParser\obj\x86\Debug\CIMParser.pdb
-C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMParser\obj\x86\Debug\CIMParser.csproj.AssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\CIMParser\obj\x86\Debug\CIMParser.csprojAssemblyReference.cache

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.2017
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIMParser", "CIMParser\CIMParser.csproj", "{3C03A41C-BE4C-40A8-97D5-5DBAC0C34102}"
 EndProject
@@ -37,8 +37,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewResources", "NewResources", "{EA611FE1-6DB7-408E-9DC9-770744F32965}"
 	ProjectSection(SolutionItems) = preProject
 		NewResources\9_CIMXML.xml = NewResources\9_CIMXML.xml
-		NewResources\IntervalScheduleCIMProfile_Labs.dll = NewResources\IntervalScheduleCIMProfile_Labs.dll
 		NewResources\LabsProfile.legacy-rdfs = NewResources\LabsProfile.legacy-rdfs
+		NewResources\PowerTransformerCIMProfile_Labs.dll = NewResources\PowerTransformerCIMProfile_Labs.dll
 	EndProjectSection
 EndProject
 Global

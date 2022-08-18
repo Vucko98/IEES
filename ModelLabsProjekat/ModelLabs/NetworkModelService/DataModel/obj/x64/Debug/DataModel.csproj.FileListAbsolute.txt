@@ -23,3 +23,10 @@ D:\Vezbe\10\ModelLabs\bin64\FTN.DataModel.pdb
 D:\Vezbe\10\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\ResolveAssemblyReference.cache
 D:\Vezbe\10\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\FTN.DataModel.dll
 D:\Vezbe\10\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\FTN.DataModel.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN.DataModel.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN.DataModel.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\DataModel.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\DataModel.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\DataModel.csproj.CopyComplete
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\FTN.DataModel.dll
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\DataModel\obj\x64\Debug\FTN.DataModel.pdb

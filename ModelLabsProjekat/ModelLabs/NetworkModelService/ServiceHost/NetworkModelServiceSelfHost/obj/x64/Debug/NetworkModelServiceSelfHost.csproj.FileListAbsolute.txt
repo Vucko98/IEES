@@ -19,3 +19,11 @@ D:\Vezbe\10\ModelLabs\bin64\FTN_NetworkModelService.pdb
 D:\Vezbe\10\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\ResolveAssemblyReference.cache
 D:\Vezbe\10\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\FTN_NetworkModelService.exe
 D:\Vezbe\10\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\FTN_NetworkModelService.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN_NetworkModelService.exe.config
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN_NetworkModelService.exe
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\FTN_NetworkModelService.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\NetworkModelServiceSelfHost.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\NetworkModelServiceSelfHost.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\NetworkModelServiceSelfHost.csproj.CopyComplete
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\FTN_NetworkModelService.exe
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ServiceHost\NetworkModelServiceSelfHost\obj\x64\Debug\FTN_NetworkModelService.pdb

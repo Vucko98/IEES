@@ -11,7 +11,7 @@ using FTN.Common;
 
 namespace FTN.Services.NetworkModelService
 {
-	public class NetworkModelService : IDisposable
+	/*public class NetworkModelService : IDisposable
 	{				
 		private NetworkModel nm = null;
 		private List<ServiceHost> hosts = null;
@@ -100,5 +100,5 @@ namespace FTN.Services.NetworkModelService
 			CommonTrace.WriteTrace(CommonTrace.TraceInfo, message);
 			Console.WriteLine("\n\n{0}", message);
 		}		
-	}
+	}*/
 }

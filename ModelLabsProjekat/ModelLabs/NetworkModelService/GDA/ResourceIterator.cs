@@ -4,11 +4,11 @@ using System.Collections;
 using System.Text;
 using System.Diagnostics;
 using FTN.Common;
-using FTN.Services.NetworkModelService.DataModel.Core;
+//using FTN.Services.NetworkModelService.DataModel.Core;
 
 namespace FTN.Services.NetworkModelService
 {	
-	public class ResourceIterator
+	/*public class ResourceIterator
 	{
         private static NetworkModel networkModel = null;
 
@@ -131,5 +131,5 @@ namespace FTN.Services.NetworkModelService
 				throw;
 			}
 		}
-	}
+	}*/
 }

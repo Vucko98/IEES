@@ -5,14 +5,14 @@
 	
 	<!--CIMET alat je atribute tipa Second generisa kao reference, dok ih DLL smatra kao float -> smatram da su atributi tipa float. -->
 	<cim:OutageSchedule rdf:ID="OS_132594591">
+		<cim:IdentifiedObject.mRID>OS_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>OS_1</cim:IdentifiedObject.name>
+		<cim:IdentifiedObject.aliasName>OS_1</cim:IdentifiedObject.aliasName>
 		<cim:BasicIntervalSchedule.startTime>8/10/2022 09:00:00 AM</cim:BasicIntervalSchedule.startTime>
 		<cim:BasicIntervalSchedule.value1Multiplier>G</cim:BasicIntervalSchedule.value1Multiplier>
 		<cim:BasicIntervalSchedule.value1Unit>Hz</cim:BasicIntervalSchedule.value1Unit>
 		<cim:BasicIntervalSchedule.value2Multiplier>M</cim:BasicIntervalSchedule.value2Multiplier>
-		<cim:BasicIntervalSchedule.value2Unit>N</cim:BasicIntervalSchedule.value2Unit>
-		<cim:IdentifiedObject.aliasName>OS_1</cim:IdentifiedObject.aliasName>
-		<cim:IdentifiedObject.mRID>OS_1</cim:IdentifiedObject.mRID>
-		<cim:IdentifiedObject.name>OS_1</cim:IdentifiedObject.name>
+		<cim:BasicIntervalSchedule.value2Unit>N</cim:BasicIntervalSchedule.value2Unit>	
 	</cim:OutageSchedule>
 
 	<cim:SwitchingOperation rdf:ID="SO_1354844875">
@@ -22,18 +22,19 @@
 		<cim:IdentifiedObject.aliasName>SO_1</cim:IdentifiedObject.aliasName>
 		<cim:IdentifiedObject.mRID>SO_1</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>SO_1</cim:IdentifiedObject.name>
-	</cim:SwitchingOperation>
-	<!--
+	</cim:SwitchingOperation>	
+
 	<cim:IrregularTimePoint rdf:ID="ITP_1567815458">
-		<cim:IrregularTimePoint.IntervalSchedule rdf:resource="#OS_132594591"/>
-		<cim:IrregularTimePoint.time rdf:resource="#"/>
+		<cim:IrregularTimePoint.IntervalSchedule rdf:resource="#OS_132594591"/>		
+		<cim:IrregularTimePoint.time>14.9</cim:IrregularTimePoint.time>
 		<cim:IrregularTimePoint.value1>0.11</cim:IrregularTimePoint.value1>
 		<cim:IrregularTimePoint.value2>0.12</cim:IrregularTimePoint.value2>
 		<cim:IdentifiedObject.aliasName>ITP_1</cim:IdentifiedObject.aliasName>
 		<cim:IdentifiedObject.mRID>ITP_1</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>ITP_1ITP_1</cim:IdentifiedObject.name>
 	</cim:IrregularTimePoint>
-	-->
+	
+	
 	<cim:Disconnector rdf:ID="D_1897892641">
 		<cim:Switch.SwitchingOperations rdf:resource="#SO_1354844875"/>
 		<cim:IdentifiedObject.aliasName>D_1</cim:IdentifiedObject.aliasName>
@@ -46,10 +47,10 @@
 		<cim:IdentifiedObject.mRID>D_2</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>D_2</cim:IdentifiedObject.name>
 	</cim:Disconnector>
-	<!-- timeStep rdf:resource="#" ??? trazi referencu umesto da je float?!
+  	
 	<cim:RegularIntervalSchedule rdf:ID="RIS_1234495">
-		<cim:RegularIntervalSchedule.endTime>8/12/2022 09:00:00 AM</cim:RegularIntervalSchedule.endTime>
-		<cim:RegularIntervalSchedule.timeStep rdf:resource="#"/>
+		<cim:RegularIntervalSchedule.endTime>8/12/2022 09:00:00 AM</cim:RegularIntervalSchedule.endTime>		
+		<cim:RegularIntervalSchedule.timeStep>10.0</cim:RegularIntervalSchedule.timeStep>
 		<cim:BasicIntervalSchedule.startTime>8/12/2022 04:30:00 PM</cim:BasicIntervalSchedule.startTime>
 		<cim:BasicIntervalSchedule.value1Multiplier>micro</cim:BasicIntervalSchedule.value1Multiplier>
 		<cim:BasicIntervalSchedule.value1Unit>deg</cim:BasicIntervalSchedule.value1Unit>
@@ -61,7 +62,7 @@
 	</cim:RegularIntervalSchedule>
 	<cim:RegularIntervalSchedule rdf:ID="RIS_22315654">
 		<cim:RegularIntervalSchedule.endTime>8/15/2022 09:00:00 AM</cim:RegularIntervalSchedule.endTime>
-		<cim:RegularIntervalSchedule.timeStep rdf:resource="#"/>
+		<cim:RegularIntervalSchedule.timeStep>30.0</cim:RegularIntervalSchedule.timeStep>
 		<cim:BasicIntervalSchedule.startTime>8/15/2022 11:30:00 AM</cim:BasicIntervalSchedule.startTime>
 		<cim:BasicIntervalSchedule.value1Multiplier>none</cim:BasicIntervalSchedule.value1Multiplier>
 		<cim:BasicIntervalSchedule.value1Unit>g</cim:BasicIntervalSchedule.value1Unit>
@@ -108,5 +109,5 @@
 		<cim:IdentifiedObject.mRID>RTP_4</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>RTP_4</cim:IdentifiedObject.name>
 	</cim:RegularTimePoint>
-	-->
+	
 </rdf:RDF>

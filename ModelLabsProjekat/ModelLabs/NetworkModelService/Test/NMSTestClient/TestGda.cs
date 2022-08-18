@@ -164,11 +164,14 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
 			try
 			{						
 				List<ModelCode> properties = new List<ModelCode>();
+                /*
                 properties.Add(ModelCode.IDOBJ_DESCRIPTION);
                 properties.Add(ModelCode.IDOBJ_MRID);
                 properties.Add(ModelCode.IDOBJ_NAME);
-						
-				int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
+			    */
+                throw new NotImplementedException();
+
+                int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
 				int resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
 
                 xmlWriter = new XmlTextWriter(Config.Instance.ResultDirecotry + "\\GetRelatedValues_Results.xml", Encoding.Unicode);

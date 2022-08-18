@@ -1,1 +1,12 @@
 D:\Vezbe\11\ModelLabs\bin64\ModelLabsApp.exe.config
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\ModelLabsApp.exe.config
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\ModelLabsApp.exe
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin64\ModelLabsApp.pdb
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.csprojAssemblyReference.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.ModelLabsAppForm.resources
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.Properties.Resources.resources
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.csproj.GenerateResource.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.csproj.CoreCompileInputs.cache
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.csproj.CopyComplete
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.exe
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\ModelLabsApp\obj\x64\Debug\ModelLabsApp.pdb

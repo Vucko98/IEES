@@ -46,7 +46,8 @@
 
                 if (cimSwitchingOperation.NewStateHasValue)
                 {
-                    rd.AddProperty(new Property(ModelCode.SwitchingOp_NewState_, (short)GetDMSSwitchState(cimSwitchingOperation.NewState)));
+                    //rd.AddProperty(new Property(ModelCode.SwitchingOp_NewState_, (short)GetDMSSwitchState(cimSwitchingOperation.NewState)));
+                    rd.AddProperty(new Property(ModelCode.SwitchingOp_NewState_, (short)cimSwitchingOperation.NewState));
                 }
                 if (cimSwitchingOperation.OperationTimeHasValue)
                 {
@@ -77,19 +78,23 @@
                 }
                 if (cimBasicIntervalSchedule.Value1MultiplierHasValue)
                 {
-                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Mplr_, (short)GetDMSUnitMultiplier(cimBasicIntervalSchedule.Value1Multiplier)));
+                    //rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Mplr_, (short)GetDMSUnitMultiplier(cimBasicIntervalSchedule.Value1Multiplier)));
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Mplr_, (short)cimBasicIntervalSchedule.Value1Multiplier));
                 }
                 if (cimBasicIntervalSchedule.Value2MultiplierHasValue)
                 {
-                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Mplr_, (short)GetDMSUnitMultiplier(cimBasicIntervalSchedule.Value2Multiplier)));
+                    //rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Mplr_, (short)GetDMSUnitMultiplier(cimBasicIntervalSchedule.Value2Multiplier)));
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Mplr_, (short)cimBasicIntervalSchedule.Value2Multiplier));
                 }
                 if (cimBasicIntervalSchedule.Value1UnitHasValue)
                 {
-                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Unit_, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value1Unit)));
+                    //rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Unit_, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value1Unit)));
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V1Unit_, (short)cimBasicIntervalSchedule.Value1Unit));
                 }
                 if (cimBasicIntervalSchedule.Value2UnitHasValue)
                 {
-                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Unit_, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value2Unit)));
+                    //rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Unit_, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value2Unit)));
+                    rd.AddProperty(new Property(ModelCode.BasicIntervalSdle_V2Unit_, (short)cimBasicIntervalSchedule.Value2Unit));
                 }
             }
         }
