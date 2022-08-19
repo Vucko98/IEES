@@ -8,14 +8,14 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
 using FTN.Common;
-/*using FTN.Services.NetworkModelService.DataModel.Core;
+using FTN.Services.NetworkModelService.DataModel.Core;
 using FTN.Services.NetworkModelService.DataModel.Wires;
-using FTN.Services.NetworkModelService.DataModel;*/
+using FTN.Services.NetworkModelService.DataModel;
 
 
 namespace FTN.Services.NetworkModelService
 {
-    /*public class Container
+    public class Container
 	{  
 		/// <summary>
 		/// The dictionary of entities. Key = GlobaId, Value = Entity
@@ -229,5 +229,5 @@ namespace FTN.Services.NetworkModelService
 		{
 			return entities.Keys.ToList();
 		}			     
-    }*/
+    }
 }
