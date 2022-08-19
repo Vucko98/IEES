@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+
+namespace FTN.Services.NetworkModelService.DataModel.Core
+{
     /// The parts of a power system that are physical devices, electronic or mechanical.
     public class Equipment : PowerSystemResource {
     }

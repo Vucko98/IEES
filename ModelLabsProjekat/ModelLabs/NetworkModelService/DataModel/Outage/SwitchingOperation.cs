@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+using FTN.Services.NetworkModelService.DataModel.Core;
+
+namespace FTN.Services.NetworkModelService.DataModel.Outage
+{
     /// A SwitchingOperation is used to define individual switch operations for an OutageSchedule. This OutageSchedule may be associated with another item of Substation such as a Transformer, Line, or Generator; or with the Switch itself as a PowerSystemResource. A Switch may be referenced by many OutageSchedules.
     public class SwitchingOperation : IdentifiedObject {
         

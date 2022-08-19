@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+
+namespace FTN.Services.NetworkModelService.DataModel.Core
+{
     /// The schedule has time points where the time between them varies.
     public class IrregularIntervalSchedule : BasicIntervalSchedule {
     }

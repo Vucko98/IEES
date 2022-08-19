@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+
+namespace FTN.Services.NetworkModelService.DataModel.Core
+{
     /// Time point for a schedule where the time between the consecutive points is constant.
     public class RegularTimePoint : IdentifiedObject {
         

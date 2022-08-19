@@ -8,11 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+using FTN.Services.NetworkModelService.DataModel.Core;
+using FTN.Services.NetworkModelService.DataModel.Outage;
+
+namespace FTN.Services.NetworkModelService.DataModel.Wires
+{
     /// A generic device designed to close, or open, or both, one or more electric circuits.
     public class Switch : ConductingEquipment {
         

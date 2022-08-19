@@ -8,11 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+
+namespace FTN.Services.NetworkModelService.DataModel.Core
+{
+
+
     /// Schedule of values at points in time.
     public class BasicIntervalSchedule : IdentifiedObject {
         

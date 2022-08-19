@@ -8,14 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+
+namespace FTN.Services.NetworkModelService.DataModel.Core
+{
     /// This is a root class to provide common identification for all classes needing identification and naming attributes.
-    public class IdentifiedObject : IDClass {
-        
+    public class IdentifiedObject
+    {        
         /// The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
         ///The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.
         private string cim_aliasName;

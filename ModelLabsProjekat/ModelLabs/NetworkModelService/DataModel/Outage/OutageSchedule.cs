@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
-    
+using FTN.Common;
+using FTN.Services.NetworkModelService.DataModel.Core;
+
+namespace FTN.Services.NetworkModelService.DataModel.Outage
+{
     /// The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service.
     public class OutageSchedule : IrregularIntervalSchedule {
     }

@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FTN {
-    using System;
-    using FTN;
-    
+using FTN.Common;
+
+namespace FTN.Services.NetworkModelService.DataModel.Core
+{ 
     
     /// The parts of the power system that are designed to carry current or that are conductively connected through terminals.
     public class ConductingEquipment : Equipment {
