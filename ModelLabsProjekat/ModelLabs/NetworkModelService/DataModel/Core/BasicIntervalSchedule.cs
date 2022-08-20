@@ -12,8 +12,6 @@ using FTN.Common;
 
 namespace FTN.Services.NetworkModelService.DataModel.Core
 {
-
-
     /// Schedule of values at points in time.
     public class BasicIntervalSchedule : IdentifiedObject {
         
