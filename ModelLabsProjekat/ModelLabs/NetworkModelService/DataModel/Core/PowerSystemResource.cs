@@ -8,11 +8,55 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using FTN.Common;
 
 namespace FTN.Services.NetworkModelService.DataModel.Core
 {
     /// A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.
-    public class PowerSystemResource : IdentifiedObject {
+    public class PowerSystemResource : IdentifiedObject
+    {
+        public PowerSystemResource(long globalId) : base(globalId)
+        {
+        }
+
+        public override bool Equals(object obj)
+        {           
+            return base.Equals(obj);            
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            return base.HasProperty(property);
+        }
+
+        public override void GetProperty(Property property)
+        {
+            base.GetProperty(property);            
+        }
+
+        public override void SetProperty(Property property)
+        {
+            base.SetProperty(property);            
+        }
+
+        #endregion IAccess implementation
+
+        #region IReference implementation
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            base.GetReferences(references, refType);
+        }
+
+        #endregion IReference implementation	
     }
 }
