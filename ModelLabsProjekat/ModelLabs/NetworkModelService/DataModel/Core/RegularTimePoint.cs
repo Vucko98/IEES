@@ -7,148 +7,330 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Xml;
 using FTN.Common;
 
 namespace FTN.Services.NetworkModelService.DataModel.Core
 {
     /// Time point for a schedule where the time between the consecutive points is constant.
     public class RegularTimePoint : IdentifiedObject {
-        
+
+        public RegularTimePoint(long globalId) : base(globalId)
+        {
+        }
+
+        #region IntervalSchedule
         /// Regular interval schedule containing this time point.
-        private RegularIntervalSchedule cim_IntervalSchedule;
-        
+        //private RegularIntervalSchedule cim_IntervalSchedule;
+        private long cim_IntervalSchedule = 0;
+
         private const bool isIntervalScheduleMandatory = true;
         
         private const string _IntervalSchedulePrefix = "cim";
-        
+
+        public virtual long IntervalSchedule
+        {
+            get
+            {
+                return this.cim_IntervalSchedule;
+            }
+            set
+            {
+                this.cim_IntervalSchedule = value;
+            }
+        }
+
+        public virtual bool IntervalScheduleHasValue
+        {
+            get
+            {
+                return this.cim_IntervalSchedule != null;
+            }
+        }
+
+        public static bool IsIntervalScheduleMandatory
+        {
+            get
+            {
+                return isIntervalScheduleMandatory;
+            }
+        }
+
+        public static string IntervalSchedulePrefix
+        {
+            get
+            {
+                return _IntervalSchedulePrefix;
+            }
+        }
+        #endregion IntervalSchedule
+
+        #region sequenceNumber
         /// The position of the regular time point in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the associated regular interval schedule's time step with the regular time point sequence number and adding the associated schedules start time.
         private System.Int32? cim_sequenceNumber;
         
         private const bool isSequenceNumberMandatory = false;
         
         private const string _sequenceNumberPrefix = "cim";
-        
+
+        public virtual int SequenceNumber
+        {
+            get
+            {
+                return this.cim_sequenceNumber.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_sequenceNumber = value;
+            }
+        }
+
+        public virtual bool SequenceNumberHasValue
+        {
+            get
+            {
+                return this.cim_sequenceNumber != null;
+            }
+        }
+
+        public static bool IsSequenceNumberMandatory
+        {
+            get
+            {
+                return isSequenceNumberMandatory;
+            }
+        }
+
+        public static string SequenceNumberPrefix
+        {
+            get
+            {
+                return _sequenceNumberPrefix;
+            }
+        }
+        #endregion sequenceNumber
+
+        #region value1
         /// The first value at the time. The meaning of the value is defined by the derived type of the associated schedule.
         private System.Single? cim_value1;
         
         private const bool isValue1Mandatory = false;
         
         private const string _value1Prefix = "cim";
-        
+
+        public virtual float Value1
+        {
+            get
+            {
+                return this.cim_value1.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_value1 = value;
+            }
+        }
+
+        public virtual bool Value1HasValue
+        {
+            get
+            {
+                return this.cim_value1 != null;
+            }
+        }
+
+        public static bool IsValue1Mandatory
+        {
+            get
+            {
+                return isValue1Mandatory;
+            }
+        }
+
+        public static string Value1Prefix
+        {
+            get
+            {
+                return _value1Prefix;
+            }
+        }
+        #endregion value1
+
+        #region value2
         /// The second value at the time. The meaning of the value is defined by the derived type of the associated schedule.
         private System.Single? cim_value2;
         
         private const bool isValue2Mandatory = false;
         
         private const string _value2Prefix = "cim";
-        
-        public virtual RegularIntervalSchedule IntervalSchedule {
-            get {
-                return this.cim_IntervalSchedule;
-            }
-            set {
-                this.cim_IntervalSchedule = value;
-            }
-        }
-        
-        public virtual bool IntervalScheduleHasValue {
-            get {
-                return this.cim_IntervalSchedule != null;
-            }
-        }
-        
-        public static bool IsIntervalScheduleMandatory {
-            get {
-                return isIntervalScheduleMandatory;
-            }
-        }
-        
-        public static string IntervalSchedulePrefix {
-            get {
-                return _IntervalSchedulePrefix;
-            }
-        }
-        
-        public virtual int SequenceNumber {
-            get {
-                return this.cim_sequenceNumber.GetValueOrDefault();
-            }
-            set {
-                this.cim_sequenceNumber = value;
-            }
-        }
-        
-        public virtual bool SequenceNumberHasValue {
-            get {
-                return this.cim_sequenceNumber != null;
-            }
-        }
-        
-        public static bool IsSequenceNumberMandatory {
-            get {
-                return isSequenceNumberMandatory;
-            }
-        }
-        
-        public static string SequenceNumberPrefix {
-            get {
-                return _sequenceNumberPrefix;
-            }
-        }
-        
-        public virtual float Value1 {
-            get {
-                return this.cim_value1.GetValueOrDefault();
-            }
-            set {
-                this.cim_value1 = value;
-            }
-        }
-        
-        public virtual bool Value1HasValue {
-            get {
-                return this.cim_value1 != null;
-            }
-        }
-        
-        public static bool IsValue1Mandatory {
-            get {
-                return isValue1Mandatory;
-            }
-        }
-        
-        public static string Value1Prefix {
-            get {
-                return _value1Prefix;
-            }
-        }
-        
-        public virtual float Value2 {
-            get {
+
+        public virtual float Value2
+        {
+            get
+            {
                 return this.cim_value2.GetValueOrDefault();
             }
-            set {
+            set
+            {
                 this.cim_value2 = value;
             }
         }
-        
-        public virtual bool Value2HasValue {
-            get {
+
+        public virtual bool Value2HasValue
+        {
+            get
+            {
                 return this.cim_value2 != null;
             }
         }
-        
-        public static bool IsValue2Mandatory {
-            get {
+
+        public static bool IsValue2Mandatory
+        {
+            get
+            {
                 return isValue2Mandatory;
             }
         }
-        
-        public static string Value2Prefix {
-            get {
+
+        public static string Value2Prefix
+        {
+            get
+            {
                 return _value2Prefix;
             }
         }
+        #endregion value2
+
+        public override bool Equals(object obj)
+        {
+            if (base.Equals(obj))
+            {
+                RegularTimePoint rtp = (RegularTimePoint)obj;
+                return (rtp.cim_sequenceNumber == this.cim_sequenceNumber &&
+                        rtp.cim_value1 == this.cim_value1 &&
+                        rtp.cim_value2 == this.cim_value2 &&
+                        rtp.cim_IntervalSchedule == this.cim_IntervalSchedule);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            switch (property)
+            {
+                case ModelCode.RegularTP_SequenceNum_:
+                case ModelCode.RegularTP_V1_:
+                case ModelCode.RegularTP_V2_:
+                case ModelCode.RegularTP_IntervalSdle_:
+                    return true;
+
+                default:
+                    return base.HasProperty(property);
+            }
+        }
+
+        public override void GetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.RegularTP_SequenceNum_:
+                    property.SetValue(SequenceNumber);
+                    break;
+
+                case ModelCode.RegularTP_V1_:
+                    property.SetValue(Value1);
+                    break;
+
+                case ModelCode.RegularTP_V2_:
+                    property.SetValue(Value2);
+                    break;
+
+                case ModelCode.RegularTP_IntervalSdle_:
+                    property.SetValue(IntervalSchedule);
+                    break;
+
+                default:
+                    base.GetProperty(property);
+                    break;
+            }
+        }
+
+        public override void SetProperty(Property property)
+        {
+            switch (property.Id)
+            {                
+                case ModelCode.RegularTP_SequenceNum_:
+                    cim_sequenceNumber = property.AsInt();
+                    break;
+
+                case ModelCode.RegularTP_V1_:
+                    cim_value1 = property.AsFloat();
+                    break;
+
+                case ModelCode.RegularTP_V2_:
+                    cim_value2 = property.AsFloat();
+                    break;
+
+                case ModelCode.RegularTP_IntervalSdle_:
+                    cim_IntervalSchedule = property.AsReference();
+                    break;
+
+                default:
+                    base.SetProperty(property);
+                    break;
+            }
+        }
+
+        #endregion IAccess implementation
+
+        #region IReference implementation
+
+        public override bool IsReferenced
+        {
+            get
+            {
+                return base.IsReferenced;
+            }
+        }
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            if (cim_IntervalSchedule != 0 && (refType == TypeOfReference.Reference || refType == TypeOfReference.Both))
+            {
+                references[ModelCode.RegularTP_IntervalSdle_] = new List<long>();
+                references[ModelCode.RegularTP_IntervalSdle_].Add(cim_IntervalSchedule);
+            }
+
+            base.GetReferences(references, refType);
+        }
+
+        public override void AddReference(ModelCode referenceId, long globalId)
+        {
+            base.AddReference(referenceId, globalId);
+        }
+
+        public override void RemoveReference(ModelCode referenceId, long globalId)
+        {
+            base.RemoveReference(referenceId, globalId);
+        }
+
+        #endregion IReference implementation
+
     }
 }

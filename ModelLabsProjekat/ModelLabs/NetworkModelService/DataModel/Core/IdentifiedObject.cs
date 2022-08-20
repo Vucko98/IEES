@@ -91,6 +91,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
             }
         }
         #endregion aliasName
+
         #region mRID
         /// Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.
         ///Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.
@@ -137,6 +138,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
             }
         }
         #endregion mRID
+
         #region name
         /// The name is any free human readable and possibly non unique text naming the object.
         private string cim_name;
