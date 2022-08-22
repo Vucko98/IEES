@@ -8,11 +8,146 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using FTN.Common;
 
 namespace FTN.Services.NetworkModelService.DataModel.Core
 {
     /// The schedule has time points where the time between them varies.
-    public class IrregularIntervalSchedule : BasicIntervalSchedule {
+    public class IrregularIntervalSchedule : BasicIntervalSchedule
+    {
+        public IrregularIntervalSchedule(long globalId) : base(globalId)
+        {
+        }
+
+        #region IntervalSchedule
+
+        List<long> cim_TimePoints = new List<long>();
+
+        public List<long> TimePoints
+        {
+            get
+            {
+                return cim_TimePoints;
+            }
+            set
+            {
+                cim_TimePoints = value;
+            }
+        }
+
+        #endregion IntervalSchedule
+
+        public override bool Equals(object obj)
+        {
+            if (base.Equals(obj))
+            {
+                IrregularIntervalSchedule iis = (IrregularIntervalSchedule)obj;
+                return (CompareHelper.CompareLists(iis.cim_TimePoints, this.cim_TimePoints));
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            switch (property)
+            {
+                case ModelCode.IrregularIntervalSdle_TPs_:
+                    return true;
+
+                default:
+                    return base.HasProperty(property);
+            }
+        }
+
+        public override void GetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.IrregularIntervalSdle_TPs_:
+                    property.SetValue(TimePoints);
+                    break;
+
+                default:
+                    base.GetProperty(property);
+                    break;
+            }
+        }
+
+        public override void SetProperty(Property property)
+        {
+            base.SetProperty(property);
+        }
+
+        #endregion IAccess implementation	
+
+        #region IReference implementation
+
+        public override bool IsReferenced
+        {
+            get
+            {
+                return cim_TimePoints.Count > 0 || base.IsReferenced;
+            }
+        }
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            if (cim_TimePoints != null && cim_TimePoints.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
+            {
+                references[ModelCode.IrregularIntervalSdle_TPs_] = cim_TimePoints.GetRange(0, cim_TimePoints.Count);
+            }
+
+            base.GetReferences(references, refType);
+        }
+
+        public override void AddReference(ModelCode referenceId, long globalId)
+        {
+            switch (referenceId)
+            {
+                case ModelCode.IrregularIntervalSdle_TPs_:
+                    cim_TimePoints.Add(globalId);
+                    break;
+
+                default:
+                    base.AddReference(referenceId, globalId);
+                    break;
+            }
+        }
+
+        public override void RemoveReference(ModelCode referenceId, long globalId)
+        {
+            switch (referenceId)
+            {
+                case ModelCode.IrregularIntervalSdle_TPs_:
+
+                    if (cim_TimePoints.Contains(globalId))
+                    {
+                        cim_TimePoints.Remove(globalId);
+                    }
+                    else
+                    {
+                        CommonTrace.WriteTrace(CommonTrace.TraceWarning, "Entity (GID = 0x{0:x16}) doesn't contain reference 0x{1:x16}.", this.GlobalId, globalId);
+                    }
+
+                    break;
+
+                default:
+                    base.RemoveReference(referenceId, globalId);
+                    break;
+            }
+        }
+
+        #endregion IReference implementation.
     }
 }
