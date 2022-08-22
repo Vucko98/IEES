@@ -8,181 +8,362 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using FTN.Common;
 
 namespace FTN.Services.NetworkModelService.DataModel.Core
 {
     /// Schedule of values at points in time.
     public class BasicIntervalSchedule : IdentifiedObject {
-        
+
+        public BasicIntervalSchedule(long globalId) : base(globalId)
+        {
+        }
+
+        #region startTime
         /// The time for the first time point.
         private System.DateTime? cim_startTime;
         
         private const bool isStartTimeMandatory = false;
         
         private const string _startTimePrefix = "cim";
-        
+
+        public virtual System.DateTime StartTime
+        {
+            get
+            {
+                return this.cim_startTime.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_startTime = value;
+            }
+        }
+
+        public virtual bool StartTimeHasValue
+        {
+            get
+            {
+                return this.cim_startTime != null;
+            }
+        }
+
+        public static bool IsStartTimeMandatory
+        {
+            get
+            {
+                return isStartTimeMandatory;
+            }
+        }
+
+        public static string StartTimePrefix
+        {
+            get
+            {
+                return _startTimePrefix;
+            }
+        }
+        #endregion startTime
+
+        #region value1Multiplier
         /// Multiplier for value1.
         private UnitMultiplier? cim_value1Multiplier;
         
         private const bool isValue1MultiplierMandatory = false;
         
         private const string _value1MultiplierPrefix = "cim";
-        
+
+        public virtual UnitMultiplier Value1Multiplier
+        {
+            get
+            {
+                return this.cim_value1Multiplier.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_value1Multiplier = value;
+            }
+        }
+
+        public virtual bool Value1MultiplierHasValue
+        {
+            get
+            {
+                return this.cim_value1Multiplier != null;
+            }
+        }
+
+        public static bool IsValue1MultiplierMandatory
+        {
+            get
+            {
+                return isValue1MultiplierMandatory;
+            }
+        }
+
+        public static string Value1MultiplierPrefix
+        {
+            get
+            {
+                return _value1MultiplierPrefix;
+            }
+        }
+        #endregion value1Multiplier
+
+        #region value1Unit
         /// Value1 units of measure.
         private UnitSymbol? cim_value1Unit;
         
         private const bool isValue1UnitMandatory = false;
         
         private const string _value1UnitPrefix = "cim";
-        
+
+        public virtual UnitSymbol Value1Unit
+        {
+            get
+            {
+                return this.cim_value1Unit.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_value1Unit = value;
+            }
+        }
+
+        public virtual bool Value1UnitHasValue
+        {
+            get
+            {
+                return this.cim_value1Unit != null;
+            }
+        }
+
+        public static bool IsValue1UnitMandatory
+        {
+            get
+            {
+                return isValue1UnitMandatory;
+            }
+        }
+
+        public static string Value1UnitPrefix
+        {
+            get
+            {
+                return _value1UnitPrefix;
+            }
+        }
+        #endregion value1Unit
+
+        #region value2Multiplier
         /// Multiplier for value2.
         private UnitMultiplier? cim_value2Multiplier;
         
         private const bool isValue2MultiplierMandatory = false;
         
         private const string _value2MultiplierPrefix = "cim";
-        
+
+        public virtual UnitMultiplier Value2Multiplier
+        {
+            get
+            {
+                return this.cim_value2Multiplier.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_value2Multiplier = value;
+            }
+        }
+
+        public virtual bool Value2MultiplierHasValue
+        {
+            get
+            {
+                return this.cim_value2Multiplier != null;
+            }
+        }
+
+        public static bool IsValue2MultiplierMandatory
+        {
+            get
+            {
+                return isValue2MultiplierMandatory;
+            }
+        }
+
+        public static string Value2MultiplierPrefix
+        {
+            get
+            {
+                return _value2MultiplierPrefix;
+            }
+        }
+        #endregion value2Multiplier
+
+        #region value2Unit
         /// Value2 units of measure.
         private UnitSymbol? cim_value2Unit;
         
         private const bool isValue2UnitMandatory = false;
         
         private const string _value2UnitPrefix = "cim";
-        
-        public virtual System.DateTime StartTime {
-            get {
-                return this.cim_startTime.GetValueOrDefault();
-            }
-            set {
-                this.cim_startTime = value;
-            }
-        }
-        
-        public virtual bool StartTimeHasValue {
-            get {
-                return this.cim_startTime != null;
-            }
-        }
-        
-        public static bool IsStartTimeMandatory {
-            get {
-                return isStartTimeMandatory;
-            }
-        }
-        
-        public static string StartTimePrefix {
-            get {
-                return _startTimePrefix;
-            }
-        }
-        
-        public virtual UnitMultiplier Value1Multiplier {
-            get {
-                return this.cim_value1Multiplier.GetValueOrDefault();
-            }
-            set {
-                this.cim_value1Multiplier = value;
-            }
-        }
-        
-        public virtual bool Value1MultiplierHasValue {
-            get {
-                return this.cim_value1Multiplier != null;
-            }
-        }
-        
-        public static bool IsValue1MultiplierMandatory {
-            get {
-                return isValue1MultiplierMandatory;
-            }
-        }
-        
-        public static string Value1MultiplierPrefix {
-            get {
-                return _value1MultiplierPrefix;
-            }
-        }
-        
-        public virtual UnitSymbol Value1Unit {
-            get {
-                return this.cim_value1Unit.GetValueOrDefault();
-            }
-            set {
-                this.cim_value1Unit = value;
-            }
-        }
-        
-        public virtual bool Value1UnitHasValue {
-            get {
-                return this.cim_value1Unit != null;
-            }
-        }
-        
-        public static bool IsValue1UnitMandatory {
-            get {
-                return isValue1UnitMandatory;
-            }
-        }
-        
-        public static string Value1UnitPrefix {
-            get {
-                return _value1UnitPrefix;
-            }
-        }
-        
-        public virtual UnitMultiplier Value2Multiplier {
-            get {
-                return this.cim_value2Multiplier.GetValueOrDefault();
-            }
-            set {
-                this.cim_value2Multiplier = value;
-            }
-        }
-        
-        public virtual bool Value2MultiplierHasValue {
-            get {
-                return this.cim_value2Multiplier != null;
-            }
-        }
-        
-        public static bool IsValue2MultiplierMandatory {
-            get {
-                return isValue2MultiplierMandatory;
-            }
-        }
-        
-        public static string Value2MultiplierPrefix {
-            get {
-                return _value2MultiplierPrefix;
-            }
-        }
-        
-        public virtual UnitSymbol Value2Unit {
-            get {
+
+        public virtual UnitSymbol Value2Unit
+        {
+            get
+            {
                 return this.cim_value2Unit.GetValueOrDefault();
             }
-            set {
+            set
+            {
                 this.cim_value2Unit = value;
             }
         }
-        
-        public virtual bool Value2UnitHasValue {
-            get {
+
+        public virtual bool Value2UnitHasValue
+        {
+            get
+            {
                 return this.cim_value2Unit != null;
             }
         }
-        
-        public static bool IsValue2UnitMandatory {
-            get {
+
+        public static bool IsValue2UnitMandatory
+        {
+            get
+            {
                 return isValue2UnitMandatory;
             }
         }
-        
-        public static string Value2UnitPrefix {
-            get {
+
+        public static string Value2UnitPrefix
+        {
+            get
+            {
                 return _value2UnitPrefix;
             }
         }
+        #endregion value2Unit                                  
+
+        public override bool Equals(object obj)
+        {
+            if (base.Equals(obj))
+            {
+                BasicIntervalSchedule bis = (BasicIntervalSchedule)obj;
+                return (bis.StartTime        == this.StartTime &&                  
+                        bis.Value1Multiplier == this.Value1Multiplier &&
+                        bis.Value1Unit       == this.Value1Unit &&
+                        bis.Value2Multiplier == this.Value2Multiplier &&
+                        bis.Value2Unit       == this.Value2Unit);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            switch (property)
+            {
+                case ModelCode.BasicIntervalSdle_StartT_:
+                case ModelCode.BasicIntervalSdle_V1Mplr_:
+                case ModelCode.BasicIntervalSdle_V1Unit_:
+                case ModelCode.BasicIntervalSdle_V2Mplr_:
+                case ModelCode.BasicIntervalSdle_V2Unit_:
+                    return true;
+
+                default:
+                    return base.HasProperty(property);
+            }
+        }
+
+        public override void GetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.BasicIntervalSdle_StartT_:
+                    property.SetValue(StartTime);
+                    break;
+                case ModelCode.BasicIntervalSdle_V1Mplr_:
+                    property.SetValue((short)Value1Multiplier);
+                    break;
+                case ModelCode.BasicIntervalSdle_V1Unit_:
+                    property.SetValue((short)Value1Unit);
+                    break;
+                case ModelCode.BasicIntervalSdle_V2Mplr_:
+                    property.SetValue((short)Value2Multiplier);
+                    break;
+                case ModelCode.BasicIntervalSdle_V2Unit_:
+                    property.SetValue((short)Value2Unit);
+                    break;
+
+                default:
+                    base.GetProperty(property);
+                    break;
+            }
+        }
+
+        public override void SetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.BasicIntervalSdle_StartT_:
+                    cim_startTime = property.AsDateTime();
+                    break;
+                case ModelCode.BasicIntervalSdle_V1Mplr_:
+                    cim_value1Multiplier = (UnitMultiplier)property.AsEnum();
+                    break;
+                case ModelCode.BasicIntervalSdle_V1Unit_:
+                    cim_value1Unit = (UnitSymbol)property.AsEnum();
+                    break;
+                case ModelCode.BasicIntervalSdle_V2Mplr_:
+                    cim_value2Multiplier = (UnitMultiplier)property.AsEnum();
+                    break;
+                case ModelCode.BasicIntervalSdle_V2Unit_:
+                    cim_value2Unit = (UnitSymbol)property.AsEnum();
+                    break;
+
+                default:
+                    base.SetProperty(property);
+                    break;
+            }
+        }
+
+        #endregion IAccess implementation
+
+        #region IReference implementation
+
+        public override bool IsReferenced
+        {
+            get
+            {
+                return base.IsReferenced;
+            }
+        }
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            base.GetReferences(references, refType);
+        }
+
+        public override void AddReference(ModelCode referenceId, long globalId)
+        {
+            base.AddReference(referenceId, globalId);
+        }
+
+        public override void RemoveReference(ModelCode referenceId, long globalId)
+        {
+            base.RemoveReference(referenceId, globalId);
+        }
+
+        #endregion IReference implementation
     }
 }
