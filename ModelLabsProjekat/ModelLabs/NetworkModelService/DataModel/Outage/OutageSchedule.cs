@@ -8,12 +8,147 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using FTN.Common;
 using FTN.Services.NetworkModelService.DataModel.Core;
 
 namespace FTN.Services.NetworkModelService.DataModel.Outage
 {
     /// The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service.
-    public class OutageSchedule : IrregularIntervalSchedule {
+    public class OutageSchedule : IrregularIntervalSchedule
+    {
+        public OutageSchedule(long globalId) : base(globalId)
+        {
+        }
+
+        #region SwitchingOperations
+
+        List<long> cim_SwitchingOperations = new List<long>();
+
+        public List<long> SwitchingOperations
+        {
+            get
+            {
+                return cim_SwitchingOperations;
+            }
+            set
+            {
+                cim_SwitchingOperations = value;
+            }
+        }
+
+        #endregion OutageSchedule
+
+        public override bool Equals(object obj)
+        {
+            if (base.Equals(obj))
+            {
+                OutageSchedule os = (OutageSchedule)obj;
+                return (CompareHelper.CompareLists(os.cim_SwitchingOperations, this.cim_SwitchingOperations));
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            switch (property)
+            {
+                case ModelCode.OutageSdle_SwitchingOps_:
+                    return true;
+
+                default:
+                    return base.HasProperty(property);
+            }
+        }
+
+        public override void GetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.OutageSdle_SwitchingOps_:
+                    property.SetValue(SwitchingOperations);
+                    break;
+
+                default:
+                    base.GetProperty(property);
+                    break;
+            }
+        }
+
+        public override void SetProperty(Property property)
+        {
+            base.SetProperty(property);
+        }
+
+        #endregion IAccess implementation	
+
+        #region IReference implementation
+
+        public override bool IsReferenced
+        {
+            get
+            {
+                return cim_SwitchingOperations.Count > 0 || base.IsReferenced;
+            }
+        }
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            if (cim_SwitchingOperations != null && cim_SwitchingOperations.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
+            {
+                references[ModelCode.OutageSdle_SwitchingOps_] = cim_SwitchingOperations.GetRange(0, cim_SwitchingOperations.Count);
+            }
+
+            base.GetReferences(references, refType);
+        }
+
+        public override void AddReference(ModelCode referenceId, long globalId)
+        {
+            switch (referenceId)
+            {
+                case ModelCode.OutageSdle_SwitchingOps_:
+                    cim_SwitchingOperations.Add(globalId);
+                    break;
+
+                default:
+                    base.AddReference(referenceId, globalId);
+                    break;
+            }
+        }
+
+        public override void RemoveReference(ModelCode referenceId, long globalId)
+        {
+            switch (referenceId)
+            {
+                case ModelCode.OutageSdle_SwitchingOps_:
+
+                    if (cim_SwitchingOperations.Contains(globalId))
+                    {
+                        cim_SwitchingOperations.Remove(globalId);
+                    }
+                    else
+                    {
+                        CommonTrace.WriteTrace(CommonTrace.TraceWarning, "Entity (GID = 0x{0:x16}) doesn't contain reference 0x{1:x16}.", this.GlobalId, globalId);
+                    }
+
+                    break;
+
+                default:
+                    base.RemoveReference(referenceId, globalId);
+                    break;
+            }
+        }
+
+        #endregion IReference implementation.
     }
 }

@@ -148,6 +148,6 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
             }
         }
 
-        #endregion IReference implementation.
+        #endregion IReference implementation
     }
 }
