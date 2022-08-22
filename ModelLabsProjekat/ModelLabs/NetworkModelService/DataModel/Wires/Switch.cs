@@ -8,23 +8,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using FTN.Common;
 using FTN.Services.NetworkModelService.DataModel.Core;
-using FTN.Services.NetworkModelService.DataModel.Outage;
 
 namespace FTN.Services.NetworkModelService.DataModel.Wires
 {
     /// A generic device designed to close, or open, or both, one or more electric circuits.
     public class Switch : ConductingEquipment {
-        
+
+        public Switch(long globalId) : base(globalId)
+        {
+        }
+
+        #region SwitchingOperations
         /// A switch may be operated by many schedules.
-        private SwitchingOperation cim_SwitchingOperations;
+        private long cim_SwitchingOperations;
         
         private const bool isSwitchingOperationsMandatory = false;
         
         private const string _SwitchingOperationsPrefix = "cim";
-        
-        public virtual SwitchingOperation SwitchingOperations {
+
+        public virtual long SwitchingOperations {
             get {
                 return this.cim_SwitchingOperations;
             }
@@ -50,5 +55,103 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
                 return _SwitchingOperationsPrefix;
             }
         }
+
+        #endregion SwitchingOperations
+
+        public override bool Equals(object obj)
+        {
+            if (base.Equals(obj))
+            {
+                Switch s = (Switch)obj;
+                return (s.cim_SwitchingOperations == this.cim_SwitchingOperations);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            switch (property)
+            {
+                case ModelCode.Switch_SwitchingOp_:
+                    return true;
+
+                default:
+                    return base.HasProperty(property);
+            }
+        }
+
+        public override void GetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.Switch_SwitchingOp_:
+                    property.SetValue(SwitchingOperations);
+                    break;
+
+                default:
+                    base.GetProperty(property);
+                    break;
+            }
+        }
+
+        public override void SetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.Switch_SwitchingOp_:
+                    cim_SwitchingOperations = property.AsReference();
+                    break;
+
+                default:
+                    base.SetProperty(property);
+                    break;
+            }
+        }
+
+        #endregion IAccess implementation
+
+        #region IReference implementation
+
+        public override bool IsReferenced
+        {
+            get
+            {
+                return base.IsReferenced;
+            }
+        }
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            if (cim_SwitchingOperations != 0 && (refType == TypeOfReference.Reference || refType == TypeOfReference.Both))
+            {
+                references[ModelCode.Switch_SwitchingOp_] = new List<long>();
+                references[ModelCode.Switch_SwitchingOp_].Add(cim_SwitchingOperations);
+            }
+
+            base.GetReferences(references, refType);
+        }
+
+        public override void AddReference(ModelCode referenceId, long globalId)
+        {
+            base.AddReference(referenceId, globalId);
+        }
+
+        public override void RemoveReference(ModelCode referenceId, long globalId)
+        {
+            base.RemoveReference(referenceId, globalId);
+        }
+
+        #endregion IReference implementation
+
     }
 }
