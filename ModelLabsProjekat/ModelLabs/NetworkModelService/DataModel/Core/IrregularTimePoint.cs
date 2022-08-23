@@ -8,147 +8,325 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using FTN.Common;
 
 namespace FTN.Services.NetworkModelService.DataModel.Core
 {
     /// TimePoints for a schedule where the time between the points varies.
     public class IrregularTimePoint : IdentifiedObject {
-        
-        /// An IrregularTimePoint belongs to an IrregularIntervalSchedule.
-        private IrregularIntervalSchedule cim_IntervalSchedule;
-        
-        private const bool isIntervalScheduleMandatory = true;
-        
-        private const string _IntervalSchedulePrefix = "cim";
-        
+
+        public IrregularTimePoint(long globalId) : base(globalId)
+        {
+        }        
+
+        #region time
         /// The time is relative to the schedule starting time.
         private System.Single? cim_time;
         
         private const bool isTimeMandatory = false;
         
         private const string _timePrefix = "cim";
-        
+
+        public virtual float Time
+        {
+            get
+            {
+                return this.cim_time.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_time = value;
+            }
+        }
+
+        public virtual bool TimeHasValue
+        {
+            get
+            {
+                return this.cim_time != null;
+            }
+        }
+
+        public static bool IsTimeMandatory
+        {
+            get
+            {
+                return isTimeMandatory;
+            }
+        }
+
+        public static string TimePrefix
+        {
+            get
+            {
+                return _timePrefix;
+            }
+        }
+
+        #endregion time
+
+        #region value1
         /// The first value at the time. The meaning of the value is defined by the derived type of the associated schedule.
         private System.Single? cim_value1;
         
         private const bool isValue1Mandatory = false;
         
         private const string _value1Prefix = "cim";
-        
+
+        public virtual float Value1
+        {
+            get
+            {
+                return this.cim_value1.GetValueOrDefault();
+            }
+            set
+            {
+                this.cim_value1 = value;
+            }
+        }
+
+        public virtual bool Value1HasValue
+        {
+            get
+            {
+                return this.cim_value1 != null;
+            }
+        }
+
+        public static bool IsValue1Mandatory
+        {
+            get
+            {
+                return isValue1Mandatory;
+            }
+        }
+
+        public static string Value1Prefix
+        {
+            get
+            {
+                return _value1Prefix;
+            }
+        }
+
+        #endregion value1
+
+        #region value2
         /// The second value at the time. The meaning of the value is defined by the derived type of the associated schedule.
         private System.Single? cim_value2;
         
         private const bool isValue2Mandatory = false;
         
         private const string _value2Prefix = "cim";
-        
-        public virtual IrregularIntervalSchedule IntervalSchedule {
-            get {
-                return this.cim_IntervalSchedule;
-            }
-            set {
-                this.cim_IntervalSchedule = value;
-            }
-        }
-        
-        public virtual bool IntervalScheduleHasValue {
-            get {
-                return this.cim_IntervalSchedule != null;
-            }
-        }
-        
-        public static bool IsIntervalScheduleMandatory {
-            get {
-                return isIntervalScheduleMandatory;
-            }
-        }
-        
-        public static string IntervalSchedulePrefix {
-            get {
-                return _IntervalSchedulePrefix;
-            }
-        }
-        
-        public virtual float Time {
-            get {
-                return this.cim_time.GetValueOrDefault();
-            }
-            set {
-                this.cim_time = value;
-            }
-        }
-        
-        public virtual bool TimeHasValue {
-            get {
-                return this.cim_time != null;
-            }
-        }
-        
-        public static bool IsTimeMandatory {
-            get {
-                return isTimeMandatory;
-            }
-        }
-        
-        public static string TimePrefix {
-            get {
-                return _timePrefix;
-            }
-        }
-        
-        public virtual float Value1 {
-            get {
-                return this.cim_value1.GetValueOrDefault();
-            }
-            set {
-                this.cim_value1 = value;
-            }
-        }
-        
-        public virtual bool Value1HasValue {
-            get {
-                return this.cim_value1 != null;
-            }
-        }
-        
-        public static bool IsValue1Mandatory {
-            get {
-                return isValue1Mandatory;
-            }
-        }
-        
-        public static string Value1Prefix {
-            get {
-                return _value1Prefix;
-            }
-        }
-        
-        public virtual float Value2 {
-            get {
+
+        public virtual float Value2
+        {
+            get
+            {
                 return this.cim_value2.GetValueOrDefault();
             }
-            set {
+            set
+            {
                 this.cim_value2 = value;
             }
         }
-        
-        public virtual bool Value2HasValue {
-            get {
+
+        public virtual bool Value2HasValue
+        {
+            get
+            {
                 return this.cim_value2 != null;
             }
         }
-        
-        public static bool IsValue2Mandatory {
-            get {
+
+        public static bool IsValue2Mandatory
+        {
+            get
+            {
                 return isValue2Mandatory;
             }
         }
-        
-        public static string Value2Prefix {
-            get {
+
+        public static string Value2Prefix
+        {
+            get
+            {
                 return _value2Prefix;
             }
         }
+
+        #endregion value2
+
+        #region IntervalSchedule
+        /// An IrregularTimePoint belongs to an IrregularIntervalSchedule.
+        private long cim_IntervalSchedule = 0;
+
+        private const bool isIntervalScheduleMandatory = true;
+
+        private const string _IntervalSchedulePrefix = "cim";
+
+        public virtual long IntervalSchedule
+        {
+            get
+            {
+                return this.cim_IntervalSchedule;
+            }
+            set
+            {
+                this.cim_IntervalSchedule = value;
+            }
+        }
+
+        public virtual bool IntervalScheduleHasValue
+        {
+            get
+            {
+                return this.cim_IntervalSchedule != null;
+            }
+        }
+
+        public static bool IsIntervalScheduleMandatory
+        {
+            get
+            {
+                return isIntervalScheduleMandatory;
+            }
+        }
+
+        public static string IntervalSchedulePrefix
+        {
+            get
+            {
+                return _IntervalSchedulePrefix;
+            }
+        }
+
+        #endregion IntervalSchedule
+
+        public override bool Equals(object obj)
+        {
+            if (base.Equals(obj))
+            {
+                IrregularTimePoint itp = (IrregularTimePoint)obj;
+                return (itp.cim_time == this.cim_time &&
+                        itp.cim_value1 == this.cim_value1 &&
+                        itp.cim_value2 == this.cim_value2 &&
+                        itp.cim_IntervalSchedule == this.cim_IntervalSchedule);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        #region IAccess implementation
+
+        public override bool HasProperty(ModelCode property)
+        {
+            switch (property)
+            {
+                case ModelCode.IrregularTP_time_:
+                case ModelCode.IrregularTP_V1_:
+                case ModelCode.IrregularTP_V2_:
+                case ModelCode.IrregularTP_IntervalSdle_:
+                    return true;
+
+                default:
+                    return base.HasProperty(property);
+            }
+        }
+
+        public override void GetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.IrregularTP_time_:
+                    property.SetValue(Time);
+                    break;
+
+                case ModelCode.IrregularTP_V1_:
+                    property.SetValue(Value1);
+                    break;
+
+                case ModelCode.IrregularTP_V2_:
+                    property.SetValue(Value2);
+                    break;
+
+                case ModelCode.IrregularTP_IntervalSdle_:
+                    property.SetValue(IntervalSchedule);
+                    break;
+
+                default:
+                    base.GetProperty(property);
+                    break;
+            }
+        }
+
+        public override void SetProperty(Property property)
+        {
+            switch (property.Id)
+            {
+                case ModelCode.IrregularTP_time_:
+                    cim_time = property.AsFloat();
+                    break;
+
+                case ModelCode.IrregularTP_V1_:
+                    cim_value1 = property.AsFloat();
+                    break;
+
+                case ModelCode.IrregularTP_V2_:
+                    cim_value2 = property.AsFloat();
+                    break;
+
+                case ModelCode.IrregularTP_IntervalSdle_:
+                    cim_IntervalSchedule = property.AsReference();
+                    break;
+
+                default:
+                    base.SetProperty(property);
+                    break;
+            }
+        }
+
+        #endregion IAccess implementation
+
+        #region IReference implementation
+
+        public override bool IsReferenced
+        {
+            get
+            {
+                return base.IsReferenced;
+            }
+        }
+
+        public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
+        {
+            if (cim_IntervalSchedule != 0 && (refType == TypeOfReference.Reference || refType == TypeOfReference.Both))
+            {
+                references[ModelCode.IrregularTP_IntervalSdle_] = new List<long>();
+                references[ModelCode.IrregularTP_IntervalSdle_].Add(cim_IntervalSchedule);
+            }
+
+            base.GetReferences(references, refType);
+        }
+
+        public override void AddReference(ModelCode referenceId, long globalId)
+        {
+            base.AddReference(referenceId, globalId);
+        }
+
+        public override void RemoveReference(ModelCode referenceId, long globalId)
+        {
+            base.RemoveReference(referenceId, globalId);
+        }
+
+        #endregion IReference implementation
     }
 }

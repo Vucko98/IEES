@@ -338,11 +338,10 @@ namespace FTN.Services.NetworkModelService
                     foreach (Property property in rd.Properties)
                     {
                         // globalId must not be set as property
-                        /*TO DO
                         if (property.Id == ModelCode.IDOBJ_GID)
                         {
                             continue;
-                        }*/
+                        }
 
                         if (property.Type == PropertyType.Reference)
                         {

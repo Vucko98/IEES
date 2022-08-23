@@ -122,7 +122,6 @@ namespace FTN.Services.NetworkModelService
 			IdentifiedObject io = null;			
 			switch ((DMSType)type)
 			{
-                /*TO DO
 				case DMSType.BASEVOLTAGE:
 					io = new BaseVoltage(globalId);
 					break;
@@ -139,7 +138,7 @@ namespace FTN.Services.NetworkModelService
 				case DMSType.WINDINGTEST:
 					io = new WindingTest(globalId);
 					break;			
-                */
+
 				default:					
 					string message = String.Format("Failed to create entity because specified type ({0}) is not supported.", type);
 					CommonTrace.WriteTrace(CommonTrace.TraceError, message);
