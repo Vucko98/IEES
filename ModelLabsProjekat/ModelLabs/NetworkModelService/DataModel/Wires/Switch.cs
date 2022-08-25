@@ -23,7 +23,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
 
         #region SwitchingOperations
         /// A switch may be operated by many schedules.
-        private long cim_SwitchingOperations;
+        private long cim_SwitchingOperations = 0;
         
         private const bool isSwitchingOperationsMandatory = false;
         
@@ -40,7 +40,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         
         public virtual bool SwitchingOperationsHasValue {
             get {
-                return this.cim_SwitchingOperations != null;
+                return this.cim_SwitchingOperations != 0;
             }
         }
         

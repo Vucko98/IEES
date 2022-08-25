@@ -182,7 +182,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             get
             {
-                return this.cim_IntervalSchedule != null;
+                return this.cim_IntervalSchedule != 0;
             }
         }
 

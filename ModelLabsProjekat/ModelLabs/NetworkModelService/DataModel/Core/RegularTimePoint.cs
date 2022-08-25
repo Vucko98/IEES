@@ -20,52 +20,6 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
         }
 
-        #region IntervalSchedule
-        /// Regular interval schedule containing this time point.
-        //private RegularIntervalSchedule cim_IntervalSchedule;
-        private long cim_IntervalSchedule = 0;
-
-        private const bool isIntervalScheduleMandatory = true;
-        
-        private const string _IntervalSchedulePrefix = "cim";
-
-        public virtual long IntervalSchedule
-        {
-            get
-            {
-                return this.cim_IntervalSchedule;
-            }
-            set
-            {
-                this.cim_IntervalSchedule = value;
-            }
-        }
-
-        public virtual bool IntervalScheduleHasValue
-        {
-            get
-            {
-                return this.cim_IntervalSchedule != null;
-            }
-        }
-
-        public static bool IsIntervalScheduleMandatory
-        {
-            get
-            {
-                return isIntervalScheduleMandatory;
-            }
-        }
-
-        public static string IntervalSchedulePrefix
-        {
-            get
-            {
-                return _IntervalSchedulePrefix;
-            }
-        }
-        #endregion IntervalSchedule
-
         #region sequenceNumber
         /// The position of the regular time point in the sequence. Note that time points don't have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the associated regular interval schedule's time step with the regular time point sequence number and adding the associated schedules start time.
         private System.Int32? cim_sequenceNumber;
@@ -200,6 +154,52 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
             }
         }
         #endregion value2
+
+        #region IntervalSchedule
+        /// Regular interval schedule containing this time point.
+        //private RegularIntervalSchedule cim_IntervalSchedule;
+        private long cim_IntervalSchedule = 0;
+
+        private const bool isIntervalScheduleMandatory = true;
+
+        private const string _IntervalSchedulePrefix = "cim";
+
+        public virtual long IntervalSchedule
+        {
+            get
+            {
+                return this.cim_IntervalSchedule;
+            }
+            set
+            {
+                this.cim_IntervalSchedule = value;
+            }
+        }
+
+        public virtual bool IntervalScheduleHasValue
+        {
+            get
+            {
+                return this.cim_IntervalSchedule != 0;
+            }
+        }
+
+        public static bool IsIntervalScheduleMandatory
+        {
+            get
+            {
+                return isIntervalScheduleMandatory;
+            }
+        }
+
+        public static string IntervalSchedulePrefix
+        {
+            get
+            {
+                return _IntervalSchedulePrefix;
+            }
+        }
+        #endregion IntervalSchedule
 
         public override bool Equals(object obj)
         {

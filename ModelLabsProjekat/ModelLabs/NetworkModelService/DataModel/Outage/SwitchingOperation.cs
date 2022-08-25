@@ -137,7 +137,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
         {
             get
             {
-                return this.cim_OutageSchedule != null;
+                return this.cim_OutageSchedule != 0;
             }
         }
 
@@ -212,7 +212,6 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
 
                 default:
                     return base.HasProperty(property);
-                    break;
             }
         }
 
@@ -246,11 +245,11 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
         {
             switch (property.Id)
             {
-                case ModelCode.RegularTP_SequenceNum_:
+                case ModelCode.SwitchingOp_NewState_:
                     cim_newState = (SwitchState)property.AsEnum();
                     break;
 
-                case ModelCode.RegularTP_V1_:
+                case ModelCode.SwitchingOp_OpTime_:
                     cim_operationTime = property.AsDateTime();
                     break;
 
@@ -278,7 +277,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
 
         public override void GetReferences(Dictionary<ModelCode, List<long>> references, TypeOfReference refType)
         {
-            if (cim_Switches != null && cim_Switches.Count != 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
+            if (cim_Switches != null && cim_Switches.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
             {
                 references[ModelCode.SwitchingOp_Switches_] = cim_Switches.GetRange(0, cim_Switches.Count);
             }

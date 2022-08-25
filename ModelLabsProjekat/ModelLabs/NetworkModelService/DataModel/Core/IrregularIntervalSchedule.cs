@@ -115,7 +115,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (referenceId)
             {
-                case ModelCode.IrregularIntervalSdle_TPs_:
+                case ModelCode.IrregularTP_IntervalSdle_:
                     cim_TimePoints.Add(globalId);
                     break;
 
@@ -129,7 +129,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (referenceId)
             {
-                case ModelCode.IrregularIntervalSdle_TPs_:
+                case ModelCode.IrregularTP_IntervalSdle_:
 
                     if (cim_TimePoints.Contains(globalId))
                     {

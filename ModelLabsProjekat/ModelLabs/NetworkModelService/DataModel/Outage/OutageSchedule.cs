@@ -116,7 +116,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
         {
             switch (referenceId)
             {
-                case ModelCode.OutageSdle_SwitchingOps_:
+                case ModelCode.SwitchingOp_OutageSdle_:
                     cim_SwitchingOperations.Add(globalId);
                     break;
 
@@ -130,7 +130,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
         {
             switch (referenceId)
             {
-                case ModelCode.OutageSdle_SwitchingOps_:
+                case ModelCode.SwitchingOp_OutageSdle_:
 
                     if (cim_SwitchingOperations.Contains(globalId))
                     {

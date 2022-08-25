@@ -26,7 +26,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         private static ModelResourcesDesc resourcesDescs = new ModelResourcesDesc();
 
         #region globalId
-        private long globalId;
+        private long globalId = 0;
 
         public long GlobalId
         {
@@ -50,7 +50,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         #region aliasName
         /// The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
         ///The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time.
-        private string cim_aliasName;
+        private string cim_aliasName = String.Empty;
         
         private const bool isAliasNameMandatory = false;
         
@@ -97,7 +97,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         /// Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.
         ///Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.
         ///For CIMXML data files in RDF syntax, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.
-        private string cim_mRID;
+        private string cim_mRID = String.Empty;
         
         private const bool isMRIDMandatory = false;
         
@@ -142,7 +142,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 
         #region name
         /// The name is any free human readable and possibly non unique text naming the object.
-        private string cim_name;
+        private string cim_name = String.Empty;
         
         private const bool isNameMandatory = false;
         
