@@ -163,10 +163,11 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
 
 			try
 			{						
-				List<ModelCode> properties = new List<ModelCode>();                
-                properties.Add(ModelCode.IDOBJ_DESCRIPTION);
-                properties.Add(ModelCode.IDOBJ_MRID);
-                properties.Add(ModelCode.IDOBJ_NAME);			   
+				List<ModelCode> properties = new List<ModelCode>();
+                /*properties.Add(ModelCode.IDObject_MRID_);
+                properties.Add(ModelCode.IDObject_Name_);
+                properties.Add(ModelCode.IDObject_AName_);*/
+                properties = modelResourcesDesc.GetAllPropertyIds(association.Type);
 
                 int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
 				int resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
