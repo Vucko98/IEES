@@ -869,8 +869,8 @@ namespace FTN.Common
 			typeIdsInInsertOrder.Add(ModelCode.RegularIntervalSdle_);
 			typeIdsInInsertOrder.Add(ModelCode.RegularTP_);
 			typeIdsInInsertOrder.Add(ModelCode.OutageSdle_);
-			typeIdsInInsertOrder.Add(ModelCode.IrregularTP_);
-            typeIdsInInsertOrder.Add(ModelCode.SwitchingOp_);
+            typeIdsInInsertOrder.Add(ModelCode.IrregularTP_);
+            typeIdsInInsertOrder.Add(ModelCode.SwitchingOp_);            
             typeIdsInInsertOrder.Add(ModelCode.Disconnector_);			
 		}
 

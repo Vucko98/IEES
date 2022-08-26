@@ -14,16 +14,30 @@
 		<cim:BasicIntervalSchedule.value2Multiplier>M</cim:BasicIntervalSchedule.value2Multiplier>
 		<cim:BasicIntervalSchedule.value2Unit>N</cim:BasicIntervalSchedule.value2Unit>	
 	</cim:OutageSchedule>
-
-	<cim:SwitchingOperation rdf:ID="SO_1354844875">
+	
+	
+	<cim:SwitchingOperation rdf:ID="SO_117835">
+		<cim:SwitchingOperation.OutageSchedule rdf:resource="#OS_132594591"/>
 		<cim:SwitchingOperation.newState>close</cim:SwitchingOperation.newState>
 		<cim:SwitchingOperation.operationTime>8/10/2022 09:10:00 AM</cim:SwitchingOperation.operationTime>
-		<cim:SwitchingOperation.OutageSchedule rdf:resource="#OS_132594591"/>
 		<cim:IdentifiedObject.aliasName>SO_1</cim:IdentifiedObject.aliasName>
 		<cim:IdentifiedObject.mRID>SO_1</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>SO_1</cim:IdentifiedObject.name>
-	</cim:SwitchingOperation>	
-
+	</cim:SwitchingOperation>
+	
+	<cim:Disconnector rdf:ID="D_1897892641">
+		<cim:Switch.SwitchingOperations rdf:resource="#SO_117835"/>
+		<cim:IdentifiedObject.aliasName>D_1</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>D_1</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>D_1</cim:IdentifiedObject.name>
+	</cim:Disconnector>
+	<cim:Disconnector rdf:ID="D_278492494">
+		<cim:Switch.SwitchingOperations rdf:resource="#SO_117835"/>
+		<cim:IdentifiedObject.aliasName>D_2</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>D_2</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>D_2</cim:IdentifiedObject.name>
+	</cim:Disconnector>
+	
 	<cim:IrregularTimePoint rdf:ID="ITP_1567815458">
 		<cim:IrregularTimePoint.IntervalSchedule rdf:resource="#OS_132594591"/>		
 		<cim:IrregularTimePoint.time>14.9</cim:IrregularTimePoint.time>
@@ -32,21 +46,7 @@
 		<cim:IdentifiedObject.aliasName>ITP_1</cim:IdentifiedObject.aliasName>
 		<cim:IdentifiedObject.mRID>ITP_1</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>ITP_1ITP_1</cim:IdentifiedObject.name>
-	</cim:IrregularTimePoint>
-	
-	
-	<cim:Disconnector rdf:ID="D_1897892641">
-		<cim:Switch.SwitchingOperations rdf:resource="#SO_1354844875"/>
-		<cim:IdentifiedObject.aliasName>D_1</cim:IdentifiedObject.aliasName>
-		<cim:IdentifiedObject.mRID>D_1</cim:IdentifiedObject.mRID>
-		<cim:IdentifiedObject.name>D_1</cim:IdentifiedObject.name>
-	</cim:Disconnector>
-	<cim:Disconnector rdf:ID="D_278492494">
-		<cim:Switch.SwitchingOperations rdf:resource="#SO_1354844875"/>
-		<cim:IdentifiedObject.aliasName>D_2</cim:IdentifiedObject.aliasName>
-		<cim:IdentifiedObject.mRID>D_2</cim:IdentifiedObject.mRID>
-		<cim:IdentifiedObject.name>D_2</cim:IdentifiedObject.name>
-	</cim:Disconnector>
+	</cim:IrregularTimePoint>	
   	
 	<cim:RegularIntervalSchedule rdf:ID="RIS_1234495">
 		<cim:RegularIntervalSchedule.endTime>8/12/2022 09:00:00 AM</cim:RegularIntervalSchedule.endTime>		

@@ -17,10 +17,11 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
     /// The period of time that a piece of equipment is out of service, for example, for maintenance or testing; including the equipment's active power rating while under maintenance. The X-axis represents absolute time and the Y-axis represents the equipment's available rating while out of service.
     public class OutageSchedule : IrregularIntervalSchedule
     {
+        
         public OutageSchedule(long globalId) : base(globalId)
         {
         }
-
+        
         #region SwitchingOperations
 
         List<long> cim_SwitchingOperations = new List<long>();
@@ -149,6 +150,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
             }
         }
 
-        #endregion IReference implementation.
+        #endregion IReference implementation
+        
     }
 }

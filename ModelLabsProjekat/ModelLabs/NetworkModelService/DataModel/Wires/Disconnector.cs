@@ -20,7 +20,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         public Disconnector(long globalId) : base(globalId)
         {
         }
-
+        
         public override bool Equals(object obj)
         {
             return base.Equals(obj);
@@ -76,5 +76,6 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         }
 
         #endregion IReference implementation
+        
     }
 }

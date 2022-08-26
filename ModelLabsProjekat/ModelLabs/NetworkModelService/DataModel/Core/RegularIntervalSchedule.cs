@@ -19,7 +19,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         public RegularIntervalSchedule(long globalId) : base(globalId)
         {
         }
-
+        
         #region endTime
         /// The time for the last time point.
         private System.DateTime? cim_endTime;
@@ -263,5 +263,6 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         }
 
         #endregion IReference implementation
+
     }
 }

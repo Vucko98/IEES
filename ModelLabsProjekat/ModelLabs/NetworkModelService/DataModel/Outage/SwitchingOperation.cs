@@ -175,7 +175,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
             }
         }
 
-        #endregion TimePoints
+        #endregion Switches
 
         public override bool Equals(object obj)
         {
@@ -253,7 +253,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Outage
                     cim_operationTime = property.AsDateTime();
                     break;
 
-                case ModelCode.SwitchingOp_Switches_:
+                case ModelCode.SwitchingOp_OutageSdle_:
                     cim_OutageSchedule = property.AsReference();
                     break;
 
