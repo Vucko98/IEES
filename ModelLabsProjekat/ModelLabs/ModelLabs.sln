@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32630.192
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2017
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIMParser", "CIMParser\CIMParser.csproj", "{3C03A41C-BE4C-40A8-97D5-5DBAC0C34102}"
 EndProject
@@ -40,6 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewResources", "NewResource
 		NewResources\LabsProfile.legacy-rdfs = NewResources\LabsProfile.legacy-rdfs
 		NewResources\PowerTransformerCIMProfile_Labs.dll = NewResources\PowerTransformerCIMProfile_Labs.dll
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUI", "NetworkModelService\ClientUI\ClientUI.csproj", "{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,6 +153,18 @@ Global
 		{E112FFCC-BD88-4056-99E1-0991A0E82588}.Release|x64.Build.0 = Release|x64
 		{E112FFCC-BD88-4056-99E1-0991A0E82588}.Release|x86.ActiveCfg = Release|x86
 		{E112FFCC-BD88-4056-99E1-0991A0E82588}.Release|x86.Build.0 = Release|x86
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Debug|x64.Build.0 = Debug|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Debug|x86.Build.0 = Debug|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Release|x64.ActiveCfg = Release|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Release|x64.Build.0 = Release|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Release|x86.ActiveCfg = Release|Any CPU
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +177,7 @@ Global
 		{ADE96497-7C11-40B6-AE82-57F956C9F104} = {ABC630A2-50D2-4DF5-B4FF-C6E1FABE530E}
 		{32EE9373-A350-42AC-972B-41B2EDABA082} = {CD0EE85F-3877-4725-9A29-968A33156D3D}
 		{E112FFCC-BD88-4056-99E1-0991A0E82588} = {ABC630A2-50D2-4DF5-B4FF-C6E1FABE530E}
+		{4472A5B9-5A9A-428E-8BAE-DE76BC3EA749} = {ABC630A2-50D2-4DF5-B4FF-C6E1FABE530E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A0D9331-176A-430D-B817-7CBF7178E502}
