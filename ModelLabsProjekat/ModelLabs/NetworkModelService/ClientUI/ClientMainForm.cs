@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClientUI
 {
-    public partial class Form1 : Form
+    public partial class ClientMainForm : Form
     {
-        public Form1()
+        public ClientMainForm()
         {
             InitializeComponent();
         }

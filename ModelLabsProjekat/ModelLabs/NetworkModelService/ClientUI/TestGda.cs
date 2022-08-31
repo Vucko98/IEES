@@ -36,7 +36,7 @@ namespace ClientUI
         }
 
         #region GDAQueryService
-
+        /*
         public ResourceDescription GetValues(long globalId)
         {
             string message = "Getting values method started.";
@@ -156,9 +156,9 @@ namespace ClientUI
             try
             {
                 List<ModelCode> properties = new List<ModelCode>();
-                /*properties.Add(ModelCode.IDObject_MRID_);
-                properties.Add(ModelCode.IDObject_Name_);
-                properties.Add(ModelCode.IDObject_AName_);*/
+                //properties.Add(ModelCode.IDObject_MRID_);
+                //properties.Add(ModelCode.IDObject_Name_);
+                //properties.Add(ModelCode.IDObject_AName_);
                 properties = modelResourcesDesc.GetAllPropertyIds(association.Type);
 
                 int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
@@ -203,7 +203,7 @@ namespace ClientUI
 
             return resultIds;
         }
-
+        */
         #endregion GDAQueryService
 
         #region Test Methods
