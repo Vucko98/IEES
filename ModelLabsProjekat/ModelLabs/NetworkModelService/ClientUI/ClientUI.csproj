@@ -68,11 +68,47 @@
     <Compile Include="ClientMainForm.Designer.cs">
       <DependentUpon>ClientMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGetExtentValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGetExtentValues.Designer.cs">
+      <DependentUpon>FormGetExtentValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGetRelatedValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGetRelatedValues.Designer.cs">
+      <DependentUpon>FormGetRelatedValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGetValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGetValues.Designer.cs">
+      <DependentUpon>FormGetValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestGda.cs" />
     <EmbeddedResource Include="ClientMainForm.resx">
       <DependentUpon>ClientMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGetExtentValues.resx">
+      <DependentUpon>FormGetExtentValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGetRelatedValues.resx">
+      <DependentUpon>FormGetRelatedValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGetValues.resx">
+      <DependentUpon>FormGetValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

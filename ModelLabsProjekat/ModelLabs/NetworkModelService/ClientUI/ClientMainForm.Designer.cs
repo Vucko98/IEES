@@ -34,6 +34,7 @@
             this.buttonGetExtentValues = new System.Windows.Forms.Button();
             this.buttonGetValues = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
+            this.panelWorkspace = new System.Windows.Forms.Panel();
             this.navigationMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +119,7 @@
             // 
             // buttonHome
             // 
+            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.buttonHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHome.FlatAppearance.BorderSize = 0;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,8 +129,17 @@
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(210, 90);
             this.buttonHome.TabIndex = 2;
-            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.UseVisualStyleBackColor = false;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
+            // panelWorkspace
+            // 
+            this.panelWorkspace.BackColor = System.Drawing.Color.Gray;
+            this.panelWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelWorkspace.Location = new System.Drawing.Point(210, 0);
+            this.panelWorkspace.Name = "panelWorkspace";
+            this.panelWorkspace.Size = new System.Drawing.Size(590, 450);
+            this.panelWorkspace.TabIndex = 1;
             // 
             // ClientMainForm
             // 
@@ -136,6 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelWorkspace);
             this.Controls.Add(this.navigationMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ClientMainForm";
@@ -153,7 +165,7 @@
         private System.Windows.Forms.Button buttonGetValues;
         private System.Windows.Forms.Button buttonResize;
         private System.Windows.Forms.Button buttonGetRelatedValues;
-
+        private System.Windows.Forms.Panel panelWorkspace;
     }
 }
 

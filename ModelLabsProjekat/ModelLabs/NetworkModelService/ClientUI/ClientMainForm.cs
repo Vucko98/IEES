@@ -58,16 +58,41 @@ namespace ClientUI
                     if (currentButton != null)
                     {
                         currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        currentButton.BackColor = ((Button)btnSender).BackColor;
+                        currentButton.BackColor = Color.FromArgb(51, 51, 76);
+                    }
+                    else
+                    {
+                        buttonHome.BackColor = Color.FromArgb(51, 51, 76); 
                     }
 
                     currentButton = (Button)btnSender;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    currentButton.BackColor = Color.SlateGray;
+                    currentButton.BackColor = Color.FromArgb(156, 168, 171);
                 }                
             }
         }
         #endregion HighlightSelected
+
+        #region OpenForm
+        private Form currentForm = null;
+        private void ChangeForm(Form newForm, object btnSender)
+        {
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            //ActivateButton(btnSender);
+            currentForm = newForm;
+            currentForm.TopLevel = false;
+            currentForm.FormBorderStyle = FormBorderStyle.None;
+            currentForm.Dock = DockStyle.Fill;
+            this.panelWorkspace.Controls.Add(currentForm);
+            this.panelWorkspace.Tag = currentForm;
+            currentForm.BringToFront();
+            currentForm.Show();
+        }
+        #endregion OpenForm
 
         private void buttonGetValues_Click(object sender, EventArgs e)
         {

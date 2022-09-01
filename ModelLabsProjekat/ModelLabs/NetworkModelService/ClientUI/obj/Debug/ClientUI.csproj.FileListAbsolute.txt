@@ -13,3 +13,7 @@ C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\Cl
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\bin\Debug\FTN.Common.pdb
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\bin\Debug\FTN.ServiceContracts.ServiceContracts.NetworkModelQueryContract.pdb
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\obj\Debug\ClientUI.csproj.CopyComplete
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\obj\Debug\ClientUI.Forms.FormHome.resources
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\obj\Debug\ClientUI.Forms.FormGetExtentValues.resources
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\obj\Debug\ClientUI.Forms.FormGetRelatedValues.resources
+C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\NetworkModelService\ClientUI\obj\Debug\ClientUI.Forms.FormGetValues.resources
