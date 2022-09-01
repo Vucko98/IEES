@@ -63,6 +63,16 @@ namespace ClientUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FTN {
+            get {
+                object obj = ResourceManager.GetObject("FTN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_arrowLeft_33 {
             get {
                 object obj = ResourceManager.GetObject("icons8-arrowLeft-33", resourceCulture);
@@ -76,6 +86,16 @@ namespace ClientUI.Properties {
         internal static System.Drawing.Bitmap icons8_arrowRight_33 {
             get {
                 object obj = ResourceManager.GetObject("icons8-arrowRight-33", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_21 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +136,26 @@ namespace ClientUI.Properties {
         internal static System.Drawing.Bitmap icons8_home_33 {
             get {
                 object obj = ResourceManager.GetObject("icons8-home-33", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_maximize_window_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-maximize-window-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_subtract_23 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-subtract-23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -155,7 +155,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\FTN.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-arrowLeft-33.png" />
   </ItemGroup>
@@ -173,6 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-home-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-maximize-window-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-subtract-23.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

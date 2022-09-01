@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ClientUI.Properties;
 
@@ -16,7 +11,27 @@ namespace ClientUI
         public ClientMainForm()
         {
             InitializeComponent();
+
+            //this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        #region FormBorderControl
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion FormBorderControl
 
         #region ResizeNavigation
         private bool resizeSmall = false;
@@ -75,15 +90,14 @@ namespace ClientUI
 
         #region OpenForm
         private Form currentForm = null;
-        private void ChangeForm(Form newForm, object btnSender)
+        private void ChangeForm(Form newForm)
         {
             if (currentForm != null)
             {
                 currentForm.Close();
             }
-
-            //ActivateButton(btnSender);
             currentForm = newForm;
+
             currentForm.TopLevel = false;
             currentForm.FormBorderStyle = FormBorderStyle.None;
             currentForm.Dock = DockStyle.Fill;
@@ -97,21 +111,49 @@ namespace ClientUI
         private void buttonGetValues_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
+            //ChangeForm(new ClientUI.Forms.FormGetValues());
         }
 
         private void buttonGetExtentValues_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
+            //ChangeForm(new ClientUI.Forms.FormGetExtentValues());
         }
 
         private void buttonGetRelatedValues_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
+            //ChangeForm(new ClientUI.Forms.FormGetRelatedValues());
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
+            //ChangeForm(new ClientUI.Forms.FormHome());
         }
+        #region CloseMaximizeMinimize
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+
+        }
+
+        private void buttonMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        #endregion CloseMaximizeMinimize
     }
 }
