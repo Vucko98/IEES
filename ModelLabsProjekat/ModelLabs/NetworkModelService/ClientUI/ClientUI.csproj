@@ -82,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +118,25 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-arrowLeft-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrowRight-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-document-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-favorites-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-folder-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-33.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
