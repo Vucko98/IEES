@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -8,15 +9,31 @@ namespace ClientUI
 {
     public partial class ClientMainForm : Form
     {
+        private List<long> allGIDs = new List<long>();
+
         public ClientMainForm()
         {
             InitializeComponent();
+            ConfigureMainForm();            
+            Testing();
 
+            InitializeNestedForms(); //must go last
+        }
+
+        private void ConfigureMainForm()
+        {
             //this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
             //this.FormBorderStyle = FormBorderStyle.None;
             this.Text = string.Empty;
             this.ControlBox = false;
             //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+
+        private void Testing() {
+            allGIDs.Add(1000);
+            allGIDs.Add(2000);
+            allGIDs.Add(3000);
+            allGIDs.Add(4567);
         }
 
         #region FormBorderControl
@@ -33,7 +50,7 @@ namespace ClientUI
         }
         #endregion FormBorderControl
 
-        #region ResizeNavigation
+        #region ResizeNavigationBar
         private bool resizeSmall = false;
         private void buttonResize_Click(object sender, EventArgs e)
         {
@@ -60,7 +77,7 @@ namespace ClientUI
                 buttonGetRelatedValues.Text = "GetRelatedValues";
             }
         }
-        #endregion ResizeNavigation
+        #endregion ResizeNavigationBar
 
         #region HighlightSelected
         private Button currentButton = null;
@@ -89,13 +106,14 @@ namespace ClientUI
         #endregion HighlightSelected
 
         #region OpenForm
+
         private Form currentForm = null;
         private void ChangeForm(Form newForm)
         {
-            if (currentForm != null)
+            /*if (currentForm != null)
             {
                 currentForm.Close();
-            }
+            }*/
             currentForm = newForm;
 
             currentForm.TopLevel = false;
@@ -106,31 +124,58 @@ namespace ClientUI
             currentForm.BringToFront();
             currentForm.Show();
         }
+
         #endregion OpenForm
+
+        #region NestedForms
+
+        private Form _FormHome = null;
+        private Form _FormGetValues = null;
+        private Form _FormGetExtentValues = null;
+        private Form _FormGetRelatedValues = null;
+        
+        private void InitializeNestedForms()
+        {
+            _FormHome = new ClientUI.Forms.FormHome();
+            _FormGetValues = new ClientUI.Forms.FormGetValues(allGIDs);
+            _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
+            _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
+
+            ChangeForm(_FormHome);
+        }
+
+        #endregion NestedForms
+
+        #region NavigationBtnClick
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            SelectedButton(sender);
+            //ChangeForm(new ClientUI.Forms.FormHome());
+            ChangeForm(_FormHome);
+        }
 
         private void buttonGetValues_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
             //ChangeForm(new ClientUI.Forms.FormGetValues());
+            ChangeForm(_FormGetValues);
         }
 
         private void buttonGetExtentValues_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
             //ChangeForm(new ClientUI.Forms.FormGetExtentValues());
+            ChangeForm(_FormGetExtentValues);
         }
 
         private void buttonGetRelatedValues_Click(object sender, EventArgs e)
         {
             SelectedButton(sender);
             //ChangeForm(new ClientUI.Forms.FormGetRelatedValues());
+            ChangeForm(_FormGetRelatedValues);
         }
+        #endregion NavigationBtnClick
 
-        private void buttonHome_Click(object sender, EventArgs e)
-        {
-            SelectedButton(sender);
-            //ChangeForm(new ClientUI.Forms.FormHome());
-        }
         #region CloseMaximizeMinimize
         private void buttonClose_Click(object sender, EventArgs e)
         {

@@ -54,7 +54,7 @@
             this.navigationMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.navigationMenu.Location = new System.Drawing.Point(0, 0);
             this.navigationMenu.Name = "navigationMenu";
-            this.navigationMenu.Size = new System.Drawing.Size(210, 450);
+            this.navigationMenu.Size = new System.Drawing.Size(210, 511);
             this.navigationMenu.TabIndex = 0;
             // 
             // buttonGetRelatedValues
@@ -81,7 +81,7 @@
             this.buttonResize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResize.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonResize.Image = global::ClientUI.Properties.Resources.icons8_arrowRight_33;
-            this.buttonResize.Location = new System.Drawing.Point(0, 385);
+            this.buttonResize.Location = new System.Drawing.Point(0, 446);
             this.buttonResize.Name = "buttonResize";
             this.buttonResize.Size = new System.Drawing.Size(210, 65);
             this.buttonResize.TabIndex = 4;
@@ -143,7 +143,7 @@
             this.panelWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkspace.Location = new System.Drawing.Point(210, 0);
             this.panelWorkspace.Name = "panelWorkspace";
-            this.panelWorkspace.Size = new System.Drawing.Size(590, 450);
+            this.panelWorkspace.Size = new System.Drawing.Size(590, 511);
             this.panelWorkspace.TabIndex = 1;
             // 
             // panelControl
@@ -207,12 +207,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 511);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panelWorkspace);
             this.Controls.Add(this.navigationMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MinimumSize = new System.Drawing.Size(300, 370);
+            this.MinimumSize = new System.Drawing.Size(325, 365);
             this.Name = "ClientMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IEES Client Service";

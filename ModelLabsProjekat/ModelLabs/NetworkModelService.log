@@ -1,0 +1,8 @@
+9/3/2022 3:39:53 PM : Starting Network Model Serivice...
+9/3/2022 3:39:54 PM : The WCF service GenericDataAccess is ready.
+9/3/2022 3:39:54 PM : Endpoints:
+9/3/2022 3:39:54 PM : net.tcp://localhost:10000/NetworkModelService/GDA/
+9/3/2022 3:39:54 PM : Connection string: ../NetworkModelData.data
+9/3/2022 3:39:54 PM : Trace level: Info
+9/3/2022 3:39:54 PM : The Network Model Service is started.
+9/3/2022 3:39:54 PM : Press <Enter> to stop the service.
