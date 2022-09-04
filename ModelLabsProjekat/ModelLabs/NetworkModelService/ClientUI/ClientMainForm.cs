@@ -4,21 +4,59 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ClientUI.Properties;
+using FTN.Common;
 
 namespace ClientUI
 {
     public partial class ClientMainForm : Form
     {
-        private List<long> allGIDs = new List<long>();
+        //ModelResourcesDesc resDesc = new ModelResourcesDesc();
+        //private List<long> allGIDs = new List<long>();
+        private TestGda tGDA = null;
 
         public ClientMainForm()
         {
             InitializeComponent();
-            ConfigureMainForm();            
-            Testing();
+            ConfigureMainForm();                        
 
+            InitializeTestGda();
             InitializeNestedForms(); //must go last
         }
+
+
+        public void InitializeTestGda()
+        {
+            try //TRY
+            {
+                tGDA = new TestGda();                
+            }
+            catch (Exception exc)
+            {                
+                Console.WriteLine(string.Format("ClientUI->MainForm->InitializeTestGda failed:\n\t{0}", exc.Message));                
+                throw;
+            }
+        }
+
+        #region NestedForms
+
+        private Form _FormHome = null;
+        private Form _FormGetValues = null;
+        private Form _FormGetExtentValues = null;
+        private Form _FormGetRelatedValues = null;
+        
+        private void InitializeNestedForms()
+        {
+            _FormHome = new ClientUI.Forms.FormHome();
+            _FormGetValues = new ClientUI.Forms.FormGetValues(tGDA.TestGetExtentValuesAllTypes(), tGDA.getAllService_DMSType_ModelCodes());
+            _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
+            _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
+
+            ChangeForm(_FormHome);
+        }
+
+        #endregion NestedForms
+
+        #region UIbehaviour
 
         private void ConfigureMainForm()
         {
@@ -28,15 +66,9 @@ namespace ClientUI
             this.ControlBox = false;
             //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-
-        private void Testing() {
-            allGIDs.Add(1000);
-            allGIDs.Add(2000);
-            allGIDs.Add(3000);
-            allGIDs.Add(4567);
-        }
-
+        
         #region FormBorderControl
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -48,9 +80,11 @@ namespace ClientUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         #endregion FormBorderControl
 
         #region ResizeNavigationBar
+
         private bool resizeSmall = false;
         private void buttonResize_Click(object sender, EventArgs e)
         {
@@ -60,10 +94,10 @@ namespace ClientUI
 
                 navigationMenu.Width = 42;
                 buttonResize.Image = Resources.icons8_arrowLeft_33;
-            
+
                 buttonGetValues.ResetText();
                 buttonGetExtentValues.ResetText();
-                buttonGetRelatedValues.ResetText();                
+                buttonGetRelatedValues.ResetText();
             }
             else
             {
@@ -77,9 +111,11 @@ namespace ClientUI
                 buttonGetRelatedValues.Text = "GetRelatedValues";
             }
         }
+
         #endregion ResizeNavigationBar
 
         #region HighlightSelected
+
         private Button currentButton = null;
         private void SelectedButton(object btnSender)
         {
@@ -94,15 +130,16 @@ namespace ClientUI
                     }
                     else
                     {
-                        buttonHome.BackColor = Color.FromArgb(51, 51, 76); 
+                        buttonHome.BackColor = Color.FromArgb(51, 51, 76);
                     }
 
                     currentButton = (Button)btnSender;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     currentButton.BackColor = Color.FromArgb(156, 168, 171);
-                }                
+                }
             }
         }
+
         #endregion HighlightSelected
 
         #region OpenForm
@@ -126,25 +163,6 @@ namespace ClientUI
         }
 
         #endregion OpenForm
-
-        #region NestedForms
-
-        private Form _FormHome = null;
-        private Form _FormGetValues = null;
-        private Form _FormGetExtentValues = null;
-        private Form _FormGetRelatedValues = null;
-        
-        private void InitializeNestedForms()
-        {
-            _FormHome = new ClientUI.Forms.FormHome();
-            _FormGetValues = new ClientUI.Forms.FormGetValues(allGIDs);
-            _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
-            _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
-
-            ChangeForm(_FormHome);
-        }
-
-        #endregion NestedForms
 
         #region NavigationBtnClick
         private void buttonHome_Click(object sender, EventArgs e)
@@ -200,5 +218,7 @@ namespace ClientUI
             this.WindowState = FormWindowState.Minimized;
         }
         #endregion CloseMaximizeMinimize
+
+        #endregion UIbehaviour
     }
 }

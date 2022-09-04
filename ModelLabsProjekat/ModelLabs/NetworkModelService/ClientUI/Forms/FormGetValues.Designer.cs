@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.comboBoxGIDs = new System.Windows.Forms.ComboBox();
+            this.listBoxDMSTypes = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // comboBoxGIDs
@@ -39,12 +40,24 @@
             this.comboBoxGIDs.Name = "comboBoxGIDs";
             this.comboBoxGIDs.Size = new System.Drawing.Size(242, 24);
             this.comboBoxGIDs.TabIndex = 0;
+            this.comboBoxGIDs.SelectedIndexChanged += new System.EventHandler(this.comboBoxGIDs_SelectedIndexChanged);
+            // 
+            // listBoxDMSTypes
+            // 
+            this.listBoxDMSTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxDMSTypes.FormattingEnabled = true;
+            this.listBoxDMSTypes.ItemHeight = 16;
+            this.listBoxDMSTypes.Location = new System.Drawing.Point(20, 100);
+            this.listBoxDMSTypes.Name = "listBoxDMSTypes";
+            this.listBoxDMSTypes.Size = new System.Drawing.Size(242, 196);
+            this.listBoxDMSTypes.TabIndex = 1;
             // 
             // FormGetValues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBoxDMSTypes);
             this.Controls.Add(this.comboBoxGIDs);
             this.Name = "FormGetValues";
             this.ResumeLayout(false);
@@ -54,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxGIDs;
+        private System.Windows.Forms.ListBox listBoxDMSTypes;
     }
 }

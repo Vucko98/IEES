@@ -13,27 +13,80 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using FTN.Common;
 
 namespace ClientUI.Forms
 {
     public partial class FormGetValues : Form
     {
-        public FormGetValues(List<long> GIDs)
+        private Dictionary<string, (long, DMSType)> xGID_GID_DMSType = null;
+        private Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = null;
+        //Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>();
+
+        public FormGetValues(Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
         {
             InitializeComponent();
-            InitializeTools(GIDs);
+
+            InitializeData(_0xGID_GID_DMSType, _DMSType_ModelCodes);
+
+            InitializeTools();
         }
 
-        private void InitializeTools(List<long> GIDs)
+        private void InitializeData(Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
         {
-            //comboBoxGIDs.Items.Clear();
-            comboBoxGIDs.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            foreach (long gid in GIDs)
+            try
             {
-                comboBoxGIDs.Items.Add(gid);
-            }            
+                xGID_GID_DMSType = new Dictionary<string, (long, DMSType)>(_0xGID_GID_DMSType);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("ClientUI->FormGetValues->InitializeData->xGID_GID_DMSType failed:\n\t{0}", e.Message));             
+                throw;
+            }
+
+            try
+            {                
+                DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>(_DMSType_ModelCodes);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("ClientUI->FormGetValues->InitializeData->DMSType_ModelCodes failed:\n\t{0}", e.Message));
+                throw;
+            }
+        }
+
+        private void InitializeTools()
+        {
+            comboBoxGIDs.DropDownStyle = ComboBoxStyle.DropDownList;
+            //comboBoxGIDs.Items.Clear();
+            listBoxDMSTypes.SelectionMode = SelectionMode.MultiExtended;
+            listBoxDMSTypes.Sorted = true;
+            try //TRY
+            {
+                foreach (KeyValuePair<string, (long, DMSType)> _0xGID_GID_DMSType in xGID_GID_DMSType)
+                    comboBoxGIDs.Items.Add(_0xGID_GID_DMSType.Key);                       
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("ClientUI->FormGetValues->InitializeTools failed:\n\t{0}", e.Message));
+            }                        
+        }
+
+        private void comboBoxGIDs_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            listBoxDMSTypes.Items.Clear();
+
+            try //TRY
+            {
+                DMSType typeOfSelectedGID = xGID_GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item2;
+                foreach (ModelCode item in DMSType_ModelCodes[typeOfSelectedGID])                
+                    listBoxDMSTypes.Items.Add(item);                                    
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(string.Format("ClientUI->FormGetValues->comboBoxGIDs_SelectedIndexChanged failed:\n\t{0}", exc.Message));
+            }
+          
         }
     }
 }

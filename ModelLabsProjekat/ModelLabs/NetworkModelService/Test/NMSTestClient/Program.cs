@@ -109,7 +109,20 @@ namespace FTN.Services.NetworkModelService.TestClient
                             CommonTrace.WriteTrace(CommonTrace.TraceError, message);
                         }
                     }
-					else if (str != "q")
+                    else if (str == "5")
+                    {
+                        try
+                        {
+                            tgda.TestGetExtentValuesAllTypes();
+                        }
+                        catch (Exception ex)
+                        {
+                            message = string.Format("TestGetExtentValuesAllTypes failed. {0}", ex.Message);
+                            Console.WriteLine(message);
+                            CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+                        }
+                    }
+                    else if (str != "q")
 					{
 						PrintUnknownOption();
 					}
@@ -136,7 +149,8 @@ namespace FTN.Services.NetworkModelService.TestClient
 			Console.WriteLine("\t2) Get extent values");
 			Console.WriteLine("\t3) Get related values");
             Console.WriteLine("\t4) Test apply update");
-			Console.WriteLine("\tq) Quit");
+            Console.WriteLine("\t5) TestGetExtentValuesAllTypes");
+            Console.WriteLine("\tq) Quit");
 		}
 
         #region Help methods

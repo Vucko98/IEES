@@ -232,29 +232,32 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
             {
                 foreach (DMSType type in Enum.GetValues(typeof(DMSType)))
                 {
-                    currType = type;
-                    properties = modelResourcesDesc.GetAllPropertyIds(type);
+                    if(type != DMSType.MASK_TYPE)
+                    {                    
+                        currType = type;
+                        properties = modelResourcesDesc.GetAllPropertyIds(type);
 
-                    iteratorId = GdaQueryProxy.GetExtentValues(modelResourcesDesc.GetModelCodeFromType(type), properties);
-                    int count = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                        iteratorId = GdaQueryProxy.GetExtentValues(modelResourcesDesc.GetModelCodeFromType(type), properties);
+                        int count = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
 
-                    while (count > 0)
-                    {
-                        List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
-
-                        for (int i = 0; i < rds.Count; i++)
+                        while (count > 0)
                         {
-                            ids.Add(rds[i].Id);
+                            List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
+
+                            for (int i = 0; i < rds.Count; i++)
+                            {
+                                ids.Add(rds[i].Id);
+                            }
+
+                            count = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
                         }
 
-                        count = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                        bool ok = GdaQueryProxy.IteratorClose(iteratorId);
+
+                        message = string.Format("Number of {0} in model {1}.", type, ids.Count);
+                        Console.WriteLine(message);
+                        CommonTrace.WriteTrace(CommonTrace.TraceInfo, message);
                     }
-
-                    bool ok = GdaQueryProxy.IteratorClose(iteratorId);
-
-                    message = string.Format("Number of {0} in model {1}.", type, ids.Count);
-                    Console.WriteLine(message);
-                    CommonTrace.WriteTrace(CommonTrace.TraceInfo, message);
                 }
 
 
@@ -276,7 +279,7 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
         }
         
         #region GDAUpdate Service
-
+        
         public UpdateResult TestApplyDeltaInsert()
         {
             string message = "Apply update method started.";
@@ -752,7 +755,7 @@ namespace TelventDMS.Services.NetworkModelService.TestClient.Tests
         //}
 
         #endregion set references
-
+        
         #endregion GDAUpdate Service
 
         #endregion Test Methods
