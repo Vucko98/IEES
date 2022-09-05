@@ -153,6 +153,16 @@ namespace ClientUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_start_55 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-start-55", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_subtract_23 {
             get {
                 object obj = ResourceManager.GetObject("icons8-subtract-23", resourceCulture);

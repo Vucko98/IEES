@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGetValues));
             this.comboBoxGIDs = new System.Windows.Forms.ComboBox();
             this.listBoxDMSTypes = new System.Windows.Forms.ListBox();
+            this.richTextBoxResult = new System.Windows.Forms.RichTextBox();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxGIDs
@@ -38,7 +41,7 @@
             this.comboBoxGIDs.FormattingEnabled = true;
             this.comboBoxGIDs.Location = new System.Drawing.Point(20, 50);
             this.comboBoxGIDs.Name = "comboBoxGIDs";
-            this.comboBoxGIDs.Size = new System.Drawing.Size(242, 24);
+            this.comboBoxGIDs.Size = new System.Drawing.Size(200, 24);
             this.comboBoxGIDs.TabIndex = 0;
             this.comboBoxGIDs.SelectedIndexChanged += new System.EventHandler(this.comboBoxGIDs_SelectedIndexChanged);
             // 
@@ -47,16 +50,42 @@
             this.listBoxDMSTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxDMSTypes.FormattingEnabled = true;
             this.listBoxDMSTypes.ItemHeight = 16;
-            this.listBoxDMSTypes.Location = new System.Drawing.Point(20, 100);
+            this.listBoxDMSTypes.Location = new System.Drawing.Point(20, 98);
             this.listBoxDMSTypes.Name = "listBoxDMSTypes";
-            this.listBoxDMSTypes.Size = new System.Drawing.Size(242, 196);
+            this.listBoxDMSTypes.Size = new System.Drawing.Size(200, 212);
             this.listBoxDMSTypes.TabIndex = 1;
+            // 
+            // richTextBoxResult
+            // 
+            this.richTextBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxResult.Location = new System.Drawing.Point(245, 50);
+            this.richTextBoxResult.Name = "richTextBoxResult";
+            this.richTextBoxResult.Size = new System.Drawing.Size(515, 340);
+            this.richTextBoxResult.TabIndex = 3;
+            this.richTextBoxResult.Text = "";
+            // 
+            // buttonStart
+            // 
+            this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStart.Image = ((System.Drawing.Image)(resources.GetObject("buttonStart.Image")));
+            this.buttonStart.Location = new System.Drawing.Point(91, 333);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(50, 40);
+            this.buttonStart.TabIndex = 2;
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // FormGetValues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.richTextBoxResult);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.listBoxDMSTypes);
             this.Controls.Add(this.comboBoxGIDs);
             this.Name = "FormGetValues";
@@ -68,5 +97,7 @@
 
         private System.Windows.Forms.ComboBox comboBoxGIDs;
         private System.Windows.Forms.ListBox listBoxDMSTypes;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.RichTextBox richTextBoxResult;
     }
 }

@@ -35,7 +35,7 @@ namespace ClientUI
         {
         }
 
-        public Dictionary<DMSType, List<ModelCode>> getAllService_DMSType_ModelCodes()
+        public Dictionary<DMSType, List<ModelCode>> get_DMSType_ModelCodes()
         {
             Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>();
 
@@ -49,16 +49,107 @@ namespace ClientUI
             }
             catch (Exception e)
             {       
-                Console.WriteLine(string.Format("TestGda->getAllService_DMSType_ModelCodes failed:\n\t{0}", e.Message));
+                Console.WriteLine(string.Format("TestGda->get_DMSType_ModelCodes failed:\n\t{0}", e.Message));
                 DMSType_ModelCodes = null;
             }
 
             return DMSType_ModelCodes;
         }
 
+        private string GetValuesToString(ResourceDescription rd)
+        {
+            string text = string.Empty;
+            try //TRY
+            {
+                foreach (Property property in rd.Properties)
+                {
+                    text += PropertyToString(property);
+                }                    
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("TestGda->GetValuesToString failed.\n\t{0}", e.Message));
+                text = null;
+            }
+
+            return text;
+        }
+
+        private string PropertyToString(Property property)
+        {
+            string result = string.Empty;
+            try //TRY
+            {
+                //object propertyValue = property.GetValue();
+                PropertyType propertyType = property.Type;
+                if (propertyType == PropertyType.DateTime)
+                {
+                    result = property.Id + ": " + property.AsDateTime() + "\n";
+                }
+                else if (propertyType == PropertyType.Enum)
+                {
+                    EnumDescs enumDescs = new EnumDescs();
+                    result = property.Id + ": " + enumDescs.GetStringFromEnum(property.Id, property.AsEnum()) + "\n";
+                }
+                else if (propertyType == PropertyType.Reference)
+                {
+                    result = property.Id + ": " + "0x" + ((long)property.GetValue()).ToString("X16") + "\n";
+                }
+                else if (propertyType == PropertyType.String)
+                {
+                    if (property.PropertyValue.StringValue == null)
+                        property.PropertyValue.StringValue = string.Empty;
+                    result = property.Id + ": " + property.AsString() + "\n";
+                }
+                else if(propertyType == PropertyType.ReferenceVector)
+                {
+                    result = property.Id + ":\n";
+                    foreach (long refGID in (IList)property.GetValue())
+                    {
+                        result += "\t" + "0x" + refGID.ToString("X16") + "\n";
+                    }
+                }
+                else
+                {
+                    if (property.Id == ModelCode.IDObject_GID_)
+                    {
+                        result = property.Id + ": " + "0x" + ((long)property.GetValue()).ToString("X16") + "\n";
+                    }
+                    else
+                    {
+                        result = property.Id + ": " + property.GetValue() + "\n";
+                    }
+                }
+
+                /*if (propertyValue is IList)
+                {
+                    text += property.Id + ":";
+                    foreach (var item in (IList)propertyValue)
+                    {
+                        text += "\n\t" + item;
+                    }
+                }
+                else if (propertyValue is DateTime)
+                {                                                
+                    text += property.Id + ": " + new DateTime((long)propertyValue).ToString() + "\n";
+                }
+                else
+                {
+                    text += property.Id + ": " + property.GetValue() + "\n";
+                }*/
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("TestGda->PropertyToString failed.\n\t{0}", e.Message));
+                result = null;              
+            }
+
+            return result;
+        }
+
         #region GDAQueryService
-        
-        public ResourceDescription GetValues(long globalId)
+
+        public string GetValues(long globalId, List<ModelCode> properties)
         {
             Console.WriteLine("Getting values method started.");
 
@@ -66,7 +157,7 @@ namespace ClientUI
             try
             {
                 short type = ModelCodeHelper.ExtractTypeFromGlobalId(globalId);
-                List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds((DMSType)type);
+                //List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds((DMSType)type);
                 rd = GdaQueryProxy.GetValues(globalId, properties);
 
                 Console.WriteLine("Getting values method successfully finished.");
@@ -75,8 +166,8 @@ namespace ClientUI
             {
                 Console.WriteLine(string.Format("Getting values method for entered id = {0} failed.\n\t{1}", globalId, e.Message));             
             }
-
-            return rd;
+            
+            return GetValuesToString(rd);
         }
 
         public List<long> GetExtentValues(ModelCode modelCode)
@@ -155,8 +246,8 @@ namespace ClientUI
             }
 
             return resultIds;
-        }
-        
+        }        
+
         #endregion GDAQueryService
 
         #region Test Methods

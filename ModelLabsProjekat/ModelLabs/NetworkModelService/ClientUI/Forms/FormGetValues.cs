@@ -19,32 +19,35 @@ namespace ClientUI.Forms
 {
     public partial class FormGetValues : Form
     {
+        private TestGda tGDA = null;
         private Dictionary<string, (long, DMSType)> xGID_GID_DMSType = null;
         private Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = null;
         //Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>();
 
-        public FormGetValues(Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
+        public FormGetValues(TestGda _tGDA, Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
         {
             InitializeComponent();
 
-            InitializeData(_0xGID_GID_DMSType, _DMSType_ModelCodes);
+            InitializeData(_tGDA, _0xGID_GID_DMSType, _DMSType_ModelCodes);
 
             InitializeTools();
         }
 
-        private void InitializeData(Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
+        private void InitializeData(TestGda _tGDA, Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
         {
-            try
+            tGDA = _tGDA;
+
+            try //TRY
             {
                 xGID_GID_DMSType = new Dictionary<string, (long, DMSType)>(_0xGID_GID_DMSType);
             }
             catch (Exception e)
             {
                 Console.WriteLine(string.Format("ClientUI->FormGetValues->InitializeData->xGID_GID_DMSType failed:\n\t{0}", e.Message));             
-                throw;
+                throw;                
             }
 
-            try
+            try //TRY
             {                
                 DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>(_DMSType_ModelCodes);
             }
@@ -57,10 +60,13 @@ namespace ClientUI.Forms
 
         private void InitializeTools()
         {
+            comboBoxGIDs.Items.Clear();            
             comboBoxGIDs.DropDownStyle = ComboBoxStyle.DropDownList;
-            //comboBoxGIDs.Items.Clear();
+            listBoxDMSTypes.Items.Clear();
             listBoxDMSTypes.SelectionMode = SelectionMode.MultiExtended;
             listBoxDMSTypes.Sorted = true;
+            richTextBoxResult.ReadOnly = true;
+
             try //TRY
             {
                 foreach (KeyValuePair<string, (long, DMSType)> _0xGID_GID_DMSType in xGID_GID_DMSType)
@@ -79,6 +85,7 @@ namespace ClientUI.Forms
             try //TRY
             {
                 DMSType typeOfSelectedGID = xGID_GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item2;
+                
                 foreach (ModelCode item in DMSType_ModelCodes[typeOfSelectedGID])                
                     listBoxDMSTypes.Items.Add(item);                                    
             }
@@ -87,6 +94,24 @@ namespace ClientUI.Forms
                 Console.WriteLine(string.Format("ClientUI->FormGetValues->comboBoxGIDs_SelectedIndexChanged failed:\n\t{0}", exc.Message));
             }
           
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            try //TRY
+            {
+                long gid = xGID_GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item1;
+
+                List<ModelCode> properties = new List<ModelCode>();
+                foreach (ModelCode modelCode in listBoxDMSTypes.SelectedItems)
+                    properties.Add(modelCode);
+
+                richTextBoxResult.Text = tGDA.GetValues(gid, properties);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(string.Format("ClientUI->FormGetValues->buttonStart_Click failed:\n\t{0}", exc.Message));                
+            }           
         }
     }
 }

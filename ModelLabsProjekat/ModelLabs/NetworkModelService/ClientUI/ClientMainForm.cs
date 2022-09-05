@@ -47,7 +47,7 @@ namespace ClientUI
         private void InitializeNestedForms()
         {
             _FormHome = new ClientUI.Forms.FormHome();
-            _FormGetValues = new ClientUI.Forms.FormGetValues(tGDA.TestGetExtentValuesAllTypes(), tGDA.getAllService_DMSType_ModelCodes());
+            _FormGetValues = new ClientUI.Forms.FormGetValues(tGDA, tGDA.TestGetExtentValuesAllTypes(), tGDA.get_DMSType_ModelCodes());
             _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
             _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
 
