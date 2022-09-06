@@ -10,31 +10,12 @@ namespace ClientUI
 {
     public partial class ClientMainForm : Form
     {
-        //ModelResourcesDesc resDesc = new ModelResourcesDesc();
-        //private List<long> allGIDs = new List<long>();
-        private TestGda tGDA = null;
-
         public ClientMainForm()
         {
             InitializeComponent();
             ConfigureMainForm();                        
 
-            InitializeTestGda();
             InitializeNestedForms(); //must go last
-        }
-
-
-        public void InitializeTestGda()
-        {
-            try //TRY
-            {
-                tGDA = new TestGda();                
-            }
-            catch (Exception exc)
-            {                
-                Console.WriteLine(string.Format("ClientUI->MainForm->InitializeTestGda failed:\n\t{0}", exc.Message));                
-                throw;
-            }
         }
 
         #region NestedForms
@@ -45,14 +26,11 @@ namespace ClientUI
         private Form _FormGetRelatedValues = null;
         
         private void InitializeNestedForms()
-        {
-            Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType = tGDA.TestGetExtentValuesAllTypes();
-            Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes = tGDA.get_DMSType_ModelCodes();
-            
+        {            
             _FormHome = new ClientUI.Forms.FormHome();
-            _FormGetValues = new ClientUI.Forms.FormGetValues(tGDA, _0xGID_GID_DMSType, _DMSType_ModelCodes);
-            _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues(tGDA, _DMSType_ModelCodes);
-            _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues(tGDA, _0xGID_GID_DMSType, _DMSType_ModelCodes, tGDA.DMSType_Reference);
+            _FormGetValues = new ClientUI.Forms.FormGetValues();
+            //_FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
+            //_FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
 
             ChangeForm(_FormHome);
         }

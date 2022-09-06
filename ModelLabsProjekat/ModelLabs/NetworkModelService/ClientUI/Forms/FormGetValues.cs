@@ -7,58 +7,22 @@ namespace ClientUI.Forms
 {
     public partial class FormGetValues : Form
     {
-        private TestGda tGDA = null;
-        private Dictionary<string, (long, DMSType)> xGID_GID_DMSType = null;
-        private Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = null;
-
-        public FormGetValues(TestGda _tGDA, Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
+        public FormGetValues()
         {
             InitializeComponent();
-
-            InitializeData(_tGDA, _0xGID_GID_DMSType, _DMSType_ModelCodes);
 
             InitializeTools();
         }
 
-        private void InitializeData(TestGda _tGDA, Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
-        {
-            tGDA = _tGDA;
-
-            try //TRY
-            {
-                xGID_GID_DMSType = new Dictionary<string, (long, DMSType)>(_0xGID_GID_DMSType);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(string.Format("ClientUI->FormGetValues->InitializeData->xGID_GID_DMSType failed:\n\t{0}", e.Message));             
-                throw;                
-            }
-
-            try //TRY
-            {                
-                DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>(_DMSType_ModelCodes);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(string.Format("ClientUI->FormGetValues->InitializeData->DMSType_ModelCodes failed:\n\t{0}", e.Message));
-                throw;
-            }
-        }
-
         private void InitializeTools()
-        {
-            //comboBoxGIDs.Items.Clear();            
-            comboBoxGIDs.DropDownStyle = ComboBoxStyle.DropDownList;
-            //listBoxDMSTypes.Items.Clear();
-            listBoxAttribute.SelectionMode = SelectionMode.MultiExtended;
-            listBoxAttribute.Sorted = true;
-            //richTextBoxResult.Clear();
+        {                                                                                   
             richTextBoxResult.ReadOnly = true;
 
+            buttonStart.Enabled = false;
             try //TRY
-            {
-                foreach (KeyValuePair<string, (long, DMSType)> _0xGID_GID_DMSType in xGID_GID_DMSType)
-                    comboBoxGIDs.Items.Add(_0xGID_GID_DMSType.Key);                       
+            {                
+                foreach (KeyValuePair<string, (long, DMSType)> _strGID__GID_DMSType in DataInAir.strGID__GID_DMSType)
+                    comboBoxGIDs.Items.Add(_strGID__GID_DMSType.Key);                       
             }
             catch (Exception e)
             {
@@ -67,14 +31,14 @@ namespace ClientUI.Forms
         }
 
         private void comboBoxGIDs_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
+            buttonStart.Enabled = true;
             listBoxAttribute.Items.Clear();
             richTextBoxResult.Clear();
             try //TRY
             {
-                DMSType typeOfSelectedGID = xGID_GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item2;
-                
-                foreach (ModelCode item in DMSType_ModelCodes[typeOfSelectedGID])                
+                DMSType typeOfSelectedGID = DataInAir.strGID__GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item2;                
+                foreach (ModelCode item in DataInAir.DMSType_ModelCodes[typeOfSelectedGID])                
                     listBoxAttribute.Items.Add(item);                                    
             }
             catch (Exception exc)
@@ -88,13 +52,13 @@ namespace ClientUI.Forms
         {
             try //TRY
             {
-                long gid = xGID_GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item1;
+                long GID = DataInAir.strGID__GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item1;
 
                 List<ModelCode> properties = new List<ModelCode>();
                 foreach (ModelCode modelCode in listBoxAttribute.SelectedItems)
                     properties.Add(modelCode);
 
-                richTextBoxResult.Text = tGDA.GetValues(gid, properties);
+                richTextBoxResult.Text = DataInAir.tGDA.GetValues(GID, properties);
             }
             catch (Exception exc)
             {

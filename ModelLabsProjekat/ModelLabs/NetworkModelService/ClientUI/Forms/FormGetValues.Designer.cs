@@ -37,6 +37,7 @@
             // 
             // comboBoxGIDs
             // 
+            this.comboBoxGIDs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGIDs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGIDs.FormattingEnabled = true;
             this.comboBoxGIDs.Location = new System.Drawing.Point(20, 50);
@@ -52,7 +53,9 @@
             this.listBoxAttribute.ItemHeight = 16;
             this.listBoxAttribute.Location = new System.Drawing.Point(20, 98);
             this.listBoxAttribute.Name = "listBoxAttribute";
+            this.listBoxAttribute.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxAttribute.Size = new System.Drawing.Size(200, 212);
+            this.listBoxAttribute.Sorted = true;
             this.listBoxAttribute.TabIndex = 1;
             // 
             // richTextBoxResult

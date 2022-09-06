@@ -68,6 +68,7 @@
     <Compile Include="ClientMainForm.Designer.cs">
       <DependentUpon>ClientMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataInAir.cs" />
     <Compile Include="Forms\FormGetExtentValues.cs">
       <SubType>Form</SubType>
     </Compile>
