@@ -2,6 +2,3 @@ C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\DLL\IntervalSchedu
 generisan, medutim nigne nije referenciran
 C:\Users\Vojvoda\Desktop\IEES\ModelLabsProjekat\ModelLabs\bin\DLL\PowerTransformerCIMProfile_Labs.dll
 sam napravio jer isgleda da se kod vec referencira na taj dll, tj njegovo ime medjutim generisan je sa mojim profilom
-
-CIMET alat je atribute tipa Second generisa kao reference, dok ih DLL smatra kao float
--> smatram da su atributi tipa float.

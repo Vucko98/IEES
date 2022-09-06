@@ -22,7 +22,6 @@ namespace ClientUI.Forms
         private TestGda tGDA = null;
         private Dictionary<string, (long, DMSType)> xGID_GID_DMSType = null;
         private Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = null;
-        //Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>();
 
         public FormGetValues(TestGda _tGDA, Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
         {
@@ -92,8 +91,7 @@ namespace ClientUI.Forms
             catch (Exception exc)
             {
                 Console.WriteLine(string.Format("ClientUI->FormGetValues->comboBoxGIDs_SelectedIndexChanged failed:\n\t{0}", exc.Message));
-            }
-          
+            }          
         }
 
         private void buttonStart_Click(object sender, EventArgs e)

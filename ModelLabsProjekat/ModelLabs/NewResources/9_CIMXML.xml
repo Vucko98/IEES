@@ -2,8 +2,7 @@
 <rdf:RDF	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#"
 	xmlns:ftn="http://www.ftnydro.com/CIM15/2010/extension#">
-	
-	<!--CIMET alat je atribute tipa Second generisa kao reference, dok ih DLL smatra kao float -> smatram da su atributi tipa float. -->
+		
 	<cim:OutageSchedule rdf:ID="OS_132594591">
 		<cim:IdentifiedObject.mRID>OS_1</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>OS_1</cim:IdentifiedObject.name>
@@ -14,8 +13,7 @@
 		<cim:BasicIntervalSchedule.value2Multiplier>M</cim:BasicIntervalSchedule.value2Multiplier>
 		<cim:BasicIntervalSchedule.value2Unit>N</cim:BasicIntervalSchedule.value2Unit>	
 	</cim:OutageSchedule>
-	
-	
+		
 	<cim:SwitchingOperation rdf:ID="SO_117835">
 		<cim:SwitchingOperation.OutageSchedule rdf:resource="#OS_132594591"/>
 		<cim:SwitchingOperation.newState>close</cim:SwitchingOperation.newState>
@@ -108,6 +106,12 @@
 		<cim:IdentifiedObject.aliasName>RTP_4</cim:IdentifiedObject.aliasName>
 		<cim:IdentifiedObject.mRID>RTP_4</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>RTP_4</cim:IdentifiedObject.name>
-	</cim:RegularTimePoint>
-	
+	</cim:RegularTimePoint>	
+	<!--<cim:RegularTimePoint rdf:ID="RTP_57987416194">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource=""/>
+		<cim:RegularTimePoint.sequenceNumber></cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1></cim:RegularTimePoint.value1>				
+		<cim:IdentifiedObject.mRID></cim:IdentifiedObject.mRID>		
+	</cim:RegularTimePoint>-->
+
 </rdf:RDF>

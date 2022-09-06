@@ -37,10 +37,10 @@ namespace ClientUI
 
         public Dictionary<DMSType, List<ModelCode>> get_DMSType_ModelCodes()
         {
-            Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>();
+            Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>();            
 
             try //TRY
-            {                
+            {                    
                 foreach (DMSType _DMSType in modelResourcesDesc.AllDMSTypes)
                 {
                     if (_DMSType != DMSType.MASK_TYPE)                    
@@ -63,7 +63,7 @@ namespace ClientUI
             {
                 foreach (Property property in rd.Properties)
                 {
-                    text += PropertyToString(property);
+                    text += PropertyToString(property, "");
                 }                    
             }
             catch (Exception e)
@@ -75,68 +75,73 @@ namespace ClientUI
             return text;
         }
 
-        private string PropertyToString(Property property)
+        private string GetExtentValuesToString(List<ResourceDescription> rds)
+        {
+            string text = string.Empty;
+            try //TRY
+            {
+                foreach (ResourceDescription rd in rds)
+                {                    
+                    text += "ResourceGID: " + "0x" + rd.Id.ToString("X16") + "\n";
+                    foreach (Property property in rd.Properties)
+                    {
+                        text += PropertyToString(property, "\t");
+                    }                    
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("TestGda->GetValuesToString failed.\n\t{0}", e.Message));
+                text = null;
+            }
+
+            return text;
+        }
+
+        private string PropertyToString(Property property, string tab)
         {
             string result = string.Empty;
             try //TRY
             {
-                //object propertyValue = property.GetValue();
                 PropertyType propertyType = property.Type;
                 if (propertyType == PropertyType.DateTime)
                 {
-                    result = property.Id + ": " + property.AsDateTime() + "\n";
+                    result = tab + property.Id + ": " + property.AsDateTime() + "\n";
                 }
                 else if (propertyType == PropertyType.Enum)
                 {
                     EnumDescs enumDescs = new EnumDescs();
-                    result = property.Id + ": " + enumDescs.GetStringFromEnum(property.Id, property.AsEnum()) + "\n";
+                    result = tab + property.Id + ": " + enumDescs.GetStringFromEnum(property.Id, property.AsEnum()) + "\n";
                 }
                 else if (propertyType == PropertyType.Reference)
                 {
-                    result = property.Id + ": " + "0x" + ((long)property.GetValue()).ToString("X16") + "\n";
+                    result = tab + property.Id + ": " + "0x" + ((long)property.GetValue()).ToString("X16") + "\n";
                 }
                 else if (propertyType == PropertyType.String)
                 {
                     if (property.PropertyValue.StringValue == null)
                         property.PropertyValue.StringValue = string.Empty;
-                    result = property.Id + ": " + property.AsString() + "\n";
+                    result = tab + property.Id + ": " + property.AsString() + "\n";
                 }
                 else if(propertyType == PropertyType.ReferenceVector)
                 {
-                    result = property.Id + ":\n";
+                    result = tab + property.Id + ":\n";
                     foreach (long refGID in (IList)property.GetValue())
                     {
-                        result += "\t" + "0x" + refGID.ToString("X16") + "\n";
+                        result += tab + "\t" + "0x" + refGID.ToString("X16") + "\n";
                     }
                 }
                 else
                 {
                     if (property.Id == ModelCode.IDObject_GID_)
                     {
-                        result = property.Id + ": " + "0x" + ((long)property.GetValue()).ToString("X16") + "\n";
+                        result = tab + property.Id + ": " + "0x" + ((long)property.GetValue()).ToString("X16") + "\n";
                     }
                     else
                     {
-                        result = property.Id + ": " + property.GetValue() + "\n";
+                        result = tab + property.Id + ": " + property.GetValue() + "\n";
                     }
                 }
-
-                /*if (propertyValue is IList)
-                {
-                    text += property.Id + ":";
-                    foreach (var item in (IList)propertyValue)
-                    {
-                        text += "\n\t" + item;
-                    }
-                }
-                else if (propertyValue is DateTime)
-                {                                                
-                    text += property.Id + ": " + new DateTime((long)propertyValue).ToString() + "\n";
-                }
-                else
-                {
-                    text += property.Id + ": " + property.GetValue() + "\n";
-                }*/
             }
             catch (Exception e)
             {
@@ -156,9 +161,7 @@ namespace ClientUI
             ResourceDescription rd = null;
             try
             {
-                short type = ModelCodeHelper.ExtractTypeFromGlobalId(globalId);
-                //List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds((DMSType)type);
-                rd = GdaQueryProxy.GetValues(globalId, properties);
+                rd = GdaQueryProxy.GetValues(globalId, properties);                
 
                 Console.WriteLine("Getting values method successfully finished.");
             }
@@ -170,29 +173,19 @@ namespace ClientUI
             return GetValuesToString(rd);
         }
 
-        public List<long> GetExtentValues(ModelCode modelCode)
+        public string GetExtentValues(ModelCode SelectedConcreteClass, List<ModelCode> properties)
         {
             Console.WriteLine("Getting extent values method started.");
-
-            int iteratorId = 0;
-            List<long> ids = new List<long>();
+            
+            int iteratorId, i, resourcesLeft, numberOfResources = 20;
+            List<ResourceDescription> rds = new List<ResourceDescription>();
             try
-            {
-                int numberOfResources = 2;
-                int resourcesLeft = 0;
-                List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds(modelCode);
-
-                iteratorId = GdaQueryProxy.GetExtentValues(modelCode, properties);
+            {                                          
+                iteratorId = GdaQueryProxy.GetExtentValues(SelectedConcreteClass, properties);
                 resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
                 while (resourcesLeft > 0)
-                {
-                    List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
-
-                    for (int i = 0; i < rds.Count; i++)
-                    {
-                        ids.Add(rds[i].Id);
-                        //rds[i].ExportToXml(xmlWriter);                        
-                    }
+                {                    
+                    rds.AddRange(GdaQueryProxy.IteratorNext(numberOfResources, iteratorId));
 
                     resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
                 }
@@ -202,10 +195,11 @@ namespace ClientUI
             }
             catch (Exception e)
             {
-                Console.WriteLine(string.Format("Getting extent values method failed for {0}.\n\t{1}", modelCode, e.Message));
+                Console.WriteLine(string.Format("Getting extent values method failed for {0}.\n\t{1}", SelectedConcreteClass, e.Message));
+                rds = null;
             }
 
-            return ids;
+            return GetExtentValuesToString(rds);
         }
 
         public List<long> GetRelatedValues(long sourceGlobalId, Association association)
