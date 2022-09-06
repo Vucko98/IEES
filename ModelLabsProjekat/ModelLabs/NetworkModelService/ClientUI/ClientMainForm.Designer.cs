@@ -143,7 +143,7 @@
             this.panelWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkspace.Location = new System.Drawing.Point(210, 0);
             this.panelWorkspace.Name = "panelWorkspace";
-            this.panelWorkspace.Size = new System.Drawing.Size(590, 511);
+            this.panelWorkspace.Size = new System.Drawing.Size(624, 511);
             this.panelWorkspace.TabIndex = 1;
             // 
             // panelControl
@@ -155,7 +155,7 @@
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(210, 0);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(590, 27);
+            this.panelControl.Size = new System.Drawing.Size(624, 27);
             this.panelControl.TabIndex = 2;
             this.panelControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl_MouseDown);
             // 
@@ -165,7 +165,7 @@
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.buttonMinimize.Image = global::ClientUI.Properties.Resources.icons8_subtract_23;
-            this.buttonMinimize.Location = new System.Drawing.Point(491, 0);
+            this.buttonMinimize.Location = new System.Drawing.Point(525, 0);
             this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.Size = new System.Drawing.Size(33, 26);
@@ -179,7 +179,7 @@
             this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.buttonMaximize.Image = global::ClientUI.Properties.Resources.icons8_maximize_window_24;
-            this.buttonMaximize.Location = new System.Drawing.Point(524, 0);
+            this.buttonMaximize.Location = new System.Drawing.Point(558, 0);
             this.buttonMaximize.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMaximize.Name = "buttonMaximize";
             this.buttonMaximize.Size = new System.Drawing.Size(33, 26);
@@ -194,7 +194,7 @@
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(168)))), ((int)(((byte)(171)))));
             this.buttonClose.Image = global::ClientUI.Properties.Resources.icons8_close_21;
-            this.buttonClose.Location = new System.Drawing.Point(557, 0);
+            this.buttonClose.Location = new System.Drawing.Point(591, 0);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(33, 26);
@@ -207,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 511);
+            this.ClientSize = new System.Drawing.Size(834, 511);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panelWorkspace);
             this.Controls.Add(this.navigationMenu);
