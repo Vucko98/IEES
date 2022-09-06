@@ -45,12 +45,14 @@
             this.richTextBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxResult.Location = new System.Drawing.Point(245, 50);
             this.richTextBoxResult.Name = "richTextBoxResult";
+            this.richTextBoxResult.ReadOnly = true;
             this.richTextBoxResult.Size = new System.Drawing.Size(515, 490);
             this.richTextBoxResult.TabIndex = 11;
             this.richTextBoxResult.Text = "";
             // 
             // buttonStart
             // 
+            this.buttonStart.Enabled = false;
             this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStart.Image = ((System.Drawing.Image)(resources.GetObject("buttonStart.Image")));
             this.buttonStart.Location = new System.Drawing.Point(91, 435);
@@ -67,11 +69,14 @@
             this.listBoxAttribute.ItemHeight = 16;
             this.listBoxAttribute.Location = new System.Drawing.Point(20, 200);
             this.listBoxAttribute.Name = "listBoxAttribute";
+            this.listBoxAttribute.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxAttribute.Size = new System.Drawing.Size(200, 212);
+            this.listBoxAttribute.Sorted = true;
             this.listBoxAttribute.TabIndex = 9;
             // 
             // comboBoxGIDs
             // 
+            this.comboBoxGIDs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGIDs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGIDs.FormattingEnabled = true;
             this.comboBoxGIDs.Location = new System.Drawing.Point(20, 50);
@@ -82,6 +87,8 @@
             // 
             // comboBoxReference
             // 
+            this.comboBoxReference.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxReference.Enabled = false;
             this.comboBoxReference.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxReference.FormattingEnabled = true;
             this.comboBoxReference.Location = new System.Drawing.Point(20, 100);
@@ -92,6 +99,8 @@
             // 
             // comboBoxConcreteClass
             // 
+            this.comboBoxConcreteClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxConcreteClass.Enabled = false;
             this.comboBoxConcreteClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxConcreteClass.FormattingEnabled = true;
             this.comboBoxConcreteClass.Location = new System.Drawing.Point(20, 150);
