@@ -5,9 +5,9 @@
         <ResourceDescription>
           <id gid="0x00000004ffffffff" type="RegularIntervalSdle_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="RIS_1" />
-            <Property id="IDObject_Name_" value="RIS_1" />
-            <Property id="IDObject_AName_" value="RIS_1" />
+            <Property id="IDObject_MRID_" value="RIS_1_mRID" />
+            <Property id="IDObject_Name_" value="RIS_1_name" />
+            <Property id="IDObject_AName_" value="RIS_1_aliasName" />
             <Property id="BasicIntervalSdle_StartT_" value="637959186000000000" />
             <Property id="BasicIntervalSdle_V1Mplr_" value="micro" />
             <Property id="BasicIntervalSdle_V2Mplr_" value="G" />
@@ -20,9 +20,9 @@
         <ResourceDescription>
           <id gid="0x00000004fffffffe" type="RegularIntervalSdle_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="RIS_2" />
-            <Property id="IDObject_Name_" value="RIS_2" />
-            <Property id="IDObject_AName_" value="RIS_2" />
+            <Property id="IDObject_MRID_" value="RIS_2_mRID" />
+            <Property id="IDObject_Name_" value="RIS_2_name" />
+            <Property id="IDObject_AName_" value="RIS_2_aliasName" />
             <Property id="BasicIntervalSdle_StartT_" value="637961598000000000" />
             <Property id="BasicIntervalSdle_V1Mplr_" value="none" />
             <Property id="BasicIntervalSdle_V2Mplr_" value="p" />
@@ -35,9 +35,9 @@
         <ResourceDescription>
           <id gid="0x00000002ffffffff" type="RegularTP_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="RTP_1" />
-            <Property id="IDObject_Name_" value="RTP_1" />
-            <Property id="IDObject_AName_" value="RTP_1" />
+            <Property id="IDObject_MRID_" value="RTP_1_mRID" />
+            <Property id="IDObject_Name_" value="RTP_1_name" />
+            <Property id="IDObject_AName_" value="RTP_1_aliasName" />
             <Property id="RegularTP_SequenceNum_" value="1" />
             <Property id="RegularTP_V1_" value="0.11" />
             <Property id="RegularTP_V2_" value="0.12" />
@@ -47,9 +47,9 @@
         <ResourceDescription>
           <id gid="0x00000002fffffffe" type="RegularTP_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="RTP_2" />
-            <Property id="IDObject_Name_" value="RTP_2" />
-            <Property id="IDObject_AName_" value="RTP_2" />
+            <Property id="IDObject_MRID_" value="RTP_2_mRID" />
+            <Property id="IDObject_Name_" value="RTP_2_name" />
+            <Property id="IDObject_AName_" value="RTP_2_aliasName" />
             <Property id="RegularTP_SequenceNum_" value="2" />
             <Property id="RegularTP_V1_" value="0.21" />
             <Property id="RegularTP_V2_" value="0.22" />
@@ -59,9 +59,9 @@
         <ResourceDescription>
           <id gid="0x00000002fffffffd" type="RegularTP_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="RTP_3" />
-            <Property id="IDObject_Name_" value="RTP_3" />
-            <Property id="IDObject_AName_" value="RTP_3" />
+            <Property id="IDObject_MRID_" value="RTP_3_mRID" />
+            <Property id="IDObject_Name_" value="RTP_3_name" />
+            <Property id="IDObject_AName_" value="RTP_3_aliasName" />
             <Property id="RegularTP_SequenceNum_" value="3" />
             <Property id="RegularTP_V1_" value="0.31" />
             <Property id="RegularTP_V2_" value="0.32" />
@@ -71,9 +71,9 @@
         <ResourceDescription>
           <id gid="0x00000002fffffffc" type="RegularTP_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="RTP_4" />
-            <Property id="IDObject_Name_" value="RTP_4" />
-            <Property id="IDObject_AName_" value="RTP_4" />
+            <Property id="IDObject_MRID_" value="RTP_4_mRID" />
+            <Property id="IDObject_Name_" value="RTP_4_name" />
+            <Property id="IDObject_AName_" value="RTP_4_aliasName" />
             <Property id="RegularTP_SequenceNum_" value="4" />
             <Property id="RegularTP_V1_" value="0.41" />
             <Property id="RegularTP_V2_" value="0.42" />
@@ -83,9 +83,9 @@
         <ResourceDescription>
           <id gid="0x00000005ffffffff" type="OutageSdle_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="OS_1" />
-            <Property id="IDObject_Name_" value="OS_1" />
-            <Property id="IDObject_AName_" value="OS_1" />
+            <Property id="IDObject_MRID_" value="OS_1_mRID" />
+            <Property id="IDObject_Name_" value="OS_1_name" />
+            <Property id="IDObject_AName_" value="OS_1_aliasName" />
             <Property id="BasicIntervalSdle_StartT_" value="637957188000000000" />
             <Property id="BasicIntervalSdle_V1Mplr_" value="G" />
             <Property id="BasicIntervalSdle_V2Mplr_" value="M" />
@@ -96,21 +96,21 @@
         <ResourceDescription>
           <id gid="0x00000003ffffffff" type="IrregularTP_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="ITP_1" />
-            <Property id="IDObject_Name_" value="ITP_1ITP_1" />
-            <Property id="IDObject_AName_" value="ITP_1" />
+            <Property id="IDObject_MRID_" value="ITP_1_mRID" />
+            <Property id="IDObject_Name_" value="ITP_1_name" />
+            <Property id="IDObject_AName_" value="ITP_1_aliasName" />
             <Property id="IrregularTP_time_" value="14.9" />
-            <Property id="IrregularTP_V1_" value="0.11" />
-            <Property id="IrregularTP_V2_" value="0.12" />
+            <Property id="IrregularTP_V1_" value="0.011" />
+            <Property id="IrregularTP_V2_" value="0.012" />
             <Property id="IrregularTP_IntervalSdle_" value="0x00000005ffffffff" />
           </Properties>
         </ResourceDescription>
         <ResourceDescription>
           <id gid="0x00000001ffffffff" type="SwitchingOp_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="SO_1" />
-            <Property id="IDObject_Name_" value="SO_1" />
-            <Property id="IDObject_AName_" value="SO_1" />
+            <Property id="IDObject_MRID_" value="SO_1_mRID" />
+            <Property id="IDObject_Name_" value="SO_1_name" />
+            <Property id="IDObject_AName_" value="SO_1_aliasName" />
             <Property id="SwitchingOp_NewState_" value="close" />
             <Property id="SwitchingOp_OpTime_" value="637957194000000000" />
             <Property id="SwitchingOp_OutageSdle_" value="0x00000005ffffffff" />
@@ -119,18 +119,18 @@
         <ResourceDescription>
           <id gid="0x00000006ffffffff" type="Disconnector_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="D_1" />
-            <Property id="IDObject_Name_" value="D_1" />
-            <Property id="IDObject_AName_" value="D_1" />
+            <Property id="IDObject_MRID_" value="D_1_mRID" />
+            <Property id="IDObject_Name_" value="D_1_name" />
+            <Property id="IDObject_AName_" value="D_1_aliasName" />
             <Property id="Switch_SwitchingOp_" value="0x00000001ffffffff" />
           </Properties>
         </ResourceDescription>
         <ResourceDescription>
           <id gid="0x00000006fffffffe" type="Disconnector_" />
           <Properties>
-            <Property id="IDObject_MRID_" value="D_2" />
-            <Property id="IDObject_Name_" value="D_2" />
-            <Property id="IDObject_AName_" value="D_2" />
+            <Property id="IDObject_MRID_" value="D_2_mRID" />
+            <Property id="IDObject_Name_" value="D_2_name" />
+            <Property id="IDObject_AName_" value="D_2_aliasName" />
             <Property id="Switch_SwitchingOp_" value="0x00000001ffffffff" />
           </Properties>
         </ResourceDescription>

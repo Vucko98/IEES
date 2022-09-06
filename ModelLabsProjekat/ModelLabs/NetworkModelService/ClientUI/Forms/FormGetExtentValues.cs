@@ -63,7 +63,7 @@ namespace ClientUI.Forms
         private void comboBoxConcreteClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBoxAttribute.Items.Clear();
-
+            richTextBoxResult.Clear();
             try //TRY
             {                               
                 foreach (ModelCode modelCode in DMSType_ModelCodes[(DMSType)comboBoxConcreteClass.SelectedItem])                
@@ -72,6 +72,7 @@ namespace ClientUI.Forms
             catch (Exception exc)
             {
                 Console.WriteLine(string.Format("ClientUI->FormGetExtentValues->comboBoxConcreteClass_SelectedIndexChanged failed:\n\t{0}", exc.Message));
+                listBoxAttribute.Items.Clear();
             }
         }
 
@@ -91,6 +92,7 @@ namespace ClientUI.Forms
             catch (Exception exc)
             {
                 Console.WriteLine(string.Format("ClientUI->FormGetExtentValues->buttonStart_Click failed:\n\t{0}", exc.Message));
+                richTextBoxResult.Clear();
             }
         }
     }

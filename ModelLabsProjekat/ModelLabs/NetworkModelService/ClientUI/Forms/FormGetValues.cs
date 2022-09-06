@@ -80,7 +80,7 @@ namespace ClientUI.Forms
         private void comboBoxGIDs_SelectedIndexChanged(object sender, EventArgs e)
         {            
             listBoxDMSTypes.Items.Clear();
-
+            richTextBoxResult.Clear();
             try //TRY
             {
                 DMSType typeOfSelectedGID = xGID_GID_DMSType[comboBoxGIDs.SelectedItem.ToString()].Item2;
@@ -91,6 +91,7 @@ namespace ClientUI.Forms
             catch (Exception exc)
             {
                 Console.WriteLine(string.Format("ClientUI->FormGetValues->comboBoxGIDs_SelectedIndexChanged failed:\n\t{0}", exc.Message));
+                listBoxDMSTypes.Items.Clear();
             }          
         }
 
@@ -108,7 +109,8 @@ namespace ClientUI.Forms
             }
             catch (Exception exc)
             {
-                Console.WriteLine(string.Format("ClientUI->FormGetValues->buttonStart_Click failed:\n\t{0}", exc.Message));                
+                Console.WriteLine(string.Format("ClientUI->FormGetValues->buttonStart_Click failed:\n\t{0}", exc.Message));
+                richTextBoxResult.Clear();
             }           
         }
     }

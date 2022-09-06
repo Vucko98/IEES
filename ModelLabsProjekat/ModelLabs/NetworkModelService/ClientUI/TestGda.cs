@@ -82,7 +82,7 @@ namespace ClientUI
             {
                 foreach (ResourceDescription rd in rds)
                 {                    
-                    text += "ResourceGID: " + "0x" + rd.Id.ToString("X16") + "\n";
+                    text += "Resource_GID: " + "0x" + rd.Id.ToString("X16") + "\n";
                     foreach (Property property in rd.Properties)
                     {
                         text += PropertyToString(property, "\t");
