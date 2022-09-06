@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGetValues));
             this.comboBoxGIDs = new System.Windows.Forms.ComboBox();
-            this.listBoxDMSTypes = new System.Windows.Forms.ListBox();
+            this.listBoxAttribute = new System.Windows.Forms.ListBox();
             this.richTextBoxResult = new System.Windows.Forms.RichTextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,15 +45,15 @@
             this.comboBoxGIDs.TabIndex = 0;
             this.comboBoxGIDs.SelectedIndexChanged += new System.EventHandler(this.comboBoxGIDs_SelectedIndexChanged);
             // 
-            // listBoxDMSTypes
+            // listBoxAttribute
             // 
-            this.listBoxDMSTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxDMSTypes.FormattingEnabled = true;
-            this.listBoxDMSTypes.ItemHeight = 16;
-            this.listBoxDMSTypes.Location = new System.Drawing.Point(20, 98);
-            this.listBoxDMSTypes.Name = "listBoxDMSTypes";
-            this.listBoxDMSTypes.Size = new System.Drawing.Size(200, 212);
-            this.listBoxDMSTypes.TabIndex = 1;
+            this.listBoxAttribute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxAttribute.FormattingEnabled = true;
+            this.listBoxAttribute.ItemHeight = 16;
+            this.listBoxAttribute.Location = new System.Drawing.Point(20, 98);
+            this.listBoxAttribute.Name = "listBoxAttribute";
+            this.listBoxAttribute.Size = new System.Drawing.Size(200, 212);
+            this.listBoxAttribute.TabIndex = 1;
             // 
             // richTextBoxResult
             // 
@@ -86,7 +86,7 @@
             this.ClientSize = new System.Drawing.Size(784, 411);
             this.Controls.Add(this.richTextBoxResult);
             this.Controls.Add(this.buttonStart);
-            this.Controls.Add(this.listBoxDMSTypes);
+            this.Controls.Add(this.listBoxAttribute);
             this.Controls.Add(this.comboBoxGIDs);
             this.Name = "FormGetValues";
             this.ResumeLayout(false);
@@ -96,7 +96,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxGIDs;
-        private System.Windows.Forms.ListBox listBoxDMSTypes;
+        private System.Windows.Forms.ListBox listBoxAttribute;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.RichTextBox richTextBoxResult;
     }

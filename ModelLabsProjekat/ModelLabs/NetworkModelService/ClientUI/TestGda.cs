@@ -13,6 +13,19 @@ namespace ClientUI
 
         private ModelResourcesDesc modelResourcesDesc = new ModelResourcesDesc();
 
+        private Dictionary<DMSType, List<ModelCode>> _DMSType_Reference = new Dictionary<DMSType, List<ModelCode>>();
+        public Dictionary<DMSType, List<ModelCode>> DMSType_Reference
+        {
+            get
+            {
+                return _DMSType_Reference;
+            }
+            set
+            {
+                _DMSType_Reference = value;
+            }
+        }
+
         private NetworkModelGDAProxy gdaQueryProxy = null;
         private NetworkModelGDAProxy GdaQueryProxy
         {
@@ -45,7 +58,7 @@ namespace ClientUI
                 {
                     if (_DMSType != DMSType.MASK_TYPE)                    
                         DMSType_ModelCodes.Add(_DMSType, modelResourcesDesc.GetAllPropertyIds(_DMSType));                    
-                }
+                }                
             }
             catch (Exception e)
             {       
@@ -202,30 +215,19 @@ namespace ClientUI
             return GetExtentValuesToString(rds);
         }
 
-        public List<long> GetRelatedValues(long sourceGlobalId, Association association)
+        public string GetRelatedValues(long sourceGlobalId, List<ModelCode> properties, Association association)
         {            
             Console.WriteLine("Getting related values method started.");            
-
-            List<long> resultIds = new List<long>();
-            int numberOfResources = 2;
+                     
+            int iteratorId, i, resourcesLeft, numberOfResources = 20;
+            List<ResourceDescription> rds = new List<ResourceDescription>();
             try
             {
-                List<ModelCode> properties = new List<ModelCode>();
-                //properties.Add(ModelCode.IDObject_MRID_);
-                //properties.Add(ModelCode.IDObject_Name_);
-                //properties.Add(ModelCode.IDObject_AName_);
-                properties = modelResourcesDesc.GetAllPropertyIds(association.Type);
-
-                int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
-                int resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
+                resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
                 while (resourcesLeft > 0)
                 {
-                    List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
-                    for (int i = 0; i < rds.Count; i++)
-                    {
-                        resultIds.Add(rds[i].Id);
-                        //rds[i].ExportToXml(xmlWriter);
-                    }
+                    rds.AddRange(GdaQueryProxy.IteratorNext(numberOfResources, iteratorId));
 
                     resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
                 }
@@ -239,7 +241,7 @@ namespace ClientUI
                 Console.WriteLine(string.Format("Getting related values method  failed for sourceGlobalId = {0} and association (propertyId = {1}, type = {2}). Reason: {3}", sourceGlobalId, association.PropertyId, association.Type, e.Message));
             }
 
-            return resultIds;
+            return GetExtentValuesToString(rds);
         }        
 
         #endregion GDAQueryService
@@ -253,32 +255,47 @@ namespace ClientUI
 
             List<ModelCode> properties = new List<ModelCode>();
             int iteratorId, resourcesLeft, i, numberOfResources = 20;
-            string xGID;
+            string xGID, result;
             try
             {
                 foreach (DMSType type in Enum.GetValues(typeof(DMSType)))
                 {
                     if (type == DMSType.MASK_TYPE)
                         continue;
-                    
-                    //properties = modelResourcesDesc.GetAllPropertyIds(type);                    
+
+                    _DMSType_Reference.Add(type, new List<ModelCode>());
+
+                    properties = modelResourcesDesc.GetAllPropertyIds(type);                    
                     iteratorId = GdaQueryProxy.GetExtentValues(modelResourcesDesc.GetModelCodeFromType(type), properties);
                     resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+
+                    result = string.Format("DMSType <{0}> contains reference ModelCode: ", type);
                     while (resourcesLeft > 0)
                     {
-                        List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
+                        List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);                        
+                        
+                        foreach (Property property in rds[0].Properties)
+                        {
+                            if (property.Type == PropertyType.Reference || property.Type == PropertyType.ReferenceVector)
+                            {
+                                _DMSType_Reference[type].Add(property.Id);
+                                result += "\n\t" + property.Id;
+                            }                                
+                        }                        
 
                         for (i = 0; i < rds.Count; i++)
                         {
                             xGID = "0x" + rds[i].Id.ToString("X16");
                             _0xGID_GID_DMSType.Add(xGID, (rds[i].Id, type));                            
-                            Console.WriteLine(string.Format("Object GID <{0}>--><{1}>, DMSType <{2}>.", _0xGID_GID_DMSType[xGID].Item1, xGID, _0xGID_GID_DMSType[xGID].Item2));
-                        }         
+                            Console.WriteLine(string.Format("Resource_GID <{0}>--><{1}>, DMSType <{2}>.", _0xGID_GID_DMSType[xGID].Item1, xGID, _0xGID_GID_DMSType[xGID].Item2));
+                        }
                         
                         resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                        
                     }
-
-                    GdaQueryProxy.IteratorClose(iteratorId);                                        
+                    
+                    GdaQueryProxy.IteratorClose(iteratorId);
+                    Console.WriteLine(result);
                 }
                 
                 Console.WriteLine("Getting extent values for all DMS types successfully ended.");

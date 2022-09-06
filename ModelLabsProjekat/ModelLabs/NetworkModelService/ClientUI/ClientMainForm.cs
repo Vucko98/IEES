@@ -46,12 +46,13 @@ namespace ClientUI
         
         private void InitializeNestedForms()
         {
+            Dictionary<string, (long, DMSType)> _0xGID_GID_DMSType = tGDA.TestGetExtentValuesAllTypes();
             Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes = tGDA.get_DMSType_ModelCodes();
-
+            
             _FormHome = new ClientUI.Forms.FormHome();
-            _FormGetValues = new ClientUI.Forms.FormGetValues(tGDA, tGDA.TestGetExtentValuesAllTypes(), _DMSType_ModelCodes);
+            _FormGetValues = new ClientUI.Forms.FormGetValues(tGDA, _0xGID_GID_DMSType, _DMSType_ModelCodes);
             _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues(tGDA, _DMSType_ModelCodes);
-            _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
+            _FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues(tGDA, _0xGID_GID_DMSType, _DMSType_ModelCodes, tGDA.DMSType_Reference);
 
             ChangeForm(_FormHome);
         }

@@ -1,12 +1,6 @@
 ﻿using FTN.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientUI.Forms
@@ -42,11 +36,12 @@ namespace ClientUI.Forms
 
         private void InitializeTools()
         {
-            comboBoxConcreteClass.Items.Clear();
+            //comboBoxConcreteClass.Items.Clear();
             comboBoxConcreteClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            listBoxAttribute.Items.Clear();
+            //listBoxAttribute.Items.Clear();
             listBoxAttribute.SelectionMode = SelectionMode.MultiExtended;
             listBoxAttribute.Sorted = true;
+            //richTextBoxResult.Clear();
             richTextBoxResult.ReadOnly = true;
 
             try //TRY

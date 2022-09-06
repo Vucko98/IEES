@@ -96,8 +96,10 @@ namespace FTN.Services.NetworkModelService
 			{
 				string message = string.Format("IteratorNext failed. Iterator ID = {0}. Resources to fetch count = {1}. {2} ", id, n, ex.Message);
 				CommonTrace.WriteTrace(CommonTrace.TraceError, message);
-				throw new Exception(message);
-			}		
+				//throw new Exception(message);
+			}
+
+            return null;
 		}
 
 		public bool IteratorRewind(int id)
