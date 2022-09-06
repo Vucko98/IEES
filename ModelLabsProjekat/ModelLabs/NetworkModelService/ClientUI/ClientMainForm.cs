@@ -29,7 +29,7 @@ namespace ClientUI
         {            
             _FormHome = new ClientUI.Forms.FormHome();
             _FormGetValues = new ClientUI.Forms.FormGetValues();
-            //_FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
+            _FormGetExtentValues = new ClientUI.Forms.FormGetExtentValues();
             //_FormGetRelatedValues = new ClientUI.Forms.FormGetRelatedValues();
 
             ChangeForm(_FormHome);

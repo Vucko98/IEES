@@ -10,15 +10,11 @@ namespace ClientUI.Forms
         public FormGetValues()
         {
             InitializeComponent();
-
             InitializeTools();
         }
 
         private void InitializeTools()
         {                                                                                   
-            richTextBoxResult.ReadOnly = true;
-
-            buttonStart.Enabled = false;
             try //TRY
             {                
                 foreach (KeyValuePair<string, (long, DMSType)> _strGID__GID_DMSType in DataInAir.strGID__GID_DMSType)

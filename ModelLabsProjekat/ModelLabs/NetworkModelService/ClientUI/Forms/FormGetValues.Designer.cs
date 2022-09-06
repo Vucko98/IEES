@@ -66,12 +66,14 @@
             this.richTextBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxResult.Location = new System.Drawing.Point(245, 50);
             this.richTextBoxResult.Name = "richTextBoxResult";
+            this.richTextBoxResult.ReadOnly = true;
             this.richTextBoxResult.Size = new System.Drawing.Size(515, 340);
             this.richTextBoxResult.TabIndex = 3;
             this.richTextBoxResult.Text = "";
             // 
             // buttonStart
             // 
+            this.buttonStart.Enabled = false;
             this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStart.Image = ((System.Drawing.Image)(resources.GetObject("buttonStart.Image")));
             this.buttonStart.Location = new System.Drawing.Point(91, 333);

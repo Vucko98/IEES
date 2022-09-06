@@ -7,46 +7,17 @@ namespace ClientUI.Forms
 {
     public partial class FormGetExtentValues : Form
     {
-        private TestGda tGDA = null;        
-        private Dictionary<DMSType, List<ModelCode>> DMSType_ModelCodes = null;
-
-        public FormGetExtentValues(TestGda _tGDA, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
+        public FormGetExtentValues()
         {
             InitializeComponent();
-
-            InitializeData(_tGDA, _DMSType_ModelCodes);
-
             InitializeTools();
         }
 
-        private void InitializeData(TestGda _tGDA, Dictionary<DMSType, List<ModelCode>> _DMSType_ModelCodes)
-        {
-            tGDA = _tGDA;
-
-            try //TRY
-            {
-                DMSType_ModelCodes = new Dictionary<DMSType, List<ModelCode>>(_DMSType_ModelCodes);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(string.Format("ClientUI->FormGetExtentValues->InitializeData->DMSType_ModelCodes failed:\n\t{0}", e.Message));
-                throw;
-            }
-        }
-
         private void InitializeTools()
-        {
-            //comboBoxConcreteClass.Items.Clear();
-            comboBoxConcreteClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            //listBoxAttribute.Items.Clear();
-            listBoxAttribute.SelectionMode = SelectionMode.MultiExtended;
-            listBoxAttribute.Sorted = true;
-            //richTextBoxResult.Clear();
-            richTextBoxResult.ReadOnly = true;
-
+        { 
             try //TRY
-            {
-                foreach (KeyValuePair<DMSType, List<ModelCode>> _DMSType_ModelCodes in DMSType_ModelCodes)
+            {                
+                foreach (KeyValuePair<DMSType, List<ModelCode>> _DMSType_ModelCodes in DataInAir.DMSType_ModelCodes)
                     comboBoxConcreteClass.Items.Add(_DMSType_ModelCodes.Key);
             }
             catch (Exception e)
@@ -59,9 +30,10 @@ namespace ClientUI.Forms
         {
             listBoxAttribute.Items.Clear();
             richTextBoxResult.Clear();
+            buttonStart.Enabled = true;
             try //TRY
             {                               
-                foreach (ModelCode modelCode in DMSType_ModelCodes[(DMSType)comboBoxConcreteClass.SelectedItem])                
+                foreach (ModelCode modelCode in DataInAir.DMSType_ModelCodes[(DMSType)comboBoxConcreteClass.SelectedItem])                
                     listBoxAttribute.Items.Add(modelCode);                
             }
             catch (Exception exc)
@@ -82,7 +54,7 @@ namespace ClientUI.Forms
                 foreach (ModelCode modelCode in listBoxAttribute.SelectedItems)
                     properties.Add(modelCode);
 
-                richTextBoxResult.Text = tGDA.GetExtentValues(SelectedConcreteClass, properties);
+                richTextBoxResult.Text = DataInAir.tGDA.GetExtentValues(SelectedConcreteClass, properties);
             }
             catch (Exception exc)
             {
