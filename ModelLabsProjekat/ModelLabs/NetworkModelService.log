@@ -1,0 +1,19 @@
+9/7/2022 12:09:19 AM : Starting Network Model Serivice...
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000400000001).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000400000002).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000200000001).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000200000002).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000200000003).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000200000004).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000500000001).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000300000001).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000100000001).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000600000001).
+9/7/2022 12:09:19 AM : Inserting entity with GID (0000000600000002).
+9/7/2022 12:09:19 AM : The WCF service GenericDataAccess is ready.
+9/7/2022 12:09:19 AM : Endpoints:
+9/7/2022 12:09:19 AM : net.tcp://localhost:10000/NetworkModelService/GDA/
+9/7/2022 12:09:19 AM : Connection string: ../NetworkModelData.data
+9/7/2022 12:09:19 AM : Trace level: Info
+9/7/2022 12:09:19 AM : The Network Model Service is started.
+9/7/2022 12:09:19 AM : Press <Enter> to stop the service.
